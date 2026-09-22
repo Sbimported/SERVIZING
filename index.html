@@ -185,7 +185,7 @@
 
                     <div class="w-full lg:col-span-6 flex justify-end relative order-2 lg:order-2">
                         <div class="w-full h-64 sm:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                            <img id="marco-superior" src="destacadas/001.JPG" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-100">
+                            <img id="marco-superior" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-0">
                         </div>
                         <div class="absolute bottom-3 right-3 sm:right-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 flex items-center space-x-1.5 shadow-lg pointer-events-none">
                             <div class="flex text-amber-400 text-xs sm:text-sm">
@@ -204,7 +204,7 @@
 
                 <div class="w-full flex justify-center order-3">
                     <div class="w-full h-80 sm:h-[30rem] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                        <img id="marco-inferior" src="destacadas/002.JPG" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-100">
+                        <img id="marco-inferior" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-0">
                     </div>
                 </div>
             </div>
@@ -462,54 +462,108 @@
             dom.mobileMenu?.classList.toggle('hidden');
         });
 
-        // Carrusel optimizado con precarga de imágenes
-        const imagenes = [
-            "destacadas/001.JPG",
-            "destacadas/002.JPG",
-            "destacadas/003.JPG",
-            "destacadas/004.JPG"
-        ];
+        // ---------------------------------------------------------------
+        // Carrusel de "Quiénes Somos" - carpeta /destacadas en la raíz
+        // Nombres esperados: 001, 002, 003, 004
+        // ---------------------------------------------------------------
+        const CARPETA_DESTACADAS = "destacadas";
+        const NOMBRES_BASE = ["001", "002", "003", "004"];
+        // Se prueban estas extensiones en orden por si en el repositorio
+        // (GitHub / Cloudflare Pages, que es case-sensitive) el archivo
+        // quedó guardado con distinta capitalización a la esperada.
+        const EXTENSIONES_A_PROBAR = ["JPG", "jpg", "jpeg", "JPEG"];
 
-        // Precarga de imágenes en memoria para evitar pantallazos negros en móviles
-        imagenes.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
-
-        let indiceSuperior = 0;
-        let indiceInferior = 1;
-
-        const imgSup = document.getElementById('marco-superior');
-        const imgInf = document.getElementById('marco-inferior');
-
-        function cambiarImagenes() {
-            if (!imgSup || !imgInf) return;
-
-            // Calcular siguientes índices
-            const siguienteSup = (indiceSuperior + 1) % imagenes.length;
-            let siguienteInf;
-            do {
-                siguienteInf = Math.floor(Math.random() * imagenes.length);
-            } while (siguienteInf === siguienteSup);
-
-            // Desvanecer
-            imgSup.style.opacity = '0';
-            imgInf.style.opacity = '0';
-
-            setTimeout(() => {
-                indiceSuperior = siguienteSup;
-                indiceInferior = siguienteInf;
-
-                imgSup.src = imagenes[indiceSuperior];
-                imgInf.src = imagenes[indiceInferior];
-
-                // Reaparecer
-                imgSup.style.opacity = '1';
-                imgInf.style.opacity = '1';
-            }, 500);
+        // Intenta cargar una imagen probando varias extensiones.
+        // Devuelve la ruta que realmente cargó, o null si ninguna sirvió.
+        function resolverRutaImagen(nombreBase) {
+            return new Promise((resolve) => {
+                let i = 0;
+                const probarSiguiente = () => {
+                    if (i >= EXTENSIONES_A_PROBAR.length) {
+                        console.warn(
+                            `[Carrusel] No se pudo cargar "${nombreBase}" desde "${CARPETA_DESTACADAS}/" ` +
+                            `con ninguna extensión probada (${EXTENSIONES_A_PROBAR.join(", ")}). ` +
+                            `Verificá que el archivo exista en el repo con ese nombre exacto.`
+                        );
+                        resolve(null);
+                        return;
+                    }
+                    const ruta = `${CARPETA_DESTACADAS}/${nombreBase}.${EXTENSIONES_A_PROBAR[i]}`;
+                    const img = new Image();
+                    img.onload = () => resolve(ruta);
+                    img.onerror = () => {
+                        i++;
+                        probarSiguiente();
+                    };
+                    img.src = ruta;
+                };
+                probarSiguiente();
+            });
         }
 
-        setInterval(cambiarImagenes, 4500);
+        async function inicializarCarruselDestacadas() {
+            const imgSup = document.getElementById('marco-superior');
+            const imgInf = document.getElementById('marco-inferior');
+            if (!imgSup || !imgInf) return;
+
+            // Resuelve la ruta real de cada imagen (probando extensiones)
+            const rutasResueltas = await Promise.all(NOMBRES_BASE.map(resolverRutaImagen));
+            const imagenes = rutasResueltas.filter(Boolean);
+
+            if (imagenes.length === 0) {
+                console.error(
+                    `[Carrusel] Ninguna imagen se pudo cargar desde "${CARPETA_DESTACADAS}/". ` +
+                    `Revisá que la carpeta "${CARPETA_DESTACADAS}" esté subida al repositorio de GitHub ` +
+                    `en la misma raíz que index.html, y que los archivos se llamen ${NOMBRES_BASE.join(", ")}.`
+                );
+                return;
+            }
+
+            let indiceSuperior = 0;
+            let indiceInferior = imagenes.length > 1 ? 1 : 0;
+
+            // Mostrar las imágenes iniciales
+            imgSup.src = imagenes[indiceSuperior];
+            imgInf.src = imagenes[indiceInferior];
+            imgSup.classList.remove('opacity-0');
+            imgInf.classList.remove('opacity-0');
+            imgSup.style.opacity = '1';
+            imgInf.style.opacity = '1';
+
+            if (imagenes.length < 2) return; // nada que rotar
+
+            function cambiarImagenes() {
+                const siguienteSup = (indiceSuperior + 1) % imagenes.length;
+                let siguienteInf = siguienteSup;
+                if (imagenes.length > 2) {
+                    do {
+                        siguienteInf = Math.floor(Math.random() * imagenes.length);
+                    } while (siguienteInf === siguienteSup);
+                } else {
+                    siguienteInf = (indiceInferior + 1) % imagenes.length;
+                }
+
+                // Desvanecer
+                imgSup.style.opacity = '0';
+                imgInf.style.opacity = '0';
+
+                setTimeout(() => {
+                    indiceSuperior = siguienteSup;
+                    indiceInferior = siguienteInf;
+
+                    imgSup.src = imagenes[indiceSuperior];
+                    imgInf.src = imagenes[indiceInferior];
+
+                    // Reaparecer
+                    imgSup.style.opacity = '1';
+                    imgInf.style.opacity = '1';
+                }, 500);
+            }
+
+            setInterval(cambiarImagenes, 4500);
+        }
+
+        inicializarCarruselDestacadas();
     </script>
 </body>
 </html>
