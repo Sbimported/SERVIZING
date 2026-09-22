@@ -87,9 +87,10 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.15);
         }
 
-        /* Image Fade Transitions Suaves */
+        /* Image Fade Transitions Suaves y Robustas */
         .fade-img {
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.4s ease-in-out;
+            will-change: opacity;
         }
 
         /* Carrusel Infinito de Marcas */
@@ -211,8 +212,7 @@
                              src="FOTOSH/01.jpg"
                              alt="Obra de zinguería"
                              class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
-                             fetchpriority="high"
-                             loading="eager">
+                             fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -236,8 +236,7 @@
                          src="FOTOSH/01.jpg"
                          alt="Obra destacada principal"
                          class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
-                         fetchpriority="high"
-                         loading="eager">
+                         fetchpriority="high">
                 </div>
 
                 <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-20 flex space-x-1.5 sm:space-x-2 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm">
@@ -507,32 +506,36 @@
         const imageBaseNames = ["01", "02", "03", "04"];
         let currentIndex = 0;
         let carouselTimer = null;
+        const preloadedImages = [];
 
-        // Precarga anticipada de imágenes en memoria del navegador móvil
-        imageBaseNames.forEach(baseName => {
-            const preload = new Image();
-            preload.src = `${imageFolder}${baseName}.jpg`;
+        // Precarga anticipada estricta en memoria para evitar errores de red móvil
+        imageBaseNames.forEach((baseName, idx) => {
+            const img = new Image();
+            img.src = `${imageFolder}${baseName}.jpg`;
+            preloadedImages[idx] = img;
         });
 
         function updateCarouselImages() {
-            if (dom.topImg && dom.mainImg) {
-                // Desvanecimiento suave de salida
-                dom.topImg.style.opacity = '0';
-                dom.mainImg.style.opacity = '0';
+            if (!dom.topImg || !dom.mainImg) return;
 
-                setTimeout(() => {
-                    const topName = imageBaseNames[(currentIndex + 1) % imageBaseNames.length];
-                    const mainName = imageBaseNames[currentIndex];
+            // 1. Difuminar hacia abajo (fade out)
+            dom.topImg.style.opacity = '0';
+            dom.mainImg.style.opacity = '0';
 
-                    dom.topImg.src = `${imageFolder}${topName}.jpg`;
-                    dom.mainImg.src = `${imageFolder}${mainName}.jpg`;
+            setTimeout(() => {
+                const topName = imageBaseNames[(currentIndex + 1) % imageBaseNames.length];
+                const mainName = imageBaseNames[currentIndex];
 
-                    // Restaurar opacidad para fundido de entrada limpio
-                    dom.topImg.style.opacity = '1';
-                    dom.mainImg.style.opacity = '1';
-                }, 250);
-            }
+                // Asignar rutas limpias asegurando que el navegador lea el caché local
+                dom.topImg.src = `${imageFolder}${topName}.jpg`;
+                dom.mainImg.src = `${imageFolder}${mainName}.jpg`;
 
+                // 2. Restaurar opacidad para fundido suave (fade in)
+                dom.topImg.style.opacity = '1';
+                dom.mainImg.style.opacity = '1';
+            }, 200);
+
+            // Actualizar puntos de navegación
             dom.dots.forEach((dot, idx) => {
                 dot.classList.toggle('w-5', idx === currentIndex);
                 dot.classList.toggle('sm:w-6', idx === currentIndex);
@@ -555,6 +558,7 @@
         }
 
         function startTimer() {
+            if (carouselTimer) clearInterval(carouselTimer);
             carouselTimer = setInterval(nextSlide, 4500);
         }
 
