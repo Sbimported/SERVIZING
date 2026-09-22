@@ -155,7 +155,7 @@
                 <!-- Compensación de padding izquierdo para alinear el borde real del logo circular con la línea vertical -->
                 <div class="flex-shrink-0 flex items-center z-10 -ml-2 sm:-ml-3">
                     <button onclick="mostrarSeccion('quienes-somos')" class="cursor-pointer block">
-                        <img src="LOGO.png" alt="SERVIZING Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain" fetchpriority="high" onerror="this.src='LOGO.PNG'">
+                        <img src="LOGO.png" alt="SERVIZING Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain" fetchpriority="high" onerror="handleImageError(this)">
                     </button>
                 </div>
 
@@ -198,10 +198,9 @@
 
         <section id="quienes-somos" class="seccion-contenido">
             <div class="w-full py-4 sm:py-6">
-                <!-- Estructura optimizada para celular: Título y texto primero, imágenes debajo -->
+                <!-- Estructura optimizada para celular y PC: Título/Texto primero en móvil, imágenes debajo -->
                 <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 items-center mb-8">
 
-                    <!-- Bloque de Texto y Título (Orden 1 en móviles, izquierda en PC) -->
                     <div class="w-full lg:col-span-6 text-left order-1 lg:order-1">
                         <h1 class="font-archivo text-3xl sm:text-5xl md:text-6xl tracking-tight uppercase leading-none mb-4 drop-shadow-md text-white">
                             SERVIZING
@@ -211,7 +210,6 @@
                         </p>
                     </div>
 
-                    <!-- Primer Marco de Imagen (Orden 2 en móviles, derecha en PC) -->
                     <div class="w-full lg:col-span-6 flex justify-end relative order-2 lg:order-2">
                         <div class="w-full h-64 sm:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
                             <img id="marco-superior" src="presentacion/01.jpg" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-100" onerror="handleImageError(this)">
@@ -460,7 +458,7 @@
     </aside>
 
     <script>
-        // Función inteligente para corregir errores de carga de imágenes en producción (maneja extensiones .jpg/.png y mayúsculas)
+        // Función inteligente para corregir errores de extensión y mayúsculas/minúsculas en el servidor web
         function handleImageError(img) {
             if (img.dataset.tried) return;
             img.dataset.tried = "true";
@@ -471,8 +469,6 @@
                 img.src = currentSrc.replace('.png', '.JPG');
             } else if (currentSrc.includes('.JPG')) {
                 img.src = currentSrc.replace('.JPG', '.PNG');
-            } else {
-                img.style.display = 'none';
             }
         }
 
@@ -512,7 +508,7 @@
             dom.mobileMenu?.classList.toggle('hidden');
         });
 
-        // Lógica para el intercambio dinámico de imágenes cada 4s
+        // Lógica para el intercambio dinámico de imágenes del carrusel de presentación cada 4s
         const imagenes = [
             "presentacion/01.jpg",
             "presentacion/02.jpg",
@@ -538,6 +534,10 @@
                     indiceInferior = Math.floor(Math.random() * imagenes.length);
                 } while (indiceInferior === indiceSuperior);
 
+                // Asignar nuevas imágenes y asegurar que aplique el manejador de errores de respaldos
+                imgSup.dataset.tried = "";
+                imgInf.dataset.tried = "";
+
                 imgSup.src = imagenes[indiceSuperior];
                 imgInf.src = imagenes[indiceInferior];
 
@@ -546,9 +546,7 @@
             }, 400);
         }
 
-        setInterval(cambiar_Imagenes = () => {
-            cambiarImagenes();
-        }, 4000);
+        setInterval(cambiarImagenes, 4000);
     </script>
 </body>
 </html>
