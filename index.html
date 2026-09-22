@@ -87,11 +87,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.15);
         }
 
-        /* Image Fade Transitions Suaves */
-        .fade-img {
-            transition: opacity 0.5s ease-in-out;
-        }
-
         /* Carrusel Infinito de Marcas */
         @keyframes scrollMarquee {
             0% { transform: translateX(0); }
@@ -205,47 +200,52 @@
                     </p>
                 </div>
 
+                <!-- Imagen estática 01.jpg desde FOTOSOBRAS -->
                 <div class="lg:col-span-5 flex justify-center lg:justify-end">
                     <div class="relative w-full max-w-sm sm:max-w-md h-56 sm:h-80 md:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900">
-                        <img id="top-carousel-img"
-                             src="FOTOSH/01.jpg"
-                             alt="Obra de zinguería"
-                             class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
+                        <img src="FOTOSOBRAS/01.jpg"
+                             alt="Obra de zinguería secundaria"
+                             class="w-full h-full object-cover pointer-events-none"
                              fetchpriority="high"
-                             loading="eager">
+                             loading="eager"
+                             onerror="this.src='FOTOSOBRAS/1.jpg'">
                     </div>
                 </div>
             </div>
 
-            <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900 mb-12 sm:mb-16">
-                <div class="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 flex flex-col items-center bg-black/40 backdrop-blur-md p-2 sm:p-3 rounded-xl sm:rounded-2xl border border-white/20 shadow-lg">
-                    <div class="flex space-x-0.5 text-amber-300 text-[10px] sm:text-sm mb-0.5 sm:mb-1">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="text-white text-xl sm:text-3xl">
-                        <i class="fa-solid fa-users"></i>
+            <!-- Contenedores con las imágenes estáticas 02.jpg, 03.jpg y 04.jpg desde FOTOSOBRAS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 sm:mb-16">
+
+                <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900">
+                    <div class="relative w-full h-64 sm:h-80">
+                        <img src="FOTOSOBRAS/02.jpg"
+                             alt="Obra destacada 02"
+                             class="w-full h-full object-cover pointer-events-none"
+                             loading="lazy"
+                             onerror="this.src='FOTOSOBRAS/2.jpg'">
                     </div>
                 </div>
 
-                <div class="relative w-full h-64 sm:h-96 md:h-[450px] lg:h-[500px]">
-                    <img id="main-carousel-img"
-                         src="FOTOSH/01.jpg"
-                         alt="Obra destacada principal"
-                         class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
-                         fetchpriority="high"
-                         loading="eager">
+                <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900">
+                    <div class="relative w-full h-64 sm:h-80">
+                        <img src="FOTOSOBRAS/03.jpg"
+                             alt="Obra destacada 03"
+                             class="w-full h-full object-cover pointer-events-none"
+                             loading="lazy"
+                             onerror="this.src='FOTOSOBRAS/3.jpg'">
+                    </div>
                 </div>
 
-                <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-20 flex space-x-1.5 sm:space-x-2 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm">
-                    <button onclick="setSlide(0)" class="carousel-dot w-5 sm:w-6 h-2 sm:h-2.5 rounded-full bg-white transition-all duration-300" aria-label="Slide 1"></button>
-                    <button onclick="setSlide(1)" class="carousel-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 2"></button>
-                    <button onclick="setSlide(2)" class="carousel-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 3"></button>
-                    <button onclick="setSlide(3)" class="carousel-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 4"></button>
+                <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900">
+                    <div class="relative w-full h-64 sm:h-80">
+                        <img src="FOTOSOBRAS/04.jpg"
+                             alt="Obra destacada 04"
+                             class="w-full h-full object-cover pointer-events-none"
+                             loading="lazy"
+                             onerror="this.src='FOTOSOBRAS/4.jpg'">
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -276,7 +276,7 @@
 
             <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 max-w-6xl mx-auto px-2 sm:px-4">
                 <p class="font-fira text-sm sm:text-xl lg:text-2xl font-extrabold uppercase tracking-wide text-white text-center lg:text-left max-w-lg leading-snug">
-                    COMPRA NUESTROS PRODUCTOS DE FORMA INMEDIATA AGREGANDOLAS AL CARRITO Y COLOCANDO LAS CORRESPONDIENTES MEDIDAs, LUEGO HAREMOS UNA VERIFICACIÓN PREVIA DE LAS MISMAS.
+                    COMPRA NUESTROS PRODUCTOS DE FORMA INMEDIATA AGREGANDOLAS AL CARRITO Y COLOCANDO LAS CORRESPONDIENTES MEDIDas, LUEGO HAREMOS UNA VERIFICACIÓN PREVIA DE LAS MISMAS.
                 </p>
 
                 <div class="w-full max-w-[240px] sm:max-w-md lg:max-w-xl flex justify-center items-center">
@@ -471,10 +471,7 @@
         const dom = {
             secciones: document.querySelectorAll('.seccion-contenido'),
             navPills: document.querySelectorAll('.nav-pill'),
-            mobileMenu: document.getElementById('mobile-menu'),
-            topImg: document.getElementById('top-carousel-img'),
-            mainImg: document.getElementById('main-carousel-img'),
-            dots: document.querySelectorAll('.carousel-dot')
+            mobileMenu: document.getElementById('mobile-menu')
         };
 
         function mostrarSeccion(idSeccion) {
@@ -503,73 +500,8 @@
             window.open(`https://api.whatsapp.com/send?phone=${numeroTelefonoEmpresa}&text=${encodeURIComponent(texto)}`, '_blank');
         }
 
-        const imageFolder = "FOTOSH/";
-        const imageBaseNames = ["01", "02", "03", "04"];
-        let currentIndex = 0;
-        let carouselTimer = null;
-
-        // Precarga anticipada de imágenes en memoria del navegador móvil
-        imageBaseNames.forEach(baseName => {
-            const preload = new Image();
-            preload.src = `${imageFolder}${baseName}.jpg`;
-        });
-
-        function updateCarouselImages() {
-            if (dom.topImg && dom.mainImg) {
-                // Desvanecimiento suave de salida
-                dom.topImg.style.opacity = '0';
-                dom.mainImg.style.opacity = '0';
-
-                setTimeout(() => {
-                    const topName = imageBaseNames[(currentIndex + 1) % imageBaseNames.length];
-                    const mainName = imageBaseNames[currentIndex];
-
-                    dom.topImg.src = `${imageFolder}${topName}.jpg`;
-                    dom.mainImg.src = `${imageFolder}${mainName}.jpg`;
-
-                    // Restaurar opacidad para fundido de entrada limpio
-                    dom.topImg.style.opacity = '1';
-                    dom.mainImg.style.opacity = '1';
-                }, 250);
-            }
-
-            dom.dots.forEach((dot, idx) => {
-                dot.classList.toggle('w-5', idx === currentIndex);
-                dot.classList.toggle('sm:w-6', idx === currentIndex);
-                dot.classList.toggle('w-2', idx !== currentIndex);
-                dot.classList.toggle('sm:w-2.5', idx !== currentIndex);
-                dot.classList.toggle('bg-white', idx === currentIndex);
-                dot.classList.toggle('bg-white/40', idx !== currentIndex);
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % imageBaseNames.length;
-            updateCarouselImages();
-        }
-
-        function setSlide(index) {
-            currentIndex = index;
-            updateCarouselImages();
-            resetTimer();
-        }
-
-        function startTimer() {
-            carouselTimer = setInterval(nextSlide, 4500);
-        }
-
-        function resetTimer() {
-            if (carouselTimer) clearInterval(carouselTimer);
-            startTimer();
-        }
-
         document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
             dom.mobileMenu?.classList.toggle('hidden');
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            updateCarouselImages();
-            startTimer();
         });
     </script>
 </body>
