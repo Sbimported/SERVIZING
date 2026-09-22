@@ -5,32 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERVIZING</title>
 
-    <link rel="icon" type="image/png" href="FAVICON.png">
+    <link rel="icon" type="image/png" href="./FAVICON.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fira+Sans:wght@500;600;700;800;900&family=Noto+Serif:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        html {
+        html, body {
             scroll-behavior: smooth;
             background-color: #000000;
             overscroll-behavior-y: none;
         }
 
-        body {
-            background-color: #000000;
-            overscroll-behavior-y: none;
-        }
-
-        /* Deshabilitar selección de texto, resaltado y cursor de edición */
+        /* Deshabilitar selección de texto y resaltado de toque en móviles */
         *, *::before, *::after {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -45,7 +39,7 @@
             box-shadow: none !important;
         }
 
-        /* Custom Fonts */
+        /* Fuentes Personalizadas */
         .font-archivo {
             font-family: 'Archivo Black', sans-serif;
         }
@@ -57,7 +51,7 @@
             font-style: italic;
         }
 
-        /* Top Bar Grid Pattern Effect */
+        /* Fondo Grid del Encabezado */
         .header-grid-bg {
             background-color: #1a1a1b;
             background-image:
@@ -66,12 +60,11 @@
             background-size: 40px 40px;
         }
 
-        /* Main Background */
         .bg-servizing-orange {
             background-color: #000000;
         }
 
-        /* Translucent Nav Pill Button Style */
+        /* Botones del menú */
         .nav-pill {
             background-color: rgba(255, 255, 255, 0.22);
             backdrop-filter: blur(4px);
@@ -103,12 +96,11 @@
             animation-play-state: paused;
         }
 
-        /* Transición de fundido para el intercambio de imágenes */
         .fade-img {
             transition: opacity 0.8s ease-in-out;
         }
 
-        /* Replica Exacta de la Barra de Desplazamiento */
+        /* Barra de Desplazamiento Estilizada */
         ::-webkit-scrollbar {
             width: 14px;
         }
@@ -127,35 +119,17 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #e0e0e0;
         }
-        ::-webkit-scrollbar-button:single-button:vertical:decrement {
-            background: #000000 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23ffffff'><polygon points='50,25 15,75 85,75'/></svg>") no-repeat center center;
-            background-size: 8px;
-            height: 18px;
-            display: block;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-        ::-webkit-scrollbar-button:single-button:vertical:increment {
-            background: #000000 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23ffffff'><polygon points='50,75 15,25 85,25'/></svg>") no-repeat center center;
-            background-size: 8px;
-            height: 18px;
-            display: block;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
     </style>
 </head>
 <body class="bg-servizing-orange font-fira text-white min-h-screen flex flex-col select-none relative pb-12">
 
     <header class="header-grid-bg sticky top-0 z-50">
-        <!-- Contenedor unificado a max-w-5xl para garantizar alineación exacta de los bordes con el contenido -->
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 md:h-28 flex items-center justify-between">
 
             <div class="flex items-center space-x-2 md:space-x-4">
-                <!-- Compensación de padding izquierdo para alinear el borde real del logo circular con la línea vertical -->
                 <div class="flex-shrink-0 flex items-center z-10 -ml-2 sm:-ml-3">
                     <button onclick="mostrarSeccion('quienes-somos')" class="cursor-pointer block">
-                        <img src="LOGO.png" alt="SERVIZING Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain" fetchpriority="high" onerror="handleImageError(this)">
+                        <img src="./LOGO.png" alt="SERVIZING Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain">
                     </button>
                 </div>
 
@@ -198,7 +172,6 @@
 
         <section id="quienes-somos" class="seccion-contenido">
             <div class="w-full py-4 sm:py-6">
-                <!-- Estructura optimizada para celular y PC: Título/Texto primero en móvil, imágenes debajo -->
                 <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 items-center mb-8">
 
                     <div class="w-full lg:col-span-6 text-left order-1 lg:order-1">
@@ -212,9 +185,8 @@
 
                     <div class="w-full lg:col-span-6 flex justify-end relative order-2 lg:order-2">
                         <div class="w-full h-64 sm:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                            <img id="marco-superior" src="presentacion/01.jpg" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-100" onerror="handleImageError(this)">
+                            <img id="marco-superior" src="./presentacion/01.jpg" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-100">
                         </div>
-                        <!-- Distintivo con las 5 estrellas amarillas y siluetas -->
                         <div class="absolute bottom-3 right-3 sm:right-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 flex items-center space-x-1.5 shadow-lg pointer-events-none">
                             <div class="flex text-amber-400 text-xs sm:text-sm">
                                 <i class="fa-solid fa-star"></i>
@@ -230,10 +202,9 @@
                     </div>
                 </div>
 
-                <!-- Segundo Marco Contenedor de Ancho Completo -->
                 <div class="w-full flex justify-center order-3">
                     <div class="w-full h-80 sm:h-[30rem] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                        <img id="marco-inferior" src="presentacion/02.jpg" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-100" onerror="handleImageError(this)">
+                        <img id="marco-inferior" src="./presentacion/02.jpg" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-100">
                     </div>
                 </div>
             </div>
@@ -250,11 +221,7 @@
                 </p>
 
                 <div class="w-full max-w-[240px] sm:max-w-md md:max-w-lg flex justify-center items-center">
-                    <img src="ICONOSTIENDAS.png"
-                         alt="Iconos de tienda estándar"
-                         class="w-full h-auto object-contain pointer-events-none drop-shadow-lg"
-                         loading="lazy"
-                         onerror="handleImageError(this)">
+                    <img src="./ICONOSTIENDAS.png" alt="Iconos de tienda estándar" class="w-full h-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy">
                 </div>
             </div>
         </section>
@@ -266,15 +233,11 @@
 
             <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 max-w-5xl mx-auto px-2 sm:px-4">
                 <p class="font-fira text-sm sm:text-xl lg:text-2xl font-extrabold uppercase tracking-wide text-white text-center lg:text-left max-w-lg leading-snug">
-                    COMPRA NUESTROS PRODUCTOS DE FORMA INMEDIATA AGREGANDOLAS AL CARRITO Y COLOCANDO LAS CORRESPONDIENTES MEDIDas, LUEGO HAREMOS UNA VERIFICACIÓN PREVIA DE LAS MISMAS.
+                    COMPRA NUESTROS PRODUCTOS DE FORMA INMEDIATA AGREGANDOLAS AL CARRITO Y COLOCANDO LAS CORRESPONDIENTES MEDIDAS, LUEGO HAREMOS UNA VERIFICACIÓN PREVIA DE LAS MISMAS.
                 </p>
 
                 <div class="w-full max-w-[240px] sm:max-w-md lg:max-w-xl flex justify-center items-center">
-                    <img src="ICONOSTIENDAS.png"
-                         alt="Iconos de tienda personalizada"
-                         class="w-full h-auto object-contain pointer-events-none drop-shadow-lg"
-                         loading="lazy"
-                         onerror="handleImageError(this)">
+                    <img src="./ICONOSTIENDAS.png" alt="Iconos de tienda personalizada" class="w-full h-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy">
                 </div>
             </div>
         </section>
@@ -284,16 +247,14 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/1.jpg" onerror="handleImageError(this)" alt="Instalación de canaletas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="./FOTOSS/1.jpg" alt="Instalación de canaletas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE CANALETAS</h3>
                         <p class="text-gray-300 text-xs sm:text-lg">Soluciones rápidas para escurrimientos de techos.</p>
                     </div>
                     <div class="flex-shrink-0 pt-2 md:pt-0">
-                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de canaletas. ¿Me podrían brindar más información?')"
-                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-                           title="Solicitar presupuesto" aria-label="Solicitar presupuesto canaletas">
+                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de canaletas. ¿Me podrían brindar más información?')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md" title="Solicitar presupuesto" aria-label="Solicitar presupuesto canaletas">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -301,16 +262,14 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/2.jpg" onerror="handleImageError(this)" alt="Pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="./FOTOSS/2.jpg" alt="Pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">PÉRGOLAS</h3>
                         <p class="text-gray-300 text-xs sm:text-lg">Montaje de diferentes tipos de pérgolas.</p>
                     </div>
                     <div class="flex-shrink-0 pt-2 md:pt-0">
-                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la construcción y montaje de pérgolas. ¿Me podrían asesorar?')"
-                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-                           title="Solicitar presupuesto" aria-label="Solicitar presupuesto pergolas">
+                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la construcción y montaje de pérgolas. ¿Me podrían asesorar?')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md" title="Solicitar presupuesto" aria-label="Solicitar presupuesto pergolas">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -318,16 +277,14 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/3.jpg" onerror="handleImageError(this)" alt="Techos nuevos" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="./FOTOSS/3.jpg" alt="Techos nuevos" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">TECHOS NUEVOS</h3>
                         <p class="text-gray-300 text-xs sm:text-lg">Techos de chapa para viviendas, galpones y comercios.</p>
                     </div>
                     <div class="flex-shrink-0 pt-2 md:pt-0">
-                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de techos nuevos. ¿Me podrían brindar más detalles?')"
-                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-                           title="Solicitar presupuesto" aria-label="Solicitar presupuesto techos nuevos">
+                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de techos nuevos. ¿Me podrían brindar más detalles?')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md" title="Solicitar presupuesto" aria-label="Solicitar presupuesto techos nuevos">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -335,16 +292,14 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/4.jpg" onerror="handleImageError(this)" alt="Reparaciones" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="./FOTOSS/4.jpg" alt="Reparaciones" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">REPARACIONES</h3>
                         <p class="text-gray-300 text-xs sm:text-lg">Cambio de tejas dañadas y reemplazo por chapas.</p>
                     </div>
                     <div class="flex-shrink-0 pt-2 md:pt-0">
-                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para reparaciones de techo y cambio de chapas/tejas. ¿Cómo podemos coordinar?')"
-                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-                           title="Solicitar presupuesto" aria-label="Solicitar presupuesto reparaciones">
+                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para reparaciones de techo y cambio de chapas/tejas. ¿Cómo podemos coordinar?')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md" title="Solicitar presupuesto" aria-label="Solicitar presupuesto reparaciones">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -352,16 +307,14 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/5.jpg" onerror="handleImageError(this)" alt="Campanas y extracción" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="./FOTOSS/5.jpg" alt="Campanas y extracción" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INST. DE CAMPANAS Y EQUIPOS DE EXTRACCIÓN</h3>
                         <p class="text-gray-300 text-xs sm:text-lg">Instalación de extracciones para viviendas y comercios.</p>
                     </div>
                     <div class="flex-shrink-0 pt-2 md:pt-0">
-                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de campanas y equipos de extracción. ¿Me podrían asesorar?')"
-                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-                           title="Solicitar presupuesto" aria-label="Solicitar presupuesto campanas">
+                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de campanas y equipos de extracción. ¿Me podrían asesorar?')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md" title="Solicitar presupuesto" aria-label="Solicitar presupuesto campanas">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -369,16 +322,14 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/6.jpg" onerror="handleImageError(this)" alt="Bajadas pluviales" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="./FOTOSS/6.jpg" alt="Bajadas pluviales" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE BAJADAS PLUVIALES</h3>
                         <p class="text-gray-300 text-xs sm:text-lg">Desagües para todo tipo de techos.</p>
                     </div>
                     <div class="flex-shrink-0 pt-2 md:pt-0">
-                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de bajadas pluviales. ¿Me brindan más information?')"
-                           class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-                           title="Solicitar presupuesto" aria-label="Solicitar presupuesto bajadas pluviales">
+                        <button onclick="abrirWhatsapp('Hola buenas, quisiera solicitar un presupuesto para la instalación de bajadas pluviales. ¿Me brindan más información?')" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/80 flex items-center justify-center text-2xl sm:text-3xl text-white hover:bg-white hover:text-black transition-all duration-300 shadow-md" title="Solicitar presupuesto" aria-label="Solicitar presupuesto bajadas pluviales">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -389,7 +340,7 @@
 
     </main>
 
-    <!-- SECCIÓN DE ANCHO COMPLETO: Empresas que confían en Servizing -->
+    <!-- Sección del Carrusel de Empresas -->
     <section class="w-full mt-10 sm:mt-16 mb-4">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6 sm:mb-8 flex flex-col items-center">
             <div class="inline-block px-3 py-2 sm:px-4 sm:py-2 border-2 rounded-lg" style="border-color: #5b5b5c; background-color: #5b5b5c;">
@@ -404,53 +355,52 @@
             <div class="absolute top-0 bottom-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-black/70 to-transparent z-10 pointer-events-none"></div>
 
             <div class="marquee-track flex items-center space-x-10 sm:space-x-24 px-4 sm:px-8">
-                <!-- Grupo 1 -->
                 <div class="flex items-center space-x-10 sm:space-x-24 marquee-group">
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/1.png" alt="Empresa 1" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/1.png" alt="Empresa 1" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/2.png" alt="Empresa 2" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/2.png" alt="Empresa 2" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/3.png" alt="Empresa 3" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/3.png" alt="Empresa 3" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/4.png" alt="Empresa 4" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/4.png" alt="Empresa 4" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/5.png" alt="Empresa 5" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/5.png" alt="Empresa 5" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/6.png" alt="Empresa 6" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/6.png" alt="Empresa 6" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                 </div>
-                <!-- Grupo 2 (Duplicado para continuidad infinita fluida) -->
+
                 <div class="flex items-center space-x-10 sm:space-x-24 marquee-group" aria-hidden="true">
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/1.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/1.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/2.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/2.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/3.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/3.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/4.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/4.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/5.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/5.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/6.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
+                        <img src="./MARCAS/6.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Créditos de diseño muy discretos -->
+    <!-- Créditos -->
     <aside aria-label="Créditos de diseño" class="absolute bottom-2 right-4 z-50 pointer-events-auto">
         <p class="font-noto-serif-italic text-[10px] sm:text-xs text-zinc-500 opacity-60 hover:opacity-100 transition-opacity tracking-wide select-none">
             Diseñado por <a href="https://www.instagram.com/Valentinsalazarr" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-300 transition-colors"><i class="fa-brands fa-instagram"></i> Valentinsalazarr</a>
@@ -458,20 +408,6 @@
     </aside>
 
     <script>
-        // Función inteligente para corregir errores de extensión y mayúsculas/minúsculas en el servidor web
-        function handleImageError(img) {
-            if (img.dataset.tried) return;
-            img.dataset.tried = "true";
-            let currentSrc = img.src;
-            if (currentSrc.includes('.jpg')) {
-                img.src = currentSrc.replace('.jpg', '.png');
-            } else if (currentSrc.includes('.png')) {
-                img.src = currentSrc.replace('.png', '.JPG');
-            } else if (currentSrc.includes('.JPG')) {
-                img.src = currentSrc.replace('.JPG', '.PNG');
-            }
-        }
-
         const dom = {
             secciones: document.querySelectorAll('.seccion-contenido'),
             navPills: document.querySelectorAll('.nav-pill'),
@@ -508,12 +444,12 @@
             dom.mobileMenu?.classList.toggle('hidden');
         });
 
-        // Lógica para el intercambio dinámico de imágenes del carrusel de presentación cada 4s
+        // Carrusel dinámico simplificado
         const imagenes = [
-            "presentacion/01.jpg",
-            "presentacion/02.jpg",
-            "presentacion/03.jpg",
-            "presentacion/04.jpg",
+            "./presentacion/01.jpg",
+            "./presentacion/02.jpg",
+            "./presentacion/03.jpg",
+            "./presentacion/04.jpg"
         ];
 
         let indiceSuperior = 0;
@@ -529,14 +465,9 @@
 
             setTimeout(() => {
                 indiceSuperior = (indiceSuperior + 1) % imagenes.length;
-
                 do {
                     indiceInferior = Math.floor(Math.random() * imagenes.length);
                 } while (indiceInferior === indiceSuperior);
-
-                // Asignar nuevas imágenes y asegurar que aplique el manejador de errores de respaldos
-                imgSup.dataset.tried = "";
-                imgInf.dataset.tried = "";
 
                 imgSup.src = imagenes[indiceSuperior];
                 imgInf.src = imagenes[indiceInferior];
