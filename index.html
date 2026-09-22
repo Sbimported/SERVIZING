@@ -89,7 +89,7 @@
 
         /* Image Fade Transitions Suaves */
         .fade-img {
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.5s ease-in-out;
         }
 
         /* Carrusel Infinito de Marcas */
@@ -212,8 +212,7 @@
                              alt="Obra de zinguería"
                              class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
                              fetchpriority="high"
-                             loading="eager"
-                             onerror="handleCarouselImgError(this, 1)">
+                             loading="eager">
                     </div>
                 </div>
             </div>
@@ -238,8 +237,7 @@
                          alt="Obra destacada principal"
                          class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
                          fetchpriority="high"
-                         loading="eager"
-                         onerror="handleCarouselImgError(this, 0)">
+                         loading="eager">
                 </div>
 
                 <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 z-20 flex space-x-1.5 sm:space-x-2 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm">
@@ -507,46 +505,32 @@
 
         const imageFolder = "FOTOSH/";
         const imageBaseNames = ["01", "02", "03", "04"];
-        const extensionsToTry = [".jpg", ".jpeg", ".png", ".webp", ".JPG", ".PNG"];
-
         let currentIndex = 0;
         let carouselTimer = null;
-        const imageRetryTracker = {};
 
-        // Precargar imágenes en caché para evitar parpadeos o pantallas de carga
+        // Precarga anticipada de imágenes en memoria del navegador móvil
         imageBaseNames.forEach(baseName => {
-            const imgPreload = new Image();
-            imgPreload.src = `${imageFolder}${baseName}.jpg`;
+            const preload = new Image();
+            preload.src = `${imageFolder}${baseName}.jpg`;
         });
-
-        function getImagePath(baseName, retryCount = 0) {
-            if (retryCount < extensionsToTry.length) {
-                return `${imageFolder}${baseName}${extensionsToTry[retryCount]}`;
-            }
-            return `${imageFolder}${baseName}.jpg`;
-        }
-
-        function handleCarouselImgError(img, offset = 0) {
-            const baseName = imageBaseNames[(currentIndex + offset) % imageBaseNames.length];
-            imageRetryTracker[img.id] = (imageRetryTracker[img.id] || 0) + 1;
-            img.src = getImagePath(baseName, imageRetryTracker[img.id]);
-        }
 
         function updateCarouselImages() {
             if (dom.topImg && dom.mainImg) {
+                // Desvanecimiento suave de salida
                 dom.topImg.style.opacity = '0';
                 dom.mainImg.style.opacity = '0';
 
                 setTimeout(() => {
-                    imageRetryTracker['top-carousel-img'] = 0;
-                    imageRetryTracker['main-carousel-img'] = 0;
+                    const topName = imageBaseNames[(currentIndex + 1) % imageBaseNames.length];
+                    const mainName = imageBaseNames[currentIndex];
 
-                    dom.topImg.src = getImagePath(imageBaseNames[(currentIndex + 1) % imageBaseNames.length], 0);
-                    dom.mainImg.src = getImagePath(imageBaseNames[currentIndex], 0);
+                    dom.topImg.src = `${imageFolder}${topName}.jpg`;
+                    dom.mainImg.src = `${imageFolder}${mainName}.jpg`;
 
+                    // Restaurar opacidad para fundido de entrada limpio
                     dom.topImg.style.opacity = '1';
                     dom.mainImg.style.opacity = '1';
-                }, 300);
+                }, 250);
             }
 
             dom.dots.forEach((dot, idx) => {
