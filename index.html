@@ -21,6 +21,13 @@
     <style>
         html {
             scroll-behavior: smooth;
+            background-color: #000000;
+            overscroll-behavior-y: none;
+        }
+
+        body {
+            background-color: #000000;
+            overscroll-behavior-y: none;
         }
 
         /* Deshabilitar selección de texto, resaltado y cursor de edición */
@@ -36,11 +43,6 @@
         *:focus {
             outline: none !important;
             box-shadow: none !important;
-        }
-
-        /* Ocultar texto alternativo e iconos de error rotos del navegador */
-        img {
-            text-indent: -9999px;
         }
 
         /* Custom Fonts */
@@ -85,9 +87,9 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.15);
         }
 
-        /* Image Fade Transitions */
-        .fade-transition {
-            transition: opacity 0.8s ease-in-out;
+        /* Image Fade Transitions Suaves */
+        .fade-img {
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Carrusel Infinito de Marcas */
@@ -204,11 +206,11 @@
                 </div>
 
                 <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-sm sm:max-w-md h-56 sm:h-80 md:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-black/10">
+                    <div class="relative w-full max-w-sm sm:max-w-md h-56 sm:h-80 md:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900">
                         <img id="top-carousel-img"
                              src="FOTOSH/01.jpg"
-                             alt="Obras destacadas 2"
-                             class="w-full h-full object-cover fade-transition pointer-events-none"
+                             alt="Obra de zinguería"
+                             class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
                              fetchpriority="high"
                              loading="eager"
                              onerror="handleCarouselImgError(this, 1)">
@@ -216,7 +218,7 @@
                 </div>
             </div>
 
-            <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-black/10 mb-12 sm:mb-16">
+            <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-zinc-900 mb-12 sm:mb-16">
                 <div class="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 flex flex-col items-center bg-black/40 backdrop-blur-md p-2 sm:p-3 rounded-xl sm:rounded-2xl border border-white/20 shadow-lg">
                     <div class="flex space-x-0.5 text-amber-300 text-[10px] sm:text-sm mb-0.5 sm:mb-1">
                         <i class="fa-solid fa-star"></i>
@@ -233,8 +235,8 @@
                 <div class="relative w-full h-64 sm:h-96 md:h-[450px] lg:h-[500px]">
                     <img id="main-carousel-img"
                          src="FOTOSH/01.jpg"
-                         alt="Obras destacadas 2"
-                         class="w-full h-full object-cover fade-transition pointer-events-none"
+                         alt="Obra destacada principal"
+                         class="w-full h-full object-cover fade-img pointer-events-none opacity-100"
                          fetchpriority="high"
                          loading="eager"
                          onerror="handleCarouselImgError(this, 0)">
@@ -261,7 +263,7 @@
 
                 <div class="w-full max-w-[240px] sm:max-w-md md:max-w-lg flex justify-center items-center">
                     <img src="ICONOSTIENDAS.png"
-                         alt="Obras destacadas 2"
+                         alt="Iconos de tienda estándar"
                          class="w-full h-auto object-contain pointer-events-none drop-shadow-lg"
                          loading="lazy"
                          onerror="this.onerror=null; this.src='ICONOSTIENDAS/ICONOSTIENDAS.png';">
@@ -281,7 +283,7 @@
 
                 <div class="w-full max-w-[240px] sm:max-w-md lg:max-w-xl flex justify-center items-center">
                     <img src="ICONOSTIENDAS/ICONOSTIENDAS.png"
-                         alt="Obras destacadas 2"
+                         alt="Iconos de tienda personalizada"
                          class="w-full h-auto object-contain pointer-events-none drop-shadow-lg"
                          loading="lazy"
                          onerror="this.onerror=null; this.src='ICONOSTIENDAS.png';">
@@ -292,10 +294,9 @@
         <section id="servicios" class="seccion-contenido hidden py-4 sm:py-8">
             <div class="space-y-6 sm:space-y-12 max-w-4xl mx-auto">
 
-                <!-- Servicio 1 -->
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
-                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0">
-                        <img src="FOTOSS/1.jpg" onerror="this.src='FOTOSS/1.png'" alt="Obras destacadas 2" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
+                        <img src="FOTOSS/1.jpg" onerror="this.src='FOTOSS/1.png'" alt="Instalación de canaletas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE CANALETAS</h3>
@@ -310,10 +311,9 @@
                     </div>
                 </div>
 
-                <!-- Servicio 2 -->
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
-                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0">
-                        <img src="FOTOSS/2.jpg" onerror="this.src='FOTOSS/2.png'" alt="Obras destacadas 2" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
+                        <img src="FOTOSS/2.jpg" onerror="this.src='FOTOSS/2.png'" alt="Pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">PÉRGOLAS</h3>
@@ -328,10 +328,9 @@
                     </div>
                 </div>
 
-                <!-- Servicio 3 -->
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
-                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0">
-                        <img src="FOTOSS/3.jpg" onerror="this.src='FOTOSS/3.png'" alt="Obras destacadas 2" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
+                        <img src="FOTOSS/3.jpg" onerror="this.src='FOTOSS/3.png'" alt="Techos nuevos" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">TECHOS NUEVOS</h3>
@@ -346,10 +345,9 @@
                     </div>
                 </div>
 
-                <!-- Servicio 4 -->
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
-                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0">
-                        <img src="FOTOSS/4.jpg" onerror="this.src='FOTOSS/4.png'" alt="Obras destacadas 2" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
+                        <img src="FOTOSS/4.jpg" onerror="this.src='FOTOSS/4.png'" alt="Reparaciones" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">REPARACIONES</h3>
@@ -364,10 +362,9 @@
                     </div>
                 </div>
 
-                <!-- Servicio 5 -->
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
-                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0">
-                        <img src="FOTOSS/5.jpg" onerror="this.src='FOTOSS/5.png'" alt="Obras destacadas 2" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
+                        <img src="FOTOSS/5.jpg" onerror="this.src='FOTOSS/5.png'" alt="Campanas y extracción" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INST. DE CAMPANAS Y EQUIPOS DE EXTRACCIÓN</h3>
@@ -382,10 +379,9 @@
                     </div>
                 </div>
 
-                <!-- Servicio 6 -->
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
-                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0">
-                        <img src="FOTOSS/6.jpg" onerror="this.src='FOTOSS/6.png'" alt="Obras destacadas 2" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                    <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
+                        <img src="FOTOSS/6.jpg" onerror="this.src='FOTOSS/6.png'" alt="Bajadas pluviales" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE BAJADAS PLUVIALES</h3>
@@ -474,7 +470,6 @@
     </aside>
 
     <script>
-        // Referencias del DOM globales y cacheadas para optimizar rendimiento
         const dom = {
             secciones: document.querySelectorAll('.seccion-contenido'),
             navPills: document.querySelectorAll('.nav-pill'),
@@ -484,7 +479,6 @@
             dots: document.querySelectorAll('.carousel-dot')
         };
 
-        // Función para cambiar de vista de las secciones de forma eficiente
         function mostrarSeccion(idSeccion) {
             dom.secciones.forEach(sec => sec.classList.add('hidden'));
 
@@ -519,6 +513,12 @@
         let carouselTimer = null;
         const imageRetryTracker = {};
 
+        // Precargar imágenes en caché para evitar parpadeos o pantallas de carga
+        imageBaseNames.forEach(baseName => {
+            const imgPreload = new Image();
+            imgPreload.src = `${imageFolder}${baseName}.jpg`;
+        });
+
         function getImagePath(baseName, retryCount = 0) {
             if (retryCount < extensionsToTry.length) {
                 return `${imageFolder}${baseName}${extensionsToTry[retryCount]}`;
@@ -534,8 +534,8 @@
 
         function updateCarouselImages() {
             if (dom.topImg && dom.mainImg) {
-                dom.topImg.style.opacity = '0.3';
-                dom.mainImg.style.opacity = '0.3';
+                dom.topImg.style.opacity = '0';
+                dom.mainImg.style.opacity = '0';
 
                 setTimeout(() => {
                     imageRetryTracker['top-carousel-img'] = 0;
@@ -571,7 +571,7 @@
         }
 
         function startTimer() {
-            carouselTimer = setInterval(nextSlide, 4000);
+            carouselTimer = setInterval(nextSlide, 4500);
         }
 
         function resetTimer() {
