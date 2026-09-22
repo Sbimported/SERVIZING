@@ -198,9 +198,11 @@
 
         <section id="quienes-somos" class="seccion-contenido">
             <div class="w-full py-4 sm:py-6">
-                <!-- Fila Superior: Texto a la izquierda y Primer Marco Contenedor a la derecha perfectamente alineados -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8">
-                    <div class="lg:col-span-6 text-left">
+                <!-- Estructura optimizada para celular: Título y texto primero, imágenes debajo -->
+                <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 items-center mb-8">
+
+                    <!-- Bloque de Texto y Título (Orden 1 en móviles, izquierda en PC) -->
+                    <div class="w-full lg:col-span-6 text-left order-1 lg:order-1">
                         <h1 class="font-archivo text-3xl sm:text-5xl md:text-6xl tracking-tight uppercase leading-none mb-4 drop-shadow-md text-white">
                             SERVIZING
                         </h1>
@@ -208,9 +210,11 @@
                             SOMOS SERVIZING CONTAMOS CON 40 AÑOS DE EXPERIENCIA EN EL RUBRO, A LO LARGO DEL TIEMPO HEMOS REALIZADO ZINGUERIA DE TALLER E INSTALACIONES EN OBRA ESPECIALMENTE PARA ZONA SUR JUNTO A LOCALIDADES DE ZONA NORTE Y CABA.
                         </p>
                     </div>
-                    <div class="lg:col-span-6 flex justify-end relative">
+
+                    <!-- Primer Marco de Imagen (Orden 2 en móviles, derecha en PC) -->
+                    <div class="w-full lg:col-span-6 flex justify-end relative order-2 lg:order-2">
                         <div class="w-full h-64 sm:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                            <img id="marco-superior" src="presentacion/01.jpg" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-100">
+                            <img id="marco-superior" src="presentacion/01.jpg" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-100" onerror="handleImageError(this)">
                         </div>
                         <!-- Distintivo con las 5 estrellas amarillas y siluetas -->
                         <div class="absolute bottom-3 right-3 sm:right-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 flex items-center space-x-1.5 shadow-lg pointer-events-none">
@@ -228,10 +232,10 @@
                     </div>
                 </div>
 
-                <!-- Segundo Marco Contenedor de Ancho Completo perfectamente alineado con los márgenes -->
-                <div class="w-full flex justify-center">
+                <!-- Segundo Marco Contenedor de Ancho Completo -->
+                <div class="w-full flex justify-center order-3">
                     <div class="w-full h-80 sm:h-[30rem] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                        <img id="marco-inferior" src="presentacion/02.jpg" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-100">
+                        <img id="marco-inferior" src="presentacion/02.jpg" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-100" onerror="handleImageError(this)">
                     </div>
                 </div>
             </div>
@@ -252,7 +256,7 @@
                          alt="Iconos de tienda estándar"
                          class="w-full h-auto object-contain pointer-events-none drop-shadow-lg"
                          loading="lazy"
-                         onerror="this.onerror=null; this.src='ICONOSTIENDAS/ICONOSTIENDAS.png';">
+                         onerror="handleImageError(this)">
                 </div>
             </div>
         </section>
@@ -272,7 +276,7 @@
                          alt="Iconos de tienda personalizada"
                          class="w-full h-auto object-contain pointer-events-none drop-shadow-lg"
                          loading="lazy"
-                         onerror="this.onerror=null; this.src='ICONOSTIENDAS.png';">
+                         onerror="handleImageError(this)">
                 </div>
             </div>
         </section>
@@ -282,7 +286,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/1.jpg" onerror="this.src='FOTOSS/1.png'" alt="Instalación de canaletas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="FOTOSS/1.jpg" onerror="handleImageError(this)" alt="Instalación de canaletas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE CANALETAS</h3>
@@ -299,7 +303,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/2.jpg" onerror="this.src='FOTOSS/2.png'" alt="Pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="FOTOSS/2.jpg" onerror="handleImageError(this)" alt="Pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">PÉRGOLAS</h3>
@@ -316,7 +320,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/3.jpg" onerror="this.src='FOTOSS/3.png'" alt="Techos nuevos" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="FOTOSS/3.jpg" onerror="handleImageError(this)" alt="Techos nuevos" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">TECHOS NUEVOS</h3>
@@ -333,7 +337,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/4.jpg" onerror="this.src='FOTOSS/4.png'" alt="Reparaciones" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="FOTOSS/4.jpg" onerror="handleImageError(this)" alt="Reparaciones" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">REPARACIONES</h3>
@@ -350,7 +354,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/5.jpg" onerror="this.src='FOTOSS/5.png'" alt="Campanas y extracción" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="FOTOSS/5.jpg" onerror="handleImageError(this)" alt="Campanas y extracción" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INST. DE CAMPANAS Y EQUIPOS DE EXTRACCIÓN</h3>
@@ -367,7 +371,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="FOTOSS/6.jpg" onerror="this.src='FOTOSS/6.png'" alt="Bajadas pluviales" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
+                        <img src="FOTOSS/6.jpg" onerror="handleImageError(this)" alt="Bajadas pluviales" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl font-bold uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE BAJADAS PLUVIALES</h3>
@@ -405,43 +409,43 @@
                 <!-- Grupo 1 -->
                 <div class="flex items-center space-x-10 sm:space-x-24 marquee-group">
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/1.png" alt="Empresa 1" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="this.style.display='none'">
+                        <img src="MARCAS/1.png" alt="Empresa 1" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/2.png" alt="Empresa 2" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="this.style.display='none'">
+                        <img src="MARCAS/2.png" alt="Empresa 2" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/3.png" alt="Empresa 3" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="this.style.display='none'">
+                        <img src="MARCAS/3.png" alt="Empresa 3" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/4.png" alt="Empresa 4" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="this.style.display='none'">
+                        <img src="MARCAS/4.png" alt="Empresa 4" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/5.png" alt="Empresa 5" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="this.style.display='none'">
+                        <img src="MARCAS/5.png" alt="Empresa 5" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/6.png" alt="Empresa 6" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="this.style.display='none'">
+                        <img src="MARCAS/6.png" alt="Empresa 6" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                 </div>
                 <!-- Grupo 2 (Duplicado para continuidad infinita fluida) -->
                 <div class="flex items-center space-x-10 sm:space-x-24 marquee-group" aria-hidden="true">
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/1.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
+                        <img src="MARCAS/1.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/2.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
+                        <img src="MARCAS/2.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/3.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
+                        <img src="MARCAS/3.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/4.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
+                        <img src="MARCAS/4.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/5.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
+                        <img src="MARCAS/5.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                     <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="MARCAS/6.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg">
+                        <img src="MARCAS/6.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" onerror="handleImageError(this)">
                     </div>
                 </div>
             </div>
@@ -456,6 +460,22 @@
     </aside>
 
     <script>
+        // Función inteligente para corregir errores de carga de imágenes en producción (maneja extensiones .jpg/.png y mayúsculas)
+        function handleImageError(img) {
+            if (img.dataset.tried) return;
+            img.dataset.tried = "true";
+            let currentSrc = img.src;
+            if (currentSrc.includes('.jpg')) {
+                img.src = currentSrc.replace('.jpg', '.png');
+            } else if (currentSrc.includes('.png')) {
+                img.src = currentSrc.replace('.png', '.JPG');
+            } else if (currentSrc.includes('.JPG')) {
+                img.src = currentSrc.replace('.JPG', '.PNG');
+            } else {
+                img.style.display = 'none';
+            }
+        }
+
         const dom = {
             secciones: document.querySelectorAll('.seccion-contenido'),
             navPills: document.querySelectorAll('.nav-pill'),
@@ -492,7 +512,7 @@
             dom.mobileMenu?.classList.toggle('hidden');
         });
 
-        // Lógica para el intercambio dinámico de imágenes cada 4s sin repetir la misma imagen simultáneamente
+        // Lógica para el intercambio dinámico de imágenes cada 4s
         const imagenes = [
             "presentacion/01.jpg",
             "presentacion/02.jpg",
@@ -507,6 +527,7 @@
         const imgInf = document.getElementById('marco-inferior');
 
         function cambiarImagenes() {
+            if (!imgSup || !imgInf) return;
             imgSup.style.opacity = 0;
             imgInf.style.opacity = 0;
 
@@ -525,7 +546,9 @@
             }, 400);
         }
 
-        setInterval(cambiarImagenes, 4000);
+        setInterval(cambiar_Imagenes = () => {
+            cambiarImagenes();
+        }, 4000);
     </script>
 </body>
 </html>
