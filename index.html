@@ -24,6 +24,14 @@
 @media (max-width:767px){
   body{overflow-x:hidden}
 
+  /* --- Ocultar la barra de desplazamiento (scrollbar) en navegadores WebKit y Firefox --- */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    scrollbar-width: none;
+  }
+
   /* --- Header: más aire lateral y targets táctiles de 44px mínimo --- */
   header .max-w-5xl{padding-left:1rem;padding-right:1rem}
   header a[title]{min-width:44px;min-height:44px}
@@ -102,7 +110,7 @@
                     <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.25 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.24.64.41 1.36.46 2.43C21.99 8.95 22 9.3 22 12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.46 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.24-1.36.41-2.43.46C15.05 21.99 14.7 22 12 22s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.46a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.24-.64-.41-1.36-.46-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.46-2.43.25-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.43 2.54c.64-.24 1.36-.41 2.43-.46C8.95 2.01 9.3 2 12 2zm0 1.8c-2.66 0-2.97.01-4.02.06-.87.04-1.34.18-1.66.3-.42.16-.72.36-1.03.67-.31.31-.51.61-.67 1.03-.12.32-.26.79-.3 1.66C4.27 9.03 4.26 9.34 4.26 12s.01 2.97.06 4.02c.04.87.18 1.34.3 1.66.16.42.36.72.67 1.03.31.31.61.51 1.03.67.32.12.79.26 1.66.3 1.05.05 1.36.06 4.02.06s2.97-.01 4.02-.06c.87-.04 1.34-.18 1.66-.3.42-.16.72-.36 1.03-.67.31-.31.51-.61.67-1.03.12-.32.26-.79.3-1.66.05-1.05.06-1.36.06-4.02s-.01-2.97-.06-4.02c-.04-.87-.18-1.34-.3-1.66a2.78 2.78 0 0 0-.67-1.03 2.78 2.78 0 0 0-1.03-.67c-.32-.12-.79-.26-1.66-.3C14.97 3.81 14.66 3.8 12 3.8zm0 3.05a5.15 5.15 0 1 1 0 10.3 5.15 5.15 0 0 1 0-10.3zm0 1.8a3.35 3.35 0 1 0 0 6.7 3.35 3.35 0 0 0 0-6.7zm5.35-1.98a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
                 </a>
 
-                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none p-1.5 bg-white/10 rounded-xl border border-white/10 ml-1.5" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none p-1.5 rounded-xl ml-1.5 nav-pill" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect y="4" width="24" height="2.4" rx="1.2"/><rect y="10.8" width="24" height="2.4" rx="1.2"/><rect y="17.6" width="24" height="2.4" rx="1.2"/></svg>
                 </button>
             </div>
@@ -397,6 +405,7 @@
             if (dom.mobileMenu && !dom.mobileMenu.classList.contains('hidden')) {
                 dom.mobileMenu.classList.add('hidden');
                 document.getElementById('mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
+                document.getElementById('mobile-menu-btn')?.classList.remove('active');
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -413,6 +422,7 @@
             dom.mobileMenu?.classList.toggle('hidden');
             const abierto = !dom.mobileMenu?.classList.contains('hidden');
             btnMenuMovil.setAttribute('aria-expanded', String(abierto));
+            btnMenuMovil.classList.toggle('active', abierto);
         });
 
         // ---------------------------------------------------------------
