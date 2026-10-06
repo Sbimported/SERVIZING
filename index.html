@@ -23,7 +23,7 @@
 .tienda-filtros{width:100%;margin:0 auto clamp(20px,3.5vw,36px)}
 .filtro-wrap{position:relative;width:100%;max-width:440px;margin:0 auto}
 .filtro-bar{display:flex;gap:8px;align-items:stretch}
-.filtro-btn{flex:1 1 auto;min-width:0;height:50px;display:flex;align-items:center;gap:12px;padding:0 20px;border:1.5px solid rgba(255,255,255,.6);border-radius:9999px;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;letter-spacing:.05em;text-transform:uppercase;text-align:left;transition:border-color .2s,background .2s}
+.filtro-btn{flex:1 1 auto;min-width:0;height:50px;display:flex;align-items:center;gap:12px;padding:0 20px;border:1.5px solid rgba(255,255,255,.6);border-radius:9999px;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;letter-spacing:0;font-kerning:normal;text-rendering:optimizeLegibility;text-transform:uppercase;text-align:left;transition:border-color .2s,background .2s}
 .filtro-btn:hover{background:rgba(255,255,255,.1)}
 .filtro-btn .f-lbl{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filtro-btn .f-ico{font-size:20px}
@@ -35,19 +35,19 @@
 .filtro-clear:hover{background:rgba(255,255,255,.18)}
 .filtro-clear[hidden]{display:none}
 
-.filtro-overlay{position:fixed;inset:0;z-index:42;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s}
+.filtro-overlay{position:fixed;inset:0;z-index:42;background:transparent;opacity:0;pointer-events:none;transition:opacity .25s}
 .filtro-overlay.abierto{opacity:1;pointer-events:auto}
-.filtro-panel{position:fixed;left:0;right:0;bottom:0;z-index:43;max-height:80vh;display:flex;flex-direction:column;background:#0b0b0c;border:1px solid rgba(255,255,255,.25);border-bottom:0;border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom,0px);font-family:'Inter',sans-serif;text-transform:uppercase;text-align:left;visibility:hidden;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
+.filtro-panel{position:fixed;left:0;right:0;bottom:0;z-index:43;max-height:80vh;display:flex;flex-direction:column;background:#0b0b0c;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);font-family:'Inter',sans-serif;text-transform:uppercase;text-align:left;font-kerning:normal;text-rendering:optimizeLegibility;visibility:hidden;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
 .filtro-panel.abierto{visibility:visible;transform:none;transition:transform .28s ease,visibility 0s}
 .fp-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 12px 12px 20px;border-bottom:1px solid rgba(255,255,255,.2);flex-shrink:0}
-.fp-title{font-weight:700;font-size:16px;letter-spacing:.06em;color:#fff}
-.fp-back{font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;padding:8px 0}
+.fp-title{font-weight:700;font-size:16px;letter-spacing:0;color:#fff}
+.fp-back{font-weight:700;font-size:15px;letter-spacing:0;color:#fff;padding:8px 0}
 .fp-back:hover{color:#ff7700}
 .fp-x{font-size:32px;line-height:1;color:#fff;padding:0 8px}
 .fp-x:hover{color:#ff7700}
 .fp-body{overflow-y:auto;overscroll-behavior:contain;padding-bottom:8px}
-.fp-sub{padding:14px 20px 6px;font-weight:700;font-size:13px;letter-spacing:.08em;color:#a1a1aa}
-.fp-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:50px;padding:12px 20px;text-align:left;font-family:'Inter',sans-serif;font-weight:400;font-size:15px;line-height:1.25;letter-spacing:.03em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.fp-sub{padding:14px 20px 6px;font-weight:700;font-size:13px;letter-spacing:0;color:#a1a1aa}
+.fp-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:50px;padding:12px 20px;text-align:left;font-family:'Inter',sans-serif;font-weight:400;font-size:15px;line-height:1.25;letter-spacing:0;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
 .fp-row:hover{background:rgba(255,255,255,.08)}
 .fp-row.fuerte{font-weight:700}
 .fp-row.vacia{color:#a1a1aa}
@@ -55,24 +55,33 @@
 .fp-meta{display:flex;align-items:center;gap:10px;flex-shrink:0;color:#a1a1aa;font-size:13px}
 .fp-meta .fp-flecha{font-size:22px;line-height:1;color:#d4d4d8}
 @media (min-width:768px){
-  .filtro-overlay{background:transparent}
   .filtro-panel{position:absolute;left:0;right:auto;bottom:auto;top:calc(100% + 8px);width:100%;max-height:min(70vh,520px);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding-bottom:0;opacity:0;transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.6);transition:transform .2s ease,opacity .2s ease,visibility 0s linear .2s}
   .filtro-panel.abierto{opacity:1;transform:none;transition:transform .2s ease,opacity .2s ease,visibility 0s}
 }
 .tienda-vacio{grid-column:1/-1;text-align:center;color:#d4d4d8;font-family:'Inter',sans-serif;font-size:clamp(13px,2.6vw,17px);letter-spacing:.05em;text-transform:uppercase;padding:40px 10px;border:1.5px dashed rgba(255,255,255,.3)}
 
-/* Grilla: SIEMPRE 3 productos por fila, tamaños fluidos para que encajen exacto */
-.tienda-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2.4vw,36px);width:100%;max-width:64rem;margin:0 auto;align-items:stretch}
+/* Grilla: celular = 1 producto grande por fila · desde 640px = 3 por fila (tamaños fluidos) */
+.tienda-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;width:100%;max-width:64rem;margin:0 auto;align-items:stretch}
+@media (min-width:640px){.tienda-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2.4vw,36px)}}
 
-.prod-card{background:#000;border:2px solid #fff;padding:clamp(6px,1.6vw,16px);display:flex;flex-direction:column;gap:clamp(6px,1.4vw,14px);text-align:left;min-width:0;height:100%}
-.prod-card .prod-img{width:100%;aspect-ratio:1/1;border-radius:clamp(10px,2.4vw,22px);overflow:hidden;background:#18181b;flex-shrink:0}
+.prod-card{background:#000;border:2px solid #fff;padding:14px;display:flex;flex-direction:column;gap:14px;text-align:left;min-width:0;height:100%}
+.prod-card .prod-img{width:100%;aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:#18181b;flex-shrink:0}
 .prod-card .prod-img img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+@media (min-width:640px){
+  .prod-card{padding:clamp(6px,1.6vw,16px);gap:clamp(6px,1.4vw,14px)}
+  .prod-card .prod-img{border-radius:clamp(10px,2.4vw,22px)}
+}
 
 /* Nombre arriba, botón siempre alineado abajo (misma línea en todas las tarjetas) */
-.prod-info{display:flex;flex-direction:column;gap:clamp(3px,.8vw,8px);flex:1 1 auto;color:#fff;font-family:'Inter',Arial,sans-serif;text-transform:uppercase;min-width:0}
-.prod-info .prod-nombre{font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(9.5px,2.5vw,18px);line-height:1.2;letter-spacing:.01em;color:#fff;margin:0;overflow-wrap:anywhere}
+.prod-info{display:flex;flex-direction:column;gap:8px;flex:1 1 auto;color:#fff;font-family:'Inter',Arial,sans-serif;text-transform:uppercase;min-width:0}
+.prod-info .prod-nombre{font-family:'Inter',sans-serif;font-weight:400;font-size:21px;line-height:1.2;letter-spacing:.01em;color:#fff;margin:0;overflow-wrap:anywhere}
 
-.btn-agregar{width:100%;border:2px solid #fff;background:transparent;color:#fff;font-family:'Inter',sans-serif;font-size:clamp(9px,2.4vw,16px);font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:clamp(7px,1.8vw,14px) 0;margin-top:0;transition:all .2s;white-space:nowrap}
+.btn-agregar{width:100%;border:2px solid #fff;background:transparent;color:#fff;font-family:'Inter',sans-serif;font-size:17px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:15px 0;margin-top:0;transition:all .2s;white-space:nowrap}
+@media (min-width:640px){
+  .prod-info{gap:clamp(3px,.8vw,8px)}
+  .prod-info .prod-nombre{font-size:clamp(9.5px,2.5vw,18px)}
+  .btn-agregar{font-size:clamp(9px,2.4vw,16px);padding:clamp(7px,1.8vw,14px) 0}
+}
 .btn-agregar:hover{background:#fff;color:#000}
 .btn-agregar.ok{background:rgba(255,119,0,.6);border-color:rgba(255,119,0,.6);color:#fff}
 
