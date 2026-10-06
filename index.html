@@ -117,6 +117,13 @@
 .cart-enviar{width:100%;border-radius:9999px;background:#ff7700;color:#fff;font:700 15px 'Inter',Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:14px 12px;transition:background .2s}
 .cart-enviar:hover{background:#ff8c26}
 .cart-enviar:disabled{opacity:.45;cursor:not-allowed}
+/* Móvil: el botón de WhatsApp ocupa el lugar que tenía "Aclaración" (justo debajo del nombre).
+   El error pasa debajo del botón y el padding inferior conserva la posición del campo nombre. */
+@media (max-width:767px){
+  .cart-panel{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+  .cart-enviar{order:1}
+  .cart-error{order:2;margin:8px 0 0}
+}
 </style>
 </head>
 <body class="bg-servizing-orange font-fira text-white min-h-screen flex flex-col select-none relative pb-0">
@@ -256,9 +263,6 @@
 
                 <label class="cart-label" for="cart-nombre">NOMBRE Y APELLIDO:</label>
                 <input id="cart-nombre" class="cart-input" type="text" autocomplete="name" maxlength="80">
-
-                <label class="cart-label" for="cart-aclaracion">ACLARACIÓN:</label>
-                <input id="cart-aclaracion" class="cart-input" type="text" maxlength="200">
 
                 <div id="cart-error" class="cart-error"></div>
 
@@ -843,10 +847,8 @@
         function enviarPedidoWhatsapp() {
             const lineas = lineasCarrito();
             const inputNombre = document.getElementById("cart-nombre");
-            const inputAcl = document.getElementById("cart-aclaracion");
             const error = document.getElementById("cart-error");
             const nombre = inputNombre.value.trim();
-            const aclaracion = inputAcl.value.trim();
 
             inputNombre.classList.remove("error");
             error.textContent = "";
@@ -862,7 +864,6 @@
             let msg = "Hola! Quisiera hacer el siguiente pedido de la tienda estándar:\n\n";
             lineas.forEach(l => { msg += `• ${l.cant} x ${l.p.nombre}\n`; });
             msg += `\nNombre y apellido: ${nombre}`;
-            if (aclaracion) msg += `\nAclaración: ${aclaracion}`;
 
             abrirWhatsapp(msg);
         }
