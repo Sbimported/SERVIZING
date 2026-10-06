@@ -20,7 +20,8 @@
 #tienda h2,#tienda h3,#tienda button,#tienda label,#tienda input,#tienda .cart-vacio,#tienda .cart-error{text-transform:uppercase}
 
 /* Filtro compacto: una barra + menú (celular: panel desde abajo · escritorio: desplegable) */
-.tienda-filtros{width:100%;margin:0 auto clamp(20px,3.5vw,36px)}
+.tienda-filtros{width:100%;margin:0 auto 48px}
+@media (min-width:640px){.tienda-filtros{margin-bottom:clamp(20px,3.5vw,36px)}}
 .filtro-wrap{position:relative;width:100%;max-width:440px;margin:0 auto}
 .filtro-bar{display:flex;gap:8px;align-items:stretch}
 .filtro-btn{flex:1 1 auto;min-width:0;height:50px;display:flex;align-items:center;gap:12px;padding:0 20px;border:1.5px solid rgba(255,255,255,.6);border-radius:9999px;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;letter-spacing:0;font-kerning:normal;text-rendering:optimizeLegibility;text-transform:uppercase;text-align:left;transition:border-color .2s,background .2s}
@@ -61,7 +62,7 @@
 .tienda-vacio{grid-column:1/-1;text-align:center;color:#d4d4d8;font-family:'Inter',sans-serif;font-size:clamp(13px,2.6vw,17px);letter-spacing:.05em;text-transform:uppercase;padding:40px 10px;border:1.5px dashed rgba(255,255,255,.3)}
 
 /* Grilla: celular = 1 producto por fila (86% del ancho, centrado) · desde 640px = 3 por fila (tamaños fluidos) */
-.tienda-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;width:100%;max-width:64rem;margin:0 auto;align-items:stretch}
+.tienda-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:44px;width:100%;max-width:64rem;margin:0 auto;align-items:stretch}
 @media (min-width:640px){.tienda-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2.4vw,36px)}}
 
 .prod-card{background:#000;border:2px solid #fff;padding:14px;display:flex;flex-direction:column;gap:14px;text-align:left;min-width:0;height:100%;width:86%;max-width:20rem;margin-inline:auto}
