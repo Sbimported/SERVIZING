@@ -124,6 +124,119 @@
   .cart-enviar{order:1}
   .cart-error{order:2;margin:8px 0 0}
 }
+
+/* ===== MEDIDAS PERSONALIZADAS ===== */
+#medidas{width:100%}
+#medidas h2,#medidas h3,#medidas button,#medidas label,#medidas input,#medidas textarea,#medidas .cart-vacio,#medidas .cart-error{text-transform:uppercase}
+/* El sitio quita los contornos de foco; acá se devuelven solo para el teclado */
+#medidas :focus-visible{outline:2px solid #fff!important;outline-offset:2px}
+.med-wrap{width:100%;max-width:44rem;margin:0 auto;text-align:left;font-family:'Inter',Arial,sans-serif}
+.med-titulo{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(22px,5.4vw,42px);line-height:1.05;letter-spacing:-.01em;color:#fff;margin:0 0 clamp(18px,3vw,28px)}
+
+.med-controles{display:flex;align-items:stretch;gap:10px}
+.med-select{position:relative;flex:1 1 auto;min-width:0}
+.med-select-btn{width:100%;height:50px;display:flex;align-items:center;gap:14px;padding:0 16px;background:#5a5a5a;color:#fff;font:400 15px 'Inter',Arial,sans-serif;letter-spacing:.02em;text-align:left;transition:background .2s}
+.med-select-btn:hover{background:#686868}
+.med-select-btn .ms-tri{font-size:22px;transition:transform .2s}
+.med-select-btn[aria-expanded="true"] .ms-tri{transform:rotate(180deg)}
+.med-select-btn .ms-lbl{flex:1 1 auto;min-width:0;overflow:hidden;line-height:1.2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere}
+.med-select-btn .ms-lbl.vacio{color:#d4d4d8}
+.med-select-btn.error{box-shadow:0 0 0 2px #ef4444!important}
+
+/* Lista de productos: escritorio = desplegable · celular = panel desde abajo (igual que el filtro de la tienda) */
+.med-sel-overlay{display:none}
+.med-sheet-head{display:none}
+.med-select-panel{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:30;background:#1a1a1b;border:1px solid rgba(255,255,255,.3);box-shadow:0 16px 32px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
+.med-select-panel.abierto{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease,visibility 0s}
+.med-select-list{margin:0;padding:0;list-style:none;overflow-y:auto;overscroll-behavior:contain}
+.med-opt{display:block;width:100%;min-height:50px;padding:14px 16px;text-align:left;font:400 15px/1.25 'Inter',Arial,sans-serif;letter-spacing:.02em;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.med-select-list li:last-child .med-opt{border-bottom:0}
+.med-opt:hover{background:rgba(255,255,255,.08)}
+.med-opt.activo{color:#ff7700;font-weight:700}
+
+/* Lápiz y "más": mismo naranja y mismo ícono blanco que el botón flotante del carrito */
+.med-btn{flex:0 0 50px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:#ff7700;color:#fff;border:2px solid transparent;transition:transform .15s,border-color .2s}
+.med-btn .icon-svg{font-size:28px}
+.med-btn:active{transform:scale(.94)}
+@media (hover:hover){.med-btn:hover{transform:scale(1.07)}}
+.med-lapiz{border-radius:9999px}
+.med-lapiz[aria-expanded="true"]{border-color:#fff}
+.med-mas{border-radius:12px}
+.med-mas .i-ok{display:none}
+.med-mas.ok .i-ok{display:block}
+.med-mas.ok .i-mas{display:none}
+
+.med-msg{margin-top:12px;font-size:13px;font-weight:700;letter-spacing:.04em;color:#fca5a5}
+.med-msg.ok{color:#fdba74}
+.med-msg:empty{display:none}
+
+/* Formulario que se despliega con el lápiz */
+.med-form{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .3s ease,visibility 0s linear .3s}
+.med-form.abierto{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .3s ease,visibility 0s}
+.med-form-in{min-height:0;overflow:hidden;margin:0 -6px;padding:0 6px}
+.med-form-pad{padding-top:22px;padding-bottom:6px}
+.cart-input::placeholder{color:rgba(255,255,255,.8)}
+.cart-input.med-area{height:auto;min-height:112px;padding:10px 12px;resize:none;line-height:1.4}
+.med-form-foot{display:none}
+
+.med-texto{margin-top:clamp(28px,5vw,48px);font-weight:400;font-size:clamp(15px,4vw,20px);line-height:1.4;letter-spacing:.01em;color:#fff}
+
+/* Carrito de medidas personalizadas (reutiliza .cart-fab / .cart-panel de la tienda estándar) */
+#cmed-panel{visibility:hidden;overscroll-behavior:contain;transition:transform .3s ease,visibility 0s linear .3s}
+#cmed-panel.abierto{visibility:visible;transition:transform .3s ease,visibility 0s}
+#cmed-items{min-height:170px;overscroll-behavior:contain}
+.cart-datos{font-weight:400;font-size:22px;line-height:1;color:#fff;margin:0 0 16px;text-transform:none}
+.cart-item.med{align-items:flex-start}
+.cart-item.med .ci-body{flex:1 1 auto;min-width:0}
+.cart-item.med .ci-quitar{padding-top:2px}
+.ci-campo{margin-top:10px}
+.ci-campo .ci-k{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;color:#a1a1aa;margin-bottom:3px}
+.ci-campo .ci-v{display:block;font-size:14px;line-height:1.3;color:#fff;border-left:3px solid #c4601f;padding-left:9px;overflow-wrap:anywhere;white-space:pre-wrap}
+
+/* ---- Celular y tablet vertical ---- */
+@media (max-width:767px){
+  /* Zonas táctiles de 52px y letra de 16px en los campos (evita el zoom automático de iPhone) */
+  .med-select-btn,.med-btn{height:52px}
+  .med-btn{flex-basis:52px;width:52px}
+  .med-select-btn{font-size:14px;padding:0 14px;gap:10px}
+  .med-select-btn .ms-tri{font-size:20px}
+
+  /* Panel de productos desde abajo, como el filtro de la tienda */
+  .med-sel-overlay{display:block;position:fixed;inset:0;z-index:42;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s}
+  .med-sel-overlay.abierto{opacity:1;pointer-events:auto}
+  .med-select-panel{position:fixed;left:0;right:0;top:auto;bottom:0;z-index:43;max-height:80vh;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);opacity:1;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
+  .med-select-panel.abierto{transform:none;transition:transform .28s ease,visibility 0s}
+  .med-sheet-head{display:flex}
+
+  /* Botón extra al final del formulario: no hace falta volver a subir para agregar */
+  .med-form-foot{display:block;margin-top:2px}
+  .med-form-foot .med-msg{margin:0 0 10px}
+  .med-add-movil{width:100%;height:52px;border-radius:9999px;background:#ff7700;color:#fff;font:700 15px 'Inter',Arial,sans-serif;letter-spacing:.04em;transition:transform .15s}
+  .med-add-movil:active{transform:scale(.98)}
+
+  /* Carrito */
+  .ci-campo .ci-k{font-size:13px}
+  .ci-campo .ci-v{font-size:15px}
+}
+/* ---- Pantallas táctiles (celular y tablet): zonas de toque de 44-52px y letra de 16px (evita el zoom de iPhone/iPad) ---- */
+@media (max-width:767px),(pointer:coarse){
+  #medidas .cart-input{font-size:16px;height:48px;scroll-margin-top:110px}
+  #medidas .cart-input.med-area{height:auto;min-height:120px}
+  #medidas .cart-label{scroll-margin-top:110px}
+  #cmed-panel .cart-input{font-size:16px;height:48px}
+  .med-opt{min-height:56px;font-size:16px;padding:16px 20px}
+  .med-sheet-head .fp-x{min-width:48px;min-height:48px}
+  #cmed-panel .cart-close{min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center;margin-right:-10px}
+  #cmed-panel .ci-quitar{min-height:44px;min-width:44px;padding:12px 0 12px 12px;margin-top:-12px}
+}
+@media (max-width:359px){
+  .med-controles{gap:8px}
+  .med-select-btn{padding:0 10px;gap:8px}
+  .med-select-btn .ms-tri{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .med-select-btn .ms-tri,.med-btn,.med-add-movil,.med-form,.med-select-panel,.med-sel-overlay,#cmed-panel,#cmed-panel~.cart-overlay{transition:none!important}
+}
 </style>
 </head>
 <body class="bg-servizing-orange font-fira text-white min-h-screen flex flex-col select-none relative pb-0">
@@ -270,20 +383,92 @@
             </aside>
         </section>
 
-        <section id="medidas" class="seccion-contenido hidden py-4 sm:py-8 flex flex-col items-center justify-center text-center">
-            <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-none mb-6 sm:mb-8 text-white drop-shadow-md sm:whitespace-nowrap">
-                MEDIDAS PERSONALIZADAS
-            </h2>
+        <section id="medidas" class="seccion-contenido hidden py-4 sm:py-8 flex flex-col items-center">
+            <div class="med-wrap">
+                <h2 class="med-titulo">MEDIDAS PERSONALIZADAS</h2>
 
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 max-w-5xl mx-auto px-2 sm:px-4">
-                <p class="font-fira text-xs sm:text-base lg:text-xl font-medium uppercase tracking-wider text-gray-200 text-center lg:text-left max-w-lg leading-relaxed">
-                    ESTAMOS EN REMODELACIÓN DE LA TIENDA PERSONALIZADA.
-                </p>
+                <div id="med-controles" class="med-controles">
+                    <!-- Selector desplegable de producto (se genera desde PRODUCTOS_PERSONALIZADOS en el script) -->
+                    <div id="med-select" class="med-select">
+                        <button id="med-select-btn" class="med-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="med-select-panel" onclick="toggleSelectMed()">
+                            <svg class="icon-svg ms-tri" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18l-9 10z"/></svg>
+                            <span id="med-select-label" class="ms-lbl vacio">Elegí un producto</span>
+                        </button>
+                        <div id="med-select-overlay" class="med-sel-overlay" onclick="cerrarSelectMed(true)"></div>
+                        <div id="med-select-panel" class="med-select-panel">
+                            <div class="fp-head med-sheet-head">
+                                <span class="fp-title">PRODUCTOS</span>
+                                <button class="fp-x" type="button" onclick="cerrarSelectMed(true)" aria-label="Cerrar">&times;</button>
+                            </div>
+                            <ul id="med-select-list" class="med-select-list" role="listbox" aria-label="Productos"></ul>
+                        </div>
+                    </div>
 
-                <div class="w-full max-w-[240px] sm:max-w-md lg:max-w-xl flex justify-center items-center">
-                    <img src="ICONOSTIENDAS.png" alt="Iconos de tienda personalizada" class="w-full h-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
+                    <!-- Lápiz: muestra / oculta los datos a rellenar -->
+                    <button id="med-btn-editar" class="med-btn med-lapiz" type="button" aria-expanded="false" aria-controls="med-form" aria-label="Completar los datos del producto" title="Completar datos" onclick="toggleFormMed()">
+                        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    </button>
+
+                    <!-- Más: agrega el producto con sus datos al pedido -->
+                    <button id="med-btn-agregar" class="med-btn med-mas" type="button" aria-label="Agregar al pedido" title="Agregar al pedido" onclick="agregarPersonalizado()">
+                        <svg class="icon-svg i-mas" viewBox="0 0 24 24" aria-hidden="true"><rect x="10.5" y="4" width="3" height="16" rx="1"/><rect x="4" y="10.5" width="16" height="3" rx="1"/></svg>
+                        <svg class="icon-svg i-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 16.6 4.9 12.3l-1.9 1.9 6.2 6.2L21 8.6l-1.9-1.9z"/></svg>
+                    </button>
                 </div>
+
+                <div id="med-msg" class="med-msg" role="status" aria-live="polite"></div>
+
+                <div id="med-form" class="med-form">
+                    <div class="med-form-in">
+                        <div class="med-form-pad">
+                            <label class="cart-label" for="med-medidas">MEDIDAS</label>
+                            <input id="med-medidas" class="cart-input" type="text" maxlength="120" autocomplete="off" enterkeyhint="next" placeholder="Ej: 20x40 cm" oninput="this.classList.remove('error');mostrarMsgMed('')" onkeydown="if(event.key==='Enter'){event.preventDefault();gid('med-calibre').focus()}">
+
+                            <label class="cart-label" for="med-calibre">CALIBRE Y COLOR</label>
+                            <input id="med-calibre" class="cart-input" type="text" maxlength="80" autocomplete="off" enterkeyhint="next" placeholder="Ej: Calibre 24, negro" oninput="this.classList.remove('error');mostrarMsgMed('')" onkeydown="if(event.key==='Enter'){event.preventDefault();gid('med-aclaraciones').focus()}">
+
+                            <label class="cart-label" for="med-aclaraciones">ACLARACIONES</label>
+                            <textarea id="med-aclaraciones" class="cart-input med-area" rows="4" maxlength="400" placeholder="Opcional"></textarea>
+
+                            <!-- Solo celular: repite la acción del botón "más" al pie del formulario -->
+                            <div class="med-form-foot">
+                                <div id="med-msg-form" class="med-msg" aria-hidden="true"></div>
+                                <button type="button" class="med-add-movil" onclick="agregarPersonalizado()">AGREGAR AL PEDIDO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="med-texto">COMPRA NUESTROS PRODUCTOS AGREGÁNDOLAS AL CARRITO Y COLOCANDO LAS CORRESPONDIENTES MEDIDAS, LUEGO HAREMOS UNA VERIFICACIÓN PREVIA DE LAS MISMAS.</p>
             </div>
+
+            <!-- Botón flotante del pedido personalizado (mismo estilo que el de la tienda estándar) -->
+            <button id="cmed-fab" class="cart-fab" onclick="toggleCarritoMed()" aria-label="Ver mi pedido" title="Ver mi pedido">
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/></svg>
+                <span id="cmed-badge" class="cart-badge vacio">0</span>
+            </button>
+
+            <div id="cmed-overlay" class="cart-overlay" onclick="cerrarCarritoMed(true)"></div>
+
+            <aside id="cmed-panel" class="cart-panel" aria-label="Mi pedido personalizado">
+                <div class="cart-head">
+                    <h2 class="cart-titulo">MI PEDIDO</h2>
+                    <button id="cmed-close" class="cart-close" onclick="cerrarCarritoMed(true)" aria-label="Cerrar pedido">&times;</button>
+                </div>
+
+                <div id="cmed-items" class="cart-items"></div>
+
+                <div class="cart-sep"></div>
+
+                <div class="cart-datos">Datos:</div>
+
+                <label class="cart-label" for="cmed-nombre">NOMBRE Y APELLIDO:</label>
+                <input id="cmed-nombre" class="cart-input" type="text" autocomplete="name" enterkeyhint="send" maxlength="80" onkeydown="if(event.key==='Enter'){event.preventDefault();enviarPedidoMedWhatsapp()}">
+
+                <div id="cmed-error" class="cart-error"></div>
+
+                <button id="cmed-enviar" class="cart-enviar" onclick="enviarPedidoMedWhatsapp()">ENVIAR PEDIDO POR WHATSAPP</button>
+            </aside>
         </section>
 
         <section id="servicios" class="seccion-contenido hidden py-4 sm:py-8">
@@ -481,6 +666,8 @@
 
         function mostrarSeccion(idSeccion) {
             if (typeof cerrarCarrito === 'function') cerrarCarrito();
+            if (typeof cerrarCarritoMed === 'function') cerrarCarritoMed();
+            if (typeof cerrarSelectMed === 'function') cerrarSelectMed();
             dom.secciones.forEach(sec => sec.classList.add('hidden'));
 
             const seccionActiva = document.getElementById(idSeccion);
@@ -876,6 +1063,293 @@
         renderFiltros();
         renderProductos();
         renderCarrito();
+
+        /* ===================== MEDIDAS PERSONALIZADAS ===================== */
+
+        /* Productos del selector. Para sumar más, agregar una línea { nombre: "..." }. */
+        const PRODUCTOS_PERSONALIZADOS = [
+            { nombre: "Codo rectangular soldado" },
+            { nombre: "Codo redondo soldado" }
+        ];
+
+        const CARRITO_MED_KEY = "servizing_carrito_personalizado_v1";
+        let carritoMed = []; // [{ uid, producto, medidas, calibre, aclaraciones }]
+        let productoMedSel = -1;
+        let msgMedTimer = null;
+
+        try {
+            const guardado = JSON.parse(localStorage.getItem(CARRITO_MED_KEY));
+            if (Array.isArray(guardado)) {
+                carritoMed = guardado
+                    .filter(it => it && typeof it.producto === "string" && typeof it.uid === "string")
+                    .map(it => ({
+                        uid: it.uid,
+                        producto: it.producto,
+                        medidas: String(it.medidas || ""),
+                        calibre: String(it.calibre || ""),
+                        aclaraciones: String(it.aclaraciones || "")
+                    }));
+            }
+        } catch { carritoMed = []; }
+
+        const gid = id => document.getElementById(id);
+        const mqMovilMed = window.matchMedia ? window.matchMedia("(max-width:767px)") : { matches: false };
+        const movilMed = () => mqMovilMed.matches;
+        const sinAnimacionMed = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function guardarCarritoMed() {
+            try { localStorage.setItem(CARRITO_MED_KEY, JSON.stringify(carritoMed)); } catch { /* sin almacenamiento */ }
+        }
+
+        /* Mensaje bajo la botonera (y repetido al pie del formulario en celular) */
+        function mostrarMsgMed(texto, ok) {
+            clearTimeout(msgMedTimer);
+            document.querySelectorAll(".med-msg").forEach(el => {
+                el.textContent = texto || "";
+                el.classList.toggle("ok", !!ok);
+            });
+            if (texto && ok) msgMedTimer = setTimeout(() => {
+                document.querySelectorAll(".med-msg").forEach(el => { el.textContent = ""; el.classList.remove("ok"); });
+            }, 2200);
+        }
+
+        /* Si la botonera quedó tapada por el header al scrollear, la vuelve a mostrar */
+        function asegurarVisibleMed() {
+            const fila = gid("med-controles");
+            const header = document.querySelector("header");
+            if (!fila) return;
+            const tope = header ? header.getBoundingClientRect().bottom : 0;
+            const r = fila.getBoundingClientRect();
+            if (r.top < tope + 8) {
+                window.scrollBy({ top: r.top - tope - 16, behavior: sinAnimacionMed() ? "auto" : "smooth" });
+            }
+        }
+
+        /* ---- Selector desplegable ---- */
+        function renderSelectMed() {
+            const lista = gid("med-select-list");
+            const lbl = gid("med-select-label");
+            if (!lista || !lbl) return;
+            lista.innerHTML = PRODUCTOS_PERSONALIZADOS.map((p, i) => `
+                <li role="presentation"><button type="button" role="option" class="med-opt${i === productoMedSel ? " activo" : ""}" aria-selected="${i === productoMedSel}" onclick="elegirProductoMed(${i})">${escapar(p.nombre)}</button></li>`).join("");
+            if (productoMedSel >= 0) {
+                lbl.textContent = PRODUCTOS_PERSONALIZADOS[productoMedSel].nombre;
+                lbl.classList.remove("vacio");
+            } else {
+                lbl.textContent = "Elegí un producto";
+                lbl.classList.add("vacio");
+            }
+        }
+        const selectMedAbierto = () => gid("med-select-panel").classList.contains("abierto");
+
+        function abrirSelectMed() {
+            gid("med-select-panel").classList.add("abierto");
+            gid("med-select-overlay").classList.add("abierto");
+            gid("med-select-btn").setAttribute("aria-expanded", "true");
+            if (movilMed()) document.body.style.overflow = "hidden";
+            const op = document.querySelector("#med-select-list .med-opt.activo") || document.querySelector("#med-select-list .med-opt");
+            if (op) op.focus({ preventScroll: true });
+        }
+        function cerrarSelectMed(devolverFoco) {
+            const panel = gid("med-select-panel");
+            if (!panel || !selectMedAbierto()) return;
+            panel.classList.remove("abierto");
+            gid("med-select-overlay").classList.remove("abierto");
+            gid("med-select-btn").setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+            if (devolverFoco) gid("med-select-btn").focus({ preventScroll: true });
+        }
+        function toggleSelectMed() {
+            selectMedAbierto() ? cerrarSelectMed() : abrirSelectMed();
+        }
+        function elegirProductoMed(i) {
+            productoMedSel = i;
+            gid("med-select-btn").classList.remove("error");
+            renderSelectMed();
+            cerrarSelectMed(true);
+            mostrarMsgMed("");
+        }
+
+        document.addEventListener("click", e => { if (!e.target.closest("#med-select")) cerrarSelectMed(); });
+        if (mqMovilMed.addEventListener) mqMovilMed.addEventListener("change", () => cerrarSelectMed());
+
+        /* Teclado: flechas dentro de la lista, flecha abajo en el botón, Tab cierra */
+        gid("med-select-list").addEventListener("keydown", e => {
+            const ops = Array.from(document.querySelectorAll("#med-select-list .med-opt"));
+            const i = ops.indexOf(document.activeElement);
+            let n = null;
+            if (e.key === "ArrowDown") n = Math.min(i + 1, ops.length - 1);
+            else if (e.key === "ArrowUp") n = Math.max(i - 1, 0);
+            else if (e.key === "Home") n = 0;
+            else if (e.key === "End") n = ops.length - 1;
+            else if (e.key === "Tab") { cerrarSelectMed(); return; }
+            if (n !== null) { e.preventDefault(); ops[n].focus(); }
+        });
+        gid("med-select-btn").addEventListener("keydown", e => {
+            if (e.key === "ArrowDown" && !selectMedAbierto()) { e.preventDefault(); abrirSelectMed(); }
+        });
+
+        /* ---- Formulario (botón del lápiz) ---- */
+        const formMedAbierto = () => gid("med-form").classList.contains("abierto");
+        function abrirFormMed() {
+            gid("med-form").classList.add("abierto");
+            gid("med-btn-editar").setAttribute("aria-expanded", "true");
+        }
+        function cerrarFormMed() {
+            gid("med-form").classList.remove("abierto");
+            gid("med-btn-editar").setAttribute("aria-expanded", "false");
+        }
+        function toggleFormMed() {
+            formMedAbierto() ? cerrarFormMed() : abrirFormMed();
+        }
+
+        /* ---- Agregar al pedido (botón "más" o botón al pie del formulario en celular) ---- */
+        function agregarPersonalizado() {
+            const inMed = gid("med-medidas"), inCal = gid("med-calibre"), inAcl = gid("med-aclaraciones");
+            const selBtn = gid("med-select-btn");
+            [inMed, inCal].forEach(el => el.classList.remove("error"));
+            selBtn.classList.remove("error");
+            mostrarMsgMed("");
+
+            if (productoMedSel < 0) {
+                selBtn.classList.add("error");
+                mostrarMsgMed("Elegí un producto de la lista.");
+                asegurarVisibleMed();
+                return;
+            }
+
+            const medidas = inMed.value.trim();
+            const calibre = inCal.value.trim();
+            const aclaraciones = inAcl.value.trim();
+
+            if (!medidas || !calibre) {
+                const yaAbierto = formMedAbierto();
+                abrirFormMed();
+                if (!medidas) inMed.classList.add("error");
+                if (!calibre) inCal.classList.add("error");
+                mostrarMsgMed(!medidas && !calibre ? "Completá las medidas y el calibre y color."
+                    : !medidas ? "Completá las medidas." : "Completá el calibre y color.");
+                const campo = !medidas ? inMed : inCal;
+                if (yaAbierto) campo.focus(); else setTimeout(() => campo.focus({ preventScroll: false }), 320);
+                return;
+            }
+
+            carritoMed.push({
+                uid: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+                producto: PRODUCTOS_PERSONALIZADOS[productoMedSel].nombre,
+                medidas, calibre, aclaraciones
+            });
+            guardarCarritoMed();
+            renderCarritoMed();
+
+            inMed.value = ""; inCal.value = ""; inAcl.value = "";
+            cerrarFormMed();
+            if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+
+            const btn = gid("med-btn-agregar");
+            btn.classList.add("ok");
+            setTimeout(() => btn.classList.remove("ok"), 900);
+            mostrarMsgMed("Agregado al pedido ✓", true);
+            asegurarVisibleMed();
+        }
+
+        function quitarPersonalizado(uid) {
+            carritoMed = carritoMed.filter(it => it.uid !== uid);
+            guardarCarritoMed();
+            renderCarritoMed();
+        }
+
+        /* ---- Carrito de medidas personalizadas ---- */
+        function renderCarritoMed() {
+            const cont = gid("cmed-items");
+            if (!cont) return;
+            const campo = (k, v) => v ? `<div class="ci-campo"><span class="ci-k">${k}</span><span class="ci-v">${escapar(v)}</span></div>` : "";
+
+            cont.innerHTML = carritoMed.length
+                ? carritoMed.map(it => `
+                    <div class="cart-item med">
+                        <div class="ci-body">
+                            <h3 class="ci-nombre">${escapar(it.producto)}</h3>
+                            <div class="ci-detalle">x1</div>
+                            ${campo("Medidas", it.medidas)}${campo("Calibre y color", it.calibre)}${campo("Aclaraciones", it.aclaraciones)}
+                        </div>
+                        <button class="ci-quitar" data-uid="${escapar(it.uid)}" aria-label="Quitar ${escapar(it.producto)}" onclick="quitarPersonalizado(this.dataset.uid)">Quitar</button>
+                    </div>`).join("")
+                : '<div class="cart-vacio">Todavía no agregaste productos</div>';
+
+            const n = carritoMed.length;
+            const badge = gid("cmed-badge");
+            badge.textContent = n;
+            badge.classList.toggle("vacio", n === 0);
+            gid("cmed-fab").setAttribute("aria-label", n ? `Ver mi pedido (${n} ${n === 1 ? "producto" : "productos"})` : "Ver mi pedido");
+        }
+
+        const carritoMedAbierto = () => gid("cmed-panel").classList.contains("abierto");
+
+        function posicionarPanelMed() {
+            const header = document.querySelector("header");
+            const top = header ? Math.round(header.getBoundingClientRect().bottom) : 0;
+            gid("cmed-panel").style.top = top + "px";
+            gid("cmed-overlay").style.top = top + "px";
+        }
+        function abrirCarritoMed() {
+            cerrarSelectMed();
+            posicionarPanelMed();
+            gid("cmed-panel").classList.add("abierto");
+            gid("cmed-overlay").classList.add("abierto");
+            gid("cmed-close").focus({ preventScroll: true });
+        }
+        function cerrarCarritoMed(devolverFoco) {
+            const p = gid("cmed-panel");
+            if (!p || !carritoMedAbierto()) return;
+            p.classList.remove("abierto");
+            gid("cmed-overlay").classList.remove("abierto");
+            if (devolverFoco) gid("cmed-fab").focus({ preventScroll: true });
+        }
+        function toggleCarritoMed() {
+            carritoMedAbierto() ? cerrarCarritoMed(true) : abrirCarritoMed();
+        }
+
+        function enviarPedidoMedWhatsapp() {
+            const inputNombre = gid("cmed-nombre");
+            const error = gid("cmed-error");
+            const nombre = inputNombre.value.trim();
+
+            inputNombre.classList.remove("error");
+            error.textContent = "";
+
+            if (!carritoMed.length) { error.textContent = "Agregá al menos un producto."; return; }
+            if (!nombre) {
+                inputNombre.classList.add("error");
+                error.textContent = "Ingresá tu nombre y apellido.";
+                inputNombre.focus();
+                return;
+            }
+
+            let msg = "Hola! Quisiera hacer el siguiente pedido de medidas personalizadas:\n\n";
+            carritoMed.forEach((it, i) => {
+                msg += `${i + 1}. ${it.producto}\n`;
+                msg += `   Medidas: ${it.medidas}\n`;
+                msg += `   Calibre y color: ${it.calibre}\n`;
+                if (it.aclaraciones) msg += `   Aclaraciones: ${it.aclaraciones}\n`;
+                msg += "\n";
+            });
+            msg += `Nombre y apellido: ${nombre}`;
+
+            abrirWhatsapp(msg);
+        }
+
+        document.addEventListener("keydown", e => {
+            if (e.key !== "Escape") return;
+            if (selectMedAbierto()) cerrarSelectMed(true);
+            else if (carritoMedAbierto()) cerrarCarritoMed(true);
+        });
+        window.addEventListener("resize", () => {
+            if (carritoMedAbierto()) posicionarPanelMed();
+        });
+
+        renderSelectMed();
+        renderCarritoMed();
     </script>
 </body>
 </html>
