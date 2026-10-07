@@ -62,11 +62,11 @@
 .tienda-vacio{grid-column:1/-1;text-align:center;color:#d4d4d8;font-family:'Inter',sans-serif;font-size:clamp(13px,2.6vw,17px);letter-spacing:.05em;text-transform:uppercase;padding:40px 10px;border:1.5px dashed rgba(255,255,255,.3)}
 
 /* Grilla: celular = 1 producto por fila (86% del ancho, centrado) · desde 640px = 3 por fila (tamaños fluidos) */
-.tienda-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:44px;width:100%;max-width:64rem;margin:0 auto;align-items:stretch}
+.tienda-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;max-width:64rem;margin:0 auto;align-items:stretch}
 @media (min-width:640px){.tienda-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2.4vw,36px)}}
 
-.prod-card{background:#000;border:2px solid #fff;padding:14px;display:flex;flex-direction:column;gap:14px;text-align:left;min-width:0;height:100%;width:86%;max-width:20rem;margin-inline:auto}
-.prod-card .prod-img{width:100%;aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:#18181b;flex-shrink:0}
+.prod-card{background:#000;border:2px solid #fff;padding:10px;display:flex;flex-direction:column;gap:10px;text-align:left;min-width:0;height:100%;width:100%;max-width:none;margin-inline:0}
+.prod-card .prod-img{width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#18181b;flex-shrink:0}
 .prod-card .prod-img img{width:100%;height:100%;object-fit:cover;pointer-events:none}
 @media (min-width:640px){
   .prod-card{padding:clamp(6px,1.6vw,16px);gap:clamp(6px,1.4vw,14px);width:100%;max-width:none;margin-inline:0}
@@ -74,10 +74,10 @@
 }
 
 /* Nombre arriba, botón siempre alineado abajo (misma línea en todas las tarjetas) */
-.prod-info{display:flex;flex-direction:column;gap:8px;flex:1 1 auto;color:#fff;font-family:'Inter',Arial,sans-serif;text-transform:uppercase;min-width:0}
-.prod-info .prod-nombre{font-family:'Inter',sans-serif;font-weight:400;font-size:21px;line-height:1.2;letter-spacing:.01em;color:#fff;margin:0;overflow-wrap:anywhere}
+.prod-info{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;color:#fff;font-family:'Inter',Arial,sans-serif;text-transform:uppercase;min-width:0}
+.prod-info .prod-nombre{font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.2;letter-spacing:.01em;color:#fff;margin:0;overflow-wrap:anywhere}
 
-.btn-agregar{width:100%;border:2px solid #fff;background:transparent;color:#fff;font-family:'Inter',sans-serif;font-size:17px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:15px 0;margin-top:0;transition:all .2s;white-space:nowrap}
+.btn-agregar{width:100%;border:2px solid #fff;background:transparent;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:10px 0;margin-top:0;transition:all .2s;white-space:nowrap}
 @media (min-width:640px){
   .prod-info{gap:clamp(3px,.8vw,8px)}
   .prod-info .prod-nombre{font-size:clamp(9.5px,2.5vw,18px)}
