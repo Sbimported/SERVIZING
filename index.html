@@ -125,6 +125,10 @@
   .cart-error{order:2;margin:8px 0 0}
 }
 
+/* Tienda estándar: sin carrusel de marcas (se conserva el crédito de diseño) */
+#marcas-wrap.sin-marcas>div:first-child,#marcas-wrap.sin-marcas .marquee-track,#marcas-wrap.sin-marcas .bg-gradient-to-r,#marcas-wrap.sin-marcas .bg-gradient-to-l{display:none}
+#marcas-wrap.sin-marcas>div:last-child{padding:0;min-height:28px;background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+
 /* ===== MEDIDAS PERSONALIZADAS ===== */
 #medidas{width:100%}
 #medidas h2,#medidas h3,#medidas button,#medidas label,#medidas input,#medidas textarea,#medidas .cart-vacio,#medidas .cart-error{text-transform:uppercase}
@@ -153,6 +157,30 @@
 .med-select-list li:last-child .med-opt{border-bottom:0}
 .med-opt:hover{background:rgba(255,255,255,.08)}
 .med-opt.activo{color:#ff7700;font-weight:700}
+
+/* Desplegable agrupado: categoría > subcategoría > producto (plegado por defecto) */
+.med-select-list{max-height:min(60vh,440px)}
+.med-grp{display:flex;align-items:center;gap:10px;width:100%;min-height:46px;padding:11px 16px;text-align:left;font:700 14px/1.2 'Inter',Arial,sans-serif;letter-spacing:.04em;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.med-grp:hover{background:rgba(255,255,255,.08)}
+.med-grp .mg-ch{font-size:18px;transition:transform .2s}
+.med-grp[aria-expanded="true"]{color:#ff7700}
+.med-grp[aria-expanded="true"]>.mg-ch{transform:rotate(90deg)}
+.med-grp .mg-t{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.med-grp .mg-n{flex:none;font-weight:400;font-size:12px;color:#a1a1aa}
+.med-g2{padding-left:28px;font-weight:600;font-size:13px;color:#e4e4e7;background:rgba(255,255,255,.03)}
+.med-sub{list-style:none;margin:0;padding:0;background:rgba(255,255,255,.03)}
+.med-sub[hidden]{display:none}
+.med-select-list .med-sub .med-opt{min-height:42px;padding-top:10px;padding-bottom:10px;font-size:14px}
+.med-select-list .med-sub .med-o1{padding-left:34px}
+.med-select-list .med-sub .med-o2{padding-left:50px}
+@media (max-width:767px){
+  .med-select-list{max-height:none;flex:1 1 auto;min-height:0}
+  .med-grp{min-height:52px;padding:14px 20px;font-size:15px}
+  .med-g2{padding-left:32px}
+  .med-select-list .med-sub .med-opt{min-height:48px;font-size:15px}
+  .med-select-list .med-sub .med-o1{padding-left:38px}
+  .med-select-list .med-sub .med-o2{padding-left:54px}
+}
 
 /* Lápiz y "más": mismo naranja y mismo ícono blanco que el botón flotante del carrito */
 .med-btn{flex:0 0 50px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:#ff7700;color:#fff;border:2px solid transparent;transition:transform .15s,border-color .2s}
@@ -569,11 +597,11 @@
 
     </main>
 
-    <div class="max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-6 sm:my-8">
+    <div id="resenas-wrap" class="max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-6 sm:my-8">
         <script defer async src='https://cdn.trustindex.io/loader.js?b96f12382fbd94078e36b767c87'></script>
     </div>
 
-    <section class="w-full mt-6 sm:mt-10 mb-0 relative">
+    <section id="marcas-wrap" class="w-full mt-6 sm:mt-10 mb-0 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2 sm:mb-3 flex flex-col items-center">
             <div class="relative inline-block px-6 py-1">
                 <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none"></div>
@@ -683,6 +711,13 @@
             if (dom.mobileMenu && !dom.mobileMenu.classList.contains('hidden')) {
                 dom.mobileMenu.classList.add('hidden');
             }
+
+            /* Reseñas (Trustindex): ocultas en Tienda estándar y Medidas personalizadas.
+               Marcas: ocultas en Tienda estándar (queda solo el crédito de diseño). */
+            const rw = document.getElementById('resenas-wrap');
+            if (rw) rw.classList.toggle('hidden', idSeccion === 'tienda' || idSeccion === 'medidas');
+            const mw = document.getElementById('marcas-wrap');
+            if (mw) mw.classList.toggle('sin-marcas', idSeccion === 'tienda');
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -1066,11 +1101,90 @@
 
         /* ===================== MEDIDAS PERSONALIZADAS ===================== */
 
-        /* Productos del selector. Para sumar más, agregar una línea { nombre: "..." }. */
-        const PRODUCTOS_PERSONALIZADOS = [
-            { nombre: "Codo rectangular soldado" },
-            { nombre: "Codo redondo soldado" }
+        /* Productos del selector, agrupados: categoría > subcategoría > producto.
+           Un texto suelto = producto sin categoría. Para sumar más, agregar una línea en "items". */
+        const CATALOGO_MED = [
+            { n: "CHAPAS LISAS",
+              items: ["GALVANIZADA 100cm x 200cm C30", "GALVANIZADA 100cm x 200cm C28", "GALVANIZADA 122cm x 244cm C27", "GALVANIZADA 122cm x 244cm C25", "GALVANIZADA 122cm x 244cm C22", "COLOR NEGRO Y VARIOS 122cm x 244cm C25"] },
+            { n: "CHAPAS DE TECHO",
+              items: ["GALVANIZADA C27 X M2", "GALVANIZADA C25 X M2", "CINCALUM C27 X M2", "CINCALUM C25 X M2", "CHAPA COLOR X M2", "CHAPA POLI X M2"],
+              subs: [
+                { n: "PERFILES C", items: ["PERFIL C GALVANIZADO 80x40x15x1,60mm", "PERFIL C GALVANIZADO 100x40x15x1,60mm", "PERFIL C GALVANIZADO 120x50x15x1,60mm", "PERFIL C GALVANIZADO 100x40x15x2,00mm", "PERFIL C GALVANIZADO 120x50x15x2,00mm", "PERFIL C GALVANIZADO 140x60x20x2,00mm", "PERFIL C GALVANIZADO 160x60x20x2,00mm", "PERFIL C GALVANIZADO 180x70x20x2,00mm", "PERFIL C GALVANIZADO 200x80x30x2,00mm"] },
+                { n: "AISLANTES", items: ["LANA DE VIDRIO ISOVER X 14 M2", "LANA DE VIDRIO OROGLASS X1 14 M2", "LANA DE VIDRIO ISOTEX GALPON X 19 M2", "ESPUMA DE 10 MM DOBLE ALUMINIO", "MALLA PLASTICA"] },
+              ] },
+            { n: "CANALETAS",
+              subs: [
+                { n: "AMERICANAS", items: ["CANALETA AMERICANA 33 C/28", "CANALETA AMERICANA 40 C/28"] },
+                { n: "ARTISTICAS", items: ["CANALETA MEDIA CAÑA", "CANALETA MOLDURA"] },
+                { n: "BABETAS", items: ["SOBRETEJA 15 C/30", "SOBRETEJA 20 C/30", "CUMBRERA 33 C/28", "CUMBRERA 40 C/28", "CUMBRERA 50 C/28", "CONVERSA 33 C/28", "CONVERSA 40 C/28", "CONVERSA 50 C/28", "BAJOTEJA 20 C/30", "BAJOTEJA CON NERVIO C/28", "CAPUCHON", "ESCUADRAS CANALETAS"] },
+              ] },
+            { n: "CAÑOS",
+              subs: [
+                { n: "REDONDOS", items: ["GALVANIZADO 3\" C/30", "GALVANIZADO 4\" C/30", "GALVANIZADO 5\" C/30", "GALVANIZADO 6\" C/30", "GALVANIZADO 7\" C/27", "GALVANIZADO 8\" C/27", "GALVANIZADO 9\" C/27", "GALVANIZADO 10\" C/27", "GALVANIZADO 12\" C/27", "GALVANIZADO 3\" C/25", "GALVANIZADO 4\" C/25", "GALVANIZADO 5\" C/25", "GALVANIZADO 6\" C/25", "GALVANIZADO 7\" C/25", "GALVANIZADO 8\" C/25", "GALVANIZADO 9\" C/25", "GALVANIZADO 10\" C/25", "GALVANIZADO 12\" C/25", "GALVANIZADO 14\" C/25", "GALVANIZADO 16\" C/25", "GALVANIZADO 18\" C/25", "GALVANIZADO 20\" C/25", "GALVANIZADO 22\" C/25", "GALVANIZADO 24\" C/25", "COLOR 3\" C/25", "COLOR 4\" C/25", "COLOR 5\" C/25", "COLOR 6\" C/25", "COLOR 7\" C/25", "COLOR 8\" C/25", "COLOR 9\" C/25", "COLOR 10\" C/25", "COLOR 12\" C/25", "COLOR 14\" C/25", "COLOR 16\" C/25", "COLOR 18\" C/25", "COLOR 20\" C/25", "COLOR 22\" C/25", "COLOR 24\" C/25"] },
+                { n: "RECTANGULARES", items: ["CAÑO GALVANIZADO 2\" X 3\"", "CAÑO GALVANIZADO 2\" X 4\"", "CAÑO GALVANIZADO 3\" X 4\"", "CAÑO COLOR 2\" X 3\"", "CAÑO COLOR 2\" X 4\"", "CAÑO COLOR 3\" X 4\""] },
+                { n: "ENLOZADOS", items: ["ENLOZADO 4\"", "ENLOZADO 4\" CON CLAPETA", "ENLOZADO 5\"", "ENLOZADO 6\"", "ENLOZADO 6\" CON CLAPETA", "ENLOZADO 8\"", "ENLOZADO 10\""] },
+                { n: "FLEXIBLES", items: ["3\" X 1 METRO", "4\" X 1 METRO", "5\" X 1 METRO", "6\" X 1 METRO"] },
+                { n: "REDUCCIONES", items: ["REDUCCION 4\" A 3\"", "REDUCCION 5\" A 3\"", "REDUCCION 110 A 4\"", "REDUCCION 5\" A 4\"", "REDUCCION 6\" A 4\"", "REDUCCION 6\" A 5\"", "REDUCCION 6\" A 3\"", "REDUCCION 7\" A 4\"", "REDUCCION 8\" A 4\"", "REDUCCION 8\" A 5\"", "REDUCCION 8\" A 6\"", "REDUCCION 10\" A 6\"", "REDUCCION 10\" A 8\"", "REDUCCION 12\" A 8\"", "REDUCCION 12\" A 10\"", "REDUCCION 14\" A 8\"", "REDUCCION 14\" A 10\"", "REDUCCION 14\" A 12\"", "REDUCCION 5\" A 4\" COLOR NEGRO", "REDUCCION 6\" A 4\" COLOR NEGRO", "REDUCCION 6\" A 5\" COLOR NEGRO", "REDUCCION 8\" A 4\" COLOR NEGRO", "REDUCCION 8\" A 5\" COLOR NEGRO", "REDUCCION 8\" A 6\" COLOR NEGRO", "REDUCCION 10\" A 4\" COLOR NEGRO", "REDUCCION 10\" A 5\" COLOR NEGRO", "REDUCCION 10\" A 6\" COLOR NEGRO", "REDUCCION 10\" A 8\" COLOR NEGRO", "REDUCCION 12\" A 6\" COLOR NEGRO", "REDUCCION 12\" A 8\" COLOR NEGRO", "REDUCCION 12\" A 10\" COLOR NEGRO", "REDUCCION 14\" A 8\" COLOR NEGRO", "REDUCCION 14\" A 10\" COLOR NEGRO"] },
+                { n: "CUPLAS P/FLEXIBLES", items: ["3\"", "4\"", "5\""] },
+              ] },
+            { n: "CODOS",
+              subs: [
+                { n: "CODOS REDONDOS SOLDADOS", items: ["CODO 3\"", "CODO 4\"", "CODO 5\"", "CODO 6\""] },
+                { n: "CODOS RECTANGULARES SOLDADOS", items: ["CODO 2\" X 3\"", "CODO 2\" X 4\"", "CODO 3\" X 4\""] },
+              ] },
+            { n: "SOMBREROS",
+              subs: [
+                { n: "VENTURIS", items: ["VENTURI 3\" GALVA C/30", "VENTURI 4\" GALVA C/30", "VENTURI 5\" GALVA C/30", "VENTURI 6\" GALVA C/30", "VENTURI 8\" GALVA C/27", "VENTURI 10\" GALVA C/27", "VENTURI 12\" GALVA C/25", "VENTURI 14\" GALVA C/25", "VENTURI 16\" GALVA C/25", "VENTURI 18\" GALVA C/25", "VENTURI 20\" GALVA C/25", "VENTURI 22\" GALVA C/25", "VENTURI 24\" GALVA C/25", "VENTURI 3\" COLOR", "VENTURI 4\" COLOR", "VENTURI 5\" COLOR", "VENTURI 6\" COLOR", "VENTURI 8\" COLOR", "VENTURI 10\" COLOR", "VENTURI 12\" COLOR", "VENTURI 14\" COLOR", "VENTURI 16\" COLOR", "VENTURI 18\" COLOR", "VENTURI 20\" COLOR", "VENTURI 22\" COLOR", "VENTURI 24\" COLOR"] },
+                { n: "DOS AROS", items: ["2 AROS 3\"", "2 AROS 4\"", "2 AROS 5\"", "2 AROS 6\"", "2 AROS 7\"", "2 AROS 8\"", "2 AROS 10\"", "2 AROS 12\""] },
+                { n: "CHINOS", items: ["CHINO 4\"", "CHINO 5\"", "CHINO 6\"", "CHINO 7\"", "CHINO 8\"", "CHINO 10\"", "CHINO 12\"", "CHINO 14\""] },
+                { n: "HERMETICOS", items: ["H 3\"", "H 4\"", "H 5\"", "H 6\""] },
+                { n: "CUADRADOS", items: ["CUADRADOS 3\"", "CUADRADOS 4\"", "CUADRADOS 5\"", "CUADRADOS 6\""] },
+                { n: "EOLICOS", items: ["EOLICO 4\"", "EOLICO 6\"", "EOLICO 8\"", "EOLICO 10\"", "EOLICO 12\"", "EOLICO 16\"", "EOLICO 20\"", "EOLICO 24\""] },
+                { n: "BASE EOLICO PARABOLICO", items: ["24\" PARABOLICO BAJA", "24\" PARABOLICO ALTA"] },
+              ] },
+            { n: "CURVAS",
+              items: ["GALVANIZADA 3\" ART", "GALVANIZADA 4\" ART", "GALVANIZADA 5\" ART", "GALVANIZADA 6\" ART", "GALVANIZADA 7\" ART", "GALVANIZADA 8\" ART", "GALVANIZADA 9\" ART", "GALVANIZADA 10\" ART", "GALVANIZADA 11\" ART", "GALVANIZADA 12\" ART", "GALVANIZADA 13\" ART", "GALVANIZADA 14\" ART", "GALVANIZADA 16\" ART", "GALVANIZADA 18\"ART", "GALVANIZADA 20\" ART", "GALVANIZADA 22\" ART", "GALVANIZADA 24\" ART", "GALVANIZADA 3\" HER", "GALVANIZADA 4\" HER", "GALVANIZADA 5\" HER", "GALVANIZADA 6\" HER"],
+              subs: [
+                { n: "CURVAS ENLOZADAS", items: ["ENLOZADA 4\"", "ENLOZADA 5\"", "ENLOZADA 6\"", "ENLOZADO 8\"", "ENLOZADA 10\""] },
+              ] },
+            { n: "ZINGUERIA ARTISTICA",
+              items: ["ESQUINERO", "RINCONERO"],
+              subs: [
+                { n: "FUENTONES", items: ["FUENTON 28 X 15", "FUENTON 32 X 15", "FUENTON 35 X 17", "FUENTON 40 X 19", "FUENTON 48 X 22", "FUENTON 60 X 28"] },
+                { n: "COLECTORES", items: ["COLECTOR AMERICANO", "COLECTOR ARTISTICO"] },
+                { n: "MOLINOS, LECHEROS GARGOLAS", items: ["MOLINO CHICO 50 CM", "MOLINO MEDIANO 120 CM", "MOLINO GRANDE 150 CM", "LECHERO CHICO", "LECHERO MEDIANO", "GARGOLA BRONCE"] },
+                { n: "BALDES", items: ["BALDE 3 LITROS", "BALDE 6 LITROS", "BALDE 8 LITROS", "BALDE 14 LITROS"] },
+                { n: "REGADERAS", items: ["REGADERA 1 LITRO", "REGADERA 3 LITROS", "REGADERA 5 LITROS", "REGADERA 8 LITROS"] },
+                { n: "RAMALES Y TE", items: ["3\"", "4\"", "5\"", "6\"", "7\"", "8\"", "10\""] },
+              ] },
+            { n: "HERRAMIENTAS Y FERRETERIA",
+              subs: [
+                { n: "SELLADORES", items: ["SELLADOR PU38 MULTIFLEX", "SELLADOR ALTA TEMP MULTIFLEX", "ESPUMA POLIURETANO MULTIFLEX 500 CC", "SELLACANALETAS ZINACRIL"] },
+                { n: "COMPRIBAND", items: ["COMPRIBAND SINUSOIDAL", "COMPRIBAND TRAPEZOIDAL"] },
+              ] },
+            { n: "GRAMPAS, ABRAZADERAS Y PLANCHUELAS",
+              subs: [
+                { n: "GRAMPAS", items: ["OMEGA 3\"", "OMEGA 4\"", "OMEGA 5\"", "OMEGA 6\"", "CON PATA 3\"", "CON PATA 4\"", "CON PATA 5\"", "CON PATA 6\"", "CON PATA 7\"", "CON PATA 8\"", "CON PATA 10\"", "CON PATA 12\""] },
+                { n: "ABRAZADERAS CAÑOS RECTANGULARES", items: ["2\" X 4\" COMUN", "3\" X 4\" COMUN", "2\" X 4\" COLOR", "3\" X 4\" COLOR", "2\" X 4\" ARTISTICA", "3\" X 4\" ARTISTICA"] },
+                { n: "PLANCHUELAS LISAS GALVANIZADAS", items: ["PLANCHUELA 29 CM", "PLANCHUELA 35 Y 40 CM", "PLANCHUELA 50 CM", "PLANCHUELA 100 CM"] },
+              ] },
+            { n: "PLEGADOS HASTA 7 MTS",
+              items: ["CALIBRE 27 DESARROLLO 210 MM", "CALIBRE 27 DESARROLLO 330 MM", "CALIBRE 27 DESARROLLO 400 MM", "CALIBRE 27 DESARROLLO 500 MM", "CALIBRE 25 DESARROLLO 210 MM", "CALIBRE 25 DESARROLLO 330 MM", "CALIBRE 25 DESARROLLO 400 MM", "CALIBRE 25 DESARROLLO 500 MM", "CALIBRE 25 DESARROLLO 610 MM", "CALIBRE 25 DESARROLLO 800 MM", "CALIBRE 25 DESARROLLO 1000 MM", "CALIBRE 22 DESARROLLO 400 MM", "CALIBRE 22 DESARROLLO 610 MM", "CALIBRE 22 DESARROLLO 800 MM", "CALIBRE 22 DESARROLLO 1000 MM", "CALIBRE 22 DESARROLLO 1220 MM"] },
+            { n: "EXTRACTORES ELECTRICOS",
+              items: ["SATELITE 4\"", "SATELITE 6\"", "COCINA 25 CM DE DIAMETRO", "COCINA 30 CM DE DIAMETRO", "PARRILLERO 6\"", "PARRILLERO 8\"", "PARRILLERO 10\"", "PARRILLERO 12\"", "ENTRECAÑOS 6\"", "ENTRECAÑOS 8\"", "ENTRECAÑOS 10\"", "ENTRECAÑOS LIVIANOS 4\"", "ENTRECAÑOS LIVIANOS 6\"", "INDUSTRIAL 40 CM DIAMETRO", "INDUSTRIAL 45 CM DIAMETRO", "INDUSTRIAL 52 CM DIAMETRO", "INDUSTRIAL 61 CM DIAMETRO", "INDUSTRIAL 76 CM DIAMETRO", "SEMI INDUSTRIAL 20 CM DIAMETRO", "SEMI INDUSTRIAL 25 CM DIAMETRO", "SEMI INDUSTRIAL 30 CM DIAMETRO", "SEMI INDUSTRIAL 35 CM DIAMETRO", "SEMI INDUSTRIAL 40 CM DIAMETRO", "PVC BAÑO 4\"", "PVC BAÑO 6\"", "CROMADO 4\"", "CROMADO 6\"", "METALICO 6\"", "PVC REDONDAS 20 CM DIAMETRO", "PVC REDONDAS 25 CM DIAMETRO", "PVC REDONDAS 30 CM DIAMETRO", "MOVILES METALICAS 20 CM DIAMETRO", "MOVILES METALICAS 25 CM DE DIAMETRO", "MOVILES METALICAS 30 CM DE DIAMETRO", "PVC MOVIL 4\"", "PLANA DE 4\"", "REJILLA DE PARED", "ESFERA PLASTICO 4\"", "ESFERA ACERO 4\"", "ESFERA ACERO 6\""] },
         ];
+
+        /* Lista plana (la usa el pedido) + estructura para dibujar el desplegable */
+        const PRODUCTOS_PERSONALIZADOS = [];
+        const ARBOL_MED = CATALOGO_MED.map((e, ci) => {
+            const nodo = { key: String(ci), items: [], subs: [] };
+            const add = (txt, camino) => { PRODUCTOS_PERSONALIZADOS.push({ nombre: camino.concat(txt).join(" - "), key: nodo.key, sub: camino.length > 1 ? camino[1] : null }); return PRODUCTOS_PERSONALIZADOS.length - 1; };
+            if (typeof e === "string") { nodo.suelto = add(e, []); return nodo; }
+            nodo.n = e.n;
+            (e.items || []).forEach(t => nodo.items.push({ t, i: add(t, [e.n]) }));
+            (e.subs || []).forEach((s, si) => nodo.subs.push({ n: s.n, key: ci + "." + si, items: s.items.map(t => ({ t, i: add(t, [e.n, s.n]) })) }));
+            return nodo;
+        });
 
         const CARRITO_MED_KEY = "servizing_carrito_personalizado_v1";
         let carritoMed = []; // [{ uid, producto, medidas, calibre, aclaraciones }]
@@ -1126,12 +1240,32 @@
         }
 
         /* ---- Selector desplegable ---- */
+        const abiertosMed = new Set();
+        const CHEV_MED = '<svg class="icon-svg mg-ch" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7z"/></svg>';
+        function claveGrupoDe(i) {
+            for (const g of ARBOL_MED) {
+                if (g.suelto === i) return [];
+                if (g.items.some(x => x.i === i)) return [g.key];
+                for (const s of g.subs) if (s.items.some(x => x.i === i)) return [g.key, s.key];
+            }
+            return [];
+        }
         function renderSelectMed() {
             const lista = gid("med-select-list");
             const lbl = gid("med-select-label");
             if (!lista || !lbl) return;
-            lista.innerHTML = PRODUCTOS_PERSONALIZADOS.map((p, i) => `
-                <li role="presentation"><button type="button" role="option" class="med-opt${i === productoMedSel ? " activo" : ""}" aria-selected="${i === productoMedSel}" onclick="elegirProductoMed(${i})">${escapar(p.nombre)}</button></li>`).join("");
+            const opt = (it, cls) => `<li role="presentation"><button type="button" role="option" class="med-opt ${cls}${it.i === productoMedSel ? " activo" : ""}" aria-selected="${it.i === productoMedSel}" onclick="elegirProductoMed(${it.i})">${escapar(it.t)}</button></li>`;
+            const grupo = (key, nombre, cant, cls, hijos) => {
+                const ab = abiertosMed.has(key);
+                return `<li role="presentation"><button type="button" class="med-grp ${cls}" aria-expanded="${ab}" data-k="${key}" onclick="toggleGrupoMed(this)">${CHEV_MED}<span class="mg-t">${escapar(nombre)}</span><span class="mg-n">${cant}</span></button><ul class="med-sub" role="group"${ab ? "" : " hidden"}>${hijos}</ul></li>`;
+            };
+            lista.innerHTML = ARBOL_MED.map(g => {
+                if (g.suelto !== undefined) return opt({ t: PRODUCTOS_PERSONALIZADOS[g.suelto].nombre, i: g.suelto }, "");
+                const directos = g.items.map(x => opt(x, "med-o1")).join("");
+                const subs = g.subs.map(s => grupo(s.key, s.n, s.items.length, "med-g2", s.items.map(x => opt(x, "med-o2")).join(""))).join("");
+                const total = g.items.length + g.subs.reduce((a, s) => a + s.items.length, 0);
+                return grupo(g.key, g.n, total, "med-g1", directos + subs);
+            }).join("");
             if (productoMedSel >= 0) {
                 lbl.textContent = PRODUCTOS_PERSONALIZADOS[productoMedSel].nombre;
                 lbl.classList.remove("vacio");
@@ -1140,6 +1274,14 @@
                 lbl.classList.add("vacio");
             }
         }
+        function toggleGrupoMed(btn) {
+            const k = btn.dataset.k, ab = btn.getAttribute("aria-expanded") !== "true";
+            btn.setAttribute("aria-expanded", ab);
+            ab ? abiertosMed.add(k) : abiertosMed.delete(k);
+            const sub = btn.nextElementSibling;
+            if (sub) sub.hidden = !ab;
+        }
+        const botonesVisiblesMed = () => Array.from(document.querySelectorAll("#med-select-list button")).filter(b => b.offsetParent !== null);
         const selectMedAbierto = () => gid("med-select-panel").classList.contains("abierto");
 
         function abrirSelectMed() {
@@ -1147,8 +1289,8 @@
             gid("med-select-overlay").classList.add("abierto");
             gid("med-select-btn").setAttribute("aria-expanded", "true");
             if (movilMed()) document.body.style.overflow = "hidden";
-            const op = document.querySelector("#med-select-list .med-opt.activo") || document.querySelector("#med-select-list .med-opt");
-            if (op) op.focus({ preventScroll: true });
+            const op = document.querySelector("#med-select-list .med-opt.activo") || document.querySelector("#med-select-list .med-grp");
+            if (op) { op.focus({ preventScroll: true }); op.scrollIntoView({ block: "nearest" }); }
         }
         function cerrarSelectMed(devolverFoco) {
             const panel = gid("med-select-panel");
@@ -1164,6 +1306,7 @@
         }
         function elegirProductoMed(i) {
             productoMedSel = i;
+            claveGrupoDe(i).forEach(k => abiertosMed.add(k));
             gid("med-select-btn").classList.remove("error");
             renderSelectMed();
             cerrarSelectMed(true);
@@ -1175,7 +1318,7 @@
 
         /* Teclado: flechas dentro de la lista, flecha abajo en el botón, Tab cierra */
         gid("med-select-list").addEventListener("keydown", e => {
-            const ops = Array.from(document.querySelectorAll("#med-select-list .med-opt"));
+            const ops = botonesVisiblesMed();
             const i = ops.indexOf(document.activeElement);
             let n = null;
             if (e.key === "ArrowDown") n = Math.min(i + 1, ops.length - 1);
