@@ -1,0 +1,5 @@
+name = "SERVIZING"
+compatibility_date = "2026-10-06"
+
+[assets]
+directory = "." # O la carpeta donde estén tus archivos compilados (ej. ./dist)
