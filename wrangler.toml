@@ -1,3 +1,7 @@
 name = "SERVIZING"
 compatibility_date = "2026-10-06"
-pages_build_output_dir = "."
+main = "src/index.js"
+
+[assets]
+directory = "."
+exclude = [".git/**"]
