@@ -1,2 +1,6 @@
 # wrangler.toml
 name = 'servizing'
+compatibility_date = "2026-10-06"
+
+[assets]
+directory = "."
