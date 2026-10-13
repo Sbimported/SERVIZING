@@ -125,7 +125,7 @@
   .cart-error{order:2;margin:8px 0 0}
 }
 
-/* Tienda estándar: sin carrusel de marcas (se conserva el crédito de diseño) */
+/* Tienda estándar: sin carrusel de marcas */
 #marcas-wrap.sin-marcas>div:first-child,#marcas-wrap.sin-marcas .marquee-track,#marcas-wrap.sin-marcas .bg-gradient-to-r,#marcas-wrap.sin-marcas .bg-gradient-to-l{display:none}
 #marcas-wrap.sin-marcas>div:last-child{padding:0;min-height:28px;background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
 
@@ -676,12 +676,6 @@
                     </div>
                 </div>
             </div>
-
-            <aside aria-label="Créditos de diseño" class="absolute bottom-1 right-2 sm:right-3 z-20 pointer-events-auto">
-                <p class="font-fira text-[8px] sm:text-[9px] text-zinc-200 opacity-60 hover:opacity-100 transition-opacity tracking-wider select-none">
-                    DISEÑADO POR <a href="https://www.instagram.com/Valentinsalazarr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.25 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.24.64.41 1.36.46 2.43C21.99 8.95 22 9.3 22 12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.46 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.24-1.36.41-2.43.46C15.05 21.99 14.7 22 12 22s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.46a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.24-.64-.41-1.36-.46-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.46-2.43.25-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.43 2.54c.64-.24 1.36-.41 2.43-.46C8.95 2.01 9.3 2 12 2zm0 1.8c-2.66 0-2.97.01-4.02.06-.87.04-1.34.18-1.66.3-.42.16-.72.36-1.03.67-.31.31-.51.61-.67 1.03-.12.32-.26.79-.3 1.66C4.27 9.03 4.26 9.34 4.26 12s.01 2.97.06 4.02c.04.87.18 1.34.3 1.66.16.42.36.72.67 1.03.31.31.61.51 1.03.67.32.12.79.26 1.66.3 1.05.05 1.36.06 4.02.06s2.97-.01 4.02-.06c.87-.04 1.34-.18 1.66-.3.42-.16.72-.36 1.03-.67.31-.31.51-.61.67-1.03.12-.32.26-.79.3-1.66.05-1.05.06-1.36.06-4.02s-.01-2.97-.06-4.02c-.04-.87-.18-1.34-.3-1.66a2.78 2.78 0 0 0-.67-1.03 2.78 2.78 0 0 0-1.03-.67c-.32-.12-.79-.26-1.66-.3C14.97 3.81 14.66 3.8 12 3.8zm0 3.05a5.15 5.15 0 1 1 0 10.3 5.15 5.15 0 0 1 0-10.3zm0 1.8a3.35 3.35 0 1 0 0 6.7 3.35 3.35 0 0 0 0-6.7zm5.35-1.98a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg> VALENTINSALAZARR</a>
-                </p>
-            </aside>
         </div>
     </section>
 
@@ -713,7 +707,7 @@
             }
 
             /* Reseñas (Trustindex): ocultas en Tienda estándar y Medidas personalizadas.
-               Marcas: ocultas en Tienda estándar (queda solo el crédito de diseño). */
+               Marcas: ocultas en Tienda estándar. */
             const rw = document.getElementById('resenas-wrap');
             if (rw) rw.classList.toggle('hidden', idSeccion === 'tienda' || idSeccion === 'medidas');
             const mw = document.getElementById('marcas-wrap');
@@ -838,8 +832,6 @@
 
         /* ===================== TIENDA ESTÁNDAR ===================== */
 
-        /* PRODUCTOS DE MUESTRA: reemplazar nombre e imagen por los reales.
-           id debe ser único. imagen: ruta dentro de /tienda (ej: "tienda/cano12.jpg"). */
         const PRODUCTOS = [
             { id: 1, nombre: "CODO REDONDO 3 PULGADAS", categoria: "Codos y ramales", subcategoria: "Codos rectangulares soldados", imagen: "productos/1.png" },
             { id: 2, nombre: "CODO REDONDO 4 PULGADAS", categoria: "Codos y ramales", subcategoria: "Codos rectangulares soldados", imagen: "productos/1.png" },
@@ -1183,40 +1175,8 @@
             { id: 336, nombre: "ESFERA PLASTICO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
             { id: 337, nombre: "ESFERA ACERO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
             { id: 338, nombre: "ESFERA ACERO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         ];
 
-        /* CATEGORÍAS Y SUBCATEGORÍAS. En cada producto, "categoria" y "subcategoria"
-           deben coincidir exactamente con estos nombres (subcategoria es opcional). */
         const CATEGORIAS = [
             { nombre: "Chapas lisas", subs: [] },
             { nombre: "Chapas de techo", subs: ["Perfiles C", "Aislantes"] },
@@ -1247,8 +1207,7 @@
             try { localStorage.setItem(CARRITO_KEY, JSON.stringify(carrito)); } catch { /* sin almacenamiento */ }
         }
 
-        /* ---- Filtro de categorías: barra compacta + menú de 2 pasos ---- */
-        let vistaCat = -1; // -1 = lista de categorías · i = subcategorías de CATEGORIAS[i]
+        let vistaCat = -1;
 
         const contarCat = i => PRODUCTOS.filter(p => p.categoria === CATEGORIAS[i].nombre).length;
         const contarSub = (i, j) => PRODUCTOS.filter(p => p.categoria === CATEGORIAS[i].nombre && p.subcategoria === CATEGORIAS[i].subs[j]).length;
@@ -1301,7 +1260,6 @@
         }
 
         function abrirPanelFiltro() {
-            // Si ya hay una categoría con subcategorías elegida, se abre directo en ese paso
             vistaCat = (filtroCat >= 0 && CATEGORIAS[filtroCat].subs.length) ? filtroCat : -1;
             renderPanelFiltro();
             document.getElementById("filtro-panel").classList.add("abierto");
@@ -1467,8 +1425,6 @@
 
         /* ===================== MEDIDAS PERSONALIZADAS ===================== */
 
-        /* Productos del selector, agrupados: categoría > subcategoría > producto.
-           Un texto suelto = producto sin categoría. Para sumar más, agregar una línea en "items". */
         const CATALOGO_MED = [
             { n: "CHAPAS LISAS",
               items: ["GALVANIZADA 100cm x 200cm C30", "GALVANIZADA 100cm x 200cm C28", "GALVANIZADA 122cm x 244cm C27", "GALVANIZADA 122cm x 244cm C25", "GALVANIZADA 122cm x 244cm C22", "COLOR NEGRO Y VARIOS 122cm x 244cm C25"] },
@@ -1488,7 +1444,6 @@
               items: ["CALIBRE 27 DESARROLLO 210 MM", "CALIBRE 27 DESARROLLO 330 MM", "CALIBRE 27 DESARROLLO 400 MM", "CALIBRE 27 DESARROLLO 500 MM", "CALIBRE 25 DESARROLLO 210 MM", "CALIBRE 25 DESARROLLO 330 MM", "CALIBRE 25 DESARROLLO 400 MM", "CALIBRE 25 DESARROLLO 500 MM", "CALIBRE 25 DESARROLLO 610 MM", "CALIBRE 25 DESARROLLO 800 MM", "CALIBRE 25 DESARROLLO 1000 MM", "CALIBRE 22 DESARROLLO 400 MM", "CALIBRE 22 DESARROLLO 610 MM", "CALIBRE 22 DESARROLLO 800 MM", "CALIBRE 22 DESARROLLO 1000 MM", "CALIBRE 22 DESARROLLO 1220 MM"] },
         ];
 
-        /* Lista plana (la usa el pedido) + estructura para dibujar el desplegable */
         const PRODUCTOS_PERSONALIZADOS = [];
         const ARBOL_MED = CATALOGO_MED.map((e, ci) => {
             const nodo = { key: String(ci), items: [], subs: [] };
@@ -1501,7 +1456,7 @@
         });
 
         const CARRITO_MED_KEY = "servizing_carrito_personalizado_v1";
-        let carritoMed = []; // [{ uid, producto, medidas, calibre, aclaraciones }]
+        let carritoMed = [];
         let productoMedSel = -1;
         let msgMedTimer = null;
 
@@ -1529,7 +1484,6 @@
             try { localStorage.setItem(CARRITO_MED_KEY, JSON.stringify(carritoMed)); } catch { /* sin almacenamiento */ }
         }
 
-        /* Mensaje bajo la botonera (y repetido al pie del formulario en celular) */
         function mostrarMsgMed(texto, ok) {
             clearTimeout(msgMedTimer);
             document.querySelectorAll(".med-msg").forEach(el => {
@@ -1541,7 +1495,6 @@
             }, 2200);
         }
 
-        /* Si la botonera quedó tapada por el header al scrollear, la vuelve a mostrar */
         function asegurarVisibleMed() {
             const fila = gid("med-controles");
             const header = document.querySelector("header");
@@ -1553,7 +1506,6 @@
             }
         }
 
-        /* ---- Selector desplegable ---- */
         const abiertosMed = new Set();
         const CHEV_MED = '<svg class="icon-svg mg-ch" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7z"/></svg>';
         function claveGrupoDe(i) {
@@ -1630,7 +1582,6 @@
         document.addEventListener("click", e => { if (!e.target.closest("#med-select")) cerrarSelectMed(); });
         if (mqMovilMed.addEventListener) mqMovilMed.addEventListener("change", () => cerrarSelectMed());
 
-        /* Teclado: flechas dentro de la lista, flecha abajo en el botón, Tab cierra */
         gid("med-select-list").addEventListener("keydown", e => {
             const ops = botonesVisiblesMed();
             const i = ops.indexOf(document.activeElement);
@@ -1646,7 +1597,6 @@
             if (e.key === "ArrowDown" && !selectMedAbierto()) { e.preventDefault(); abrirSelectMed(); }
         });
 
-        /* ---- Formulario (botón del lápiz) ---- */
         const formMedAbierto = () => gid("med-form").classList.contains("abierto");
         function abrirFormMed() {
             gid("med-form").classList.add("abierto");
@@ -1660,7 +1610,6 @@
             formMedAbierto() ? cerrarFormMed() : abrirFormMed();
         }
 
-        /* ---- Agregar al pedido (botón "más" o botón al pie del formulario en celular) ---- */
         function agregarPersonalizado() {
             const inMed = gid("med-medidas"), inCal = gid("med-calibre"), inAcl = gid("med-aclaraciones");
             const selBtn = gid("med-select-btn");
@@ -1716,7 +1665,6 @@
             renderCarritoMed();
         }
 
-        /* ---- Carrito de medidas personalizadas ---- */
         function renderCarritoMed() {
             const cont = gid("cmed-items");
             if (!cont) return;
