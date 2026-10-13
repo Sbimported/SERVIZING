@@ -3,7 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZINGUERIA SERVIZING</title>
+
+    <!-- SEO Meta Tags Primarios -->
+    <title>Zinguería Servizing | Chapas, Canaletas y Zinguería en Buenos Aires</title>
+    <meta name="description" content="Zinguería Servizing en Monte Grande, Buenos Aires. Expertos en chapas, canaletas, cenefas, babetas, sombreros, extractores y plegados a medida. Cobertura en Ezeiza, Canning, Lomas de Zamora, Lanús, CABA y Zona Norte. ¡Presupuestos!">
+    <meta name="keywords" content="zingueria, chapas, canaletas, cenefas, babetas, sombreros, perfiles C, Monte Grande, Ezeiza, Canning, Lomas de Zamora, Lanus, CABA, Zona Norte">
+    <link rel="canonical" href="https://www.zingueriaservizing.com.ar/">
+
+    <!-- Open Graph / Redes Sociales / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zinguería Servizing | Chapas, Canaletas y Zinguería en Buenos Aires">
+    <meta property="og:description" content="Fabricación e instalación de zinguería, chapas, canaletas y cenefas. Atención en Monte Grande, Ezeiza, Canning, Lomas de Zamora, Lanús, CABA y Zona Norte.">
+    <meta property="og:image" content="LOGO.png">
+
+    <!-- Schema.org Structured Data (LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RoofingContractor",
+      "name": "Zinguería Servizing",
+      "image": "LOGO.png",
+      "@id": "https://www.zingueriaservizing.com.ar/",
+      "url": "https://www.zingueriaservizing.com.ar/",
+      "telephone": "+5491138835229",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Monte Grande",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.8214,
+        "longitude": -58.4705
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "areaServed": [
+        "Monte Grande",
+        "Ezeiza",
+        "Canning",
+        "El Jagüel",
+        "Luis Guillón",
+        "San Vicente",
+        "Lomas de Zamora",
+        "Lanús",
+        "CABA",
+        "Zona Norte",
+        "Zona Sur"
+      ],
+      "priceRange": "$$"
+    }
+    </script>
 
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -38,7 +100,7 @@
 
 .filtro-overlay{position:fixed;inset:0;z-index:42;background:transparent;opacity:0;pointer-events:none;transition:opacity .25s}
 .filtro-overlay.abierto{opacity:1;pointer-events:auto}
-.filtro-panel{position:fixed;left:0;right:0;bottom:0;z-index:43;max-height:80vh;display:flex;flex-direction:column;background-color:#1a1a1b;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);font-family:'Inter',sans-serif;text-transform:uppercase;text-align:left;font-kerning:normal;text-rendering:optimizeLegibility;visibility:hidden;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
+.filtro-panel{position:fixed;left:0;right:0;bottom:0;z-index:43;max-height:75vh;max-height:75dvh;display:flex;flex-direction:column;background-color:#1a1a1b;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);font-family:'Inter',sans-serif;text-transform:uppercase;text-align:left;font-kerning:normal;text-rendering:optimizeLegibility;visibility:hidden;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
 .filtro-panel.abierto{visibility:visible;transform:none;transition:transform .28s ease,visibility 0s}
 .fp-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 12px 12px 20px;border-bottom:1px solid rgba(255,255,255,.2);flex-shrink:0}
 .fp-title{font-weight:700;font-size:16px;letter-spacing:0;color:#fff}
@@ -46,9 +108,10 @@
 .fp-back:hover{color:#ff7700}
 .fp-x{font-size:32px;line-height:1;color:#fff;padding:0 8px}
 .fp-x:hover{color:#ff7700}
-.fp-body{overflow-y:auto;overscroll-behavior:contain;padding-bottom:8px}
+.fp-body{overflow-y:auto;overscroll-behavior:contain;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent}
+.fp-body::-webkit-scrollbar{width:8px}.fp-body::-webkit-scrollbar-track{background:transparent;border:0;margin:8px 0}.fp-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border:0;border-radius:8px;min-height:32px}.fp-body::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.5)}
 .fp-sub{padding:14px 20px 6px;font-weight:700;font-size:13px;letter-spacing:0;color:#a1a1aa}
-.fp-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:50px;padding:12px 20px;text-align:left;font-family:'Inter',sans-serif;font-weight:400;font-size:15px;line-height:1.25;letter-spacing:0;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.fp-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:46px;padding:10px 20px;text-align:left;font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.25;letter-spacing:0;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
 .fp-row:hover{background:rgba(255,255,255,.08)}
 .fp-row.fuerte{font-weight:700}
 .fp-row.vacia{color:#a1a1aa}
@@ -56,7 +119,7 @@
 .fp-meta{display:flex;align-items:center;gap:10px;flex-shrink:0;color:#a1a1aa;font-size:13px}
 .fp-meta .fp-flecha{font-size:22px;line-height:1;color:#d4d4d8}
 @media (min-width:768px){
-  .filtro-panel{position:absolute;left:0;right:auto;bottom:auto;top:calc(100% + 8px);width:100%;max-height:min(70vh,520px);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding-bottom:0;opacity:0;transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.6);transition:transform .2s ease,opacity .2s ease,visibility 0s linear .2s}
+  .filtro-panel{position:absolute;left:0;right:auto;bottom:auto;top:calc(100% + 8px);width:100%;max-height:min(60vh,420px);max-height:min(60dvh,420px);overflow:hidden;border:1px solid rgba(255,255,255,.3);border-radius:18px;padding-bottom:0;opacity:0;transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.6);transition:transform .2s ease,opacity .2s ease,visibility 0s linear .2s}
   .filtro-panel.abierto{opacity:1;transform:none;transition:transform .2s ease,opacity .2s ease,visibility 0s}
 }
 .tienda-vacio{grid-column:1/-1;text-align:center;color:#d4d4d8;font-family:'Inter',sans-serif;font-size:clamp(13px,2.6vw,17px);letter-spacing:.05em;text-transform:uppercase;padding:40px 10px;border:1.5px dashed rgba(255,255,255,.3)}
@@ -117,13 +180,87 @@
 .cart-enviar{width:100%;border-radius:9999px;background:#ff7700;color:#fff;font:700 15px 'Inter',Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:14px 12px;transition:background .2s}
 .cart-enviar:hover{background:#ff8c26}
 .cart-enviar:disabled{opacity:.45;cursor:not-allowed}
-/* Móvil: el botón de WhatsApp ocupa el lugar que tenía "Aclaración" (justo debajo del nombre).
-   El error pasa debajo del botón y el padding inferior conserva la posición del campo nombre. */
 @media (max-width:767px){
   .cart-panel{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
   .cart-enviar{order:1}
   .cart-error{order:2;margin:8px 0 0}
 }
+
+/* Modal de Variante de Producto (Estilo Referencia) */
+.modal-variante-overlay{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.modal-variante-overlay.abierto{opacity:1;pointer-events:auto}
+.modal-variante-content{background:#000;border:2px solid #fff;width:100%;max-width:750px;padding:24px;position:relative;display:flex;flex-direction:column;gap:20px;font-family:'Inter',Arial,sans-serif;text-transform:uppercase;color:#fff;box-shadow:0 25px 50px -12px rgba(0,0,0,0.7)}
+.modal-variante-close{position:absolute;top:16px;right:16px;font-size:32px;line-height:1;color:#fff;background:none;border:none;cursor:pointer}
+.modal-variante-close:hover{color:#ff7700}
+.modal-variante-body{display:flex;flex-direction:column;gap:20px}
+@media(min-width:640px){.modal-variante-body{flex-direction:row;align-items:center}}
+.modal-variante-img-wrap{width:100%;aspect-ratio:1/1;max-width:280px;border:2px solid #fff;border-radius:12px;overflow:hidden;background:#18181b;flex-shrink:0;margin:0 auto}
+.modal-variante-img-wrap img{width:100%;height:100%;object-fit:cover}
+.modal-variante-info{display:flex;flex-direction:column;gap:16px;flex:1 1 auto;width:100%}
+.modal-variante-titulo{font-size:20px;font-weight:700;line-height:1.2;color:#fff;margin:0}
+@media(min-width:640px){.modal-variante-titulo{font-size:24px}}
+.modal-variante-field{display:flex;flex-direction:column;gap:6px}
+.modal-variante-label{font-size:13px;font-weight:700;letter-spacing:.04em;color:#d4d4d8}
+.modal-variante-select{width:100%;height:46px;background:#5a5a5a;color:#fff;border:none;padding:0 14px;font:400 15px 'Inter',Arial,sans-serif;text-transform:uppercase;cursor:pointer}
+.modal-variante-select:hover{background:#686868}
+
+/* Modal: nunca más alto que la pantalla (si no entra, scrollea por dentro) */
+.modal-variante-content{max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px)}
+@media (max-width:767px){
+  .modal-variante-content{overflow-y:auto;overscroll-behavior:contain;padding:20px 18px}
+  .modal-variante-img-wrap{max-width:220px;max-width:min(220px,30dvh)}
+}
+
+/* Menú desplegable de variantes (reemplaza al <select> nativo)
+   escritorio: desplegable con altura máxima · celular: panel desde abajo */
+.mv-select{position:relative;width:100%}
+.mv-btn{width:100%;min-height:46px;display:flex;align-items:center;gap:12px;padding:8px 14px;background:#5a5a5a;color:#fff;border:1.5px solid transparent;border-radius:10px;font:400 15px/1.2 'Inter',Arial,sans-serif;text-transform:uppercase;text-align:left;transition:background .2s,border-color .2s}
+.mv-btn:hover{background:#686868}
+.mv-btn[aria-expanded="true"]{border-color:#ff7700;background:#686868}
+.mv-btn.error{box-shadow:0 0 0 2px #ef4444!important}
+.mv-btn .mv-lbl{flex:1 1 auto;min-width:0;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere}
+.mv-btn .mv-lbl.vacio{color:#d4d4d8}
+.mv-btn .mv-chev{font-size:18px;transition:transform .2s}
+.mv-btn[aria-expanded="true"] .mv-chev{transform:rotate(180deg)}
+.mv-btn:focus-visible,.mv-opt:focus-visible{outline:2px solid #fff!important;outline-offset:-2px}
+
+.mv-overlay{position:fixed;inset:0;z-index:1;background:transparent;opacity:0;pointer-events:none;transition:opacity .25s}
+.mv-overlay.abierto{pointer-events:auto}
+.mv-panel{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:2;display:flex;flex-direction:column;background:#1a1a1b;border:1px solid rgba(255,255,255,.28);border-radius:12px;box-shadow:0 18px 36px rgba(0,0,0,.65);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
+.mv-panel.arriba{top:auto;bottom:calc(100% + 6px);transform:translateY(6px)}
+.mv-panel.abierto{opacity:1;visibility:visible;transform:none;transition:opacity .18s ease,transform .18s ease,visibility 0s}
+.mv-head{display:none}
+.mv-list{margin:0;padding:4px 0;list-style:none;max-height:240px;max-height:min(240px,40vh);max-height:min(240px,40dvh);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent}
+.mv-list::-webkit-scrollbar{width:8px}
+.mv-list::-webkit-scrollbar-track{background:transparent;border:0;margin:6px 0}
+.mv-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border:0;border-radius:8px;min-height:32px}
+.mv-list::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.5)}
+.mv-opt{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:10px 14px;text-align:left;font:400 14px/1.25 'Inter',Arial,sans-serif;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);transition:background .15s}
+.mv-list li:last-child .mv-opt{border-bottom:0}
+.mv-opt:hover{background:rgba(255,255,255,.08)}
+.mv-opt .mv-t{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.mv-opt .mv-ck{flex:none;font-size:18px;color:#ff7700;opacity:0}
+.mv-opt.activo{color:#ff7700;font-weight:700;background:rgba(255,119,0,.1)}
+.mv-opt.activo .mv-ck{opacity:1}
+@media (max-width:767px){
+  .mv-overlay{background:rgba(0,0,0,.55)}
+  .mv-overlay.abierto{opacity:1}
+  .mv-panel,.mv-panel.arriba{position:fixed;left:0;right:0;top:auto;bottom:0;z-index:3;max-height:65vh;max-height:65dvh;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);opacity:1;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
+  .mv-panel.abierto{transform:none;transition:transform .28s ease,visibility 0s}
+  .mv-head{display:flex}
+  .mv-list{max-height:none;flex:1 1 auto;min-height:0;padding:0}
+  .mv-opt{min-height:50px;padding:12px 20px;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  .mv-btn .mv-chev,.mv-panel,.mv-overlay{transition:none!important}
+}
+.modal-variante-row-qty{display:flex;align-items:center;gap:12px}
+.modal-variante-qty-box{display:flex;align-items:center;background:#5a5a5a;border-radius:4px;overflow:hidden;height:42px;width:120px}
+.modal-variante-qty-btn{width:40px;height:100%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;background:transparent;border:none;cursor:pointer}
+.modal-variante-qty-btn:hover{background:rgba(255,255,255,0.2)}
+.modal-variante-qty-num{flex:1;text-align:center;font-weight:700;font-size:16px;color:#fff}
+.modal-variante-btn-agregar{width:100%;background:#ff7700;color:#fff;border:none;border-radius:9999px;padding:14px 20px;font:700 15px 'Inter',Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.modal-variante-btn-agregar:hover{background:#ff8c26}
 
 /* Tienda estándar: sin carrusel de marcas */
 #marcas-wrap.sin-marcas>div:first-child,#marcas-wrap.sin-marcas .marquee-track,#marcas-wrap.sin-marcas .bg-gradient-to-r,#marcas-wrap.sin-marcas .bg-gradient-to-l{display:none}
@@ -132,7 +269,6 @@
 /* ===== MEDIDAS PERSONALIZADAS ===== */
 #medidas{width:100%}
 #medidas h2,#medidas h3,#medidas button,#medidas label,#medidas input,#medidas textarea,#medidas .cart-vacio,#medidas .cart-error{text-transform:uppercase}
-/* El sitio quita los contornos de foco; acá se devuelven solo para el teclado */
 #medidas :focus-visible{outline:2px solid #fff!important;outline-offset:2px}
 .med-wrap{width:100%;max-width:44rem;margin:0 auto;text-align:left;font-family:'Inter',Arial,sans-serif}
 .med-titulo{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(22px,5.4vw,42px);line-height:1.05;letter-spacing:-.01em;color:#fff;margin:0 0 clamp(18px,3vw,28px)}
@@ -147,20 +283,18 @@
 .med-select-btn .ms-lbl.vacio{color:#d4d4d8}
 .med-select-btn.error{box-shadow:0 0 0 2px #ef4444!important}
 
-/* Lista de productos: escritorio = desplegable · celular = panel desde abajo (igual que el filtro de la tienda) */
 .med-sel-overlay{display:none}
 .med-sheet-head{display:none}
 .med-select-panel{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:30;background:#1a1a1b;border:1px solid rgba(255,255,255,.3);box-shadow:0 16px 32px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
 .med-select-panel.abierto{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease,visibility 0s}
 .med-select-list{margin:0;padding:0;list-style:none;overflow-y:auto;overscroll-behavior:contain}
-.med-opt{display:block;width:100%;min-height:50px;padding:14px 16px;text-align:left;font:400 15px/1.25 'Inter',Arial,sans-serif;letter-spacing:.02em;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.med-opt{display:block;width:100%;min-height:46px;padding:12px 16px;text-align:left;font:400 14px/1.25 'Inter',Arial,sans-serif;letter-spacing:0;font-kerning:normal;text-rendering:optimizeLegibility;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
 .med-select-list li:last-child .med-opt{border-bottom:0}
 .med-opt:hover{background:rgba(255,255,255,.08)}
 .med-opt.activo{color:#ff7700;font-weight:700}
 
-/* Desplegable agrupado: categoría > subcategoría > producto (plegado por defecto) */
-.med-select-list{max-height:min(60vh,440px)}
-.med-grp{display:flex;align-items:center;gap:10px;width:100%;min-height:46px;padding:11px 16px;text-align:left;font:700 14px/1.2 'Inter',Arial,sans-serif;letter-spacing:.04em;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+.med-select-list{max-height:min(55vh,380px)}
+.med-grp{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:10px 16px;text-align:left;font:700 14px/1.2 'Inter',Arial,sans-serif;letter-spacing:0;font-kerning:normal;text-rendering:optimizeLegibility;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
 .med-grp:hover{background:rgba(255,255,255,.08)}
 .med-grp .mg-ch{font-size:18px;transition:transform .2s}
 .med-grp[aria-expanded="true"]{color:#ff7700}
@@ -170,19 +304,18 @@
 .med-g2{padding-left:28px;font-weight:600;font-size:13px;color:#e4e4e7;background:rgba(255,255,255,.03)}
 .med-sub{list-style:none;margin:0;padding:0;background:rgba(255,255,255,.03)}
 .med-sub[hidden]{display:none}
-.med-select-list .med-sub .med-opt{min-height:42px;padding-top:10px;padding-bottom:10px;font-size:14px}
+.med-select-list .med-sub .med-opt{min-height:40px;padding-top:8px;padding-bottom:8px;font-size:13.5px}
 .med-select-list .med-sub .med-o1{padding-left:34px}
 .med-select-list .med-sub .med-o2{padding-left:50px}
 @media (max-width:767px){
   .med-select-list{max-height:none;flex:1 1 auto;min-height:0}
-  .med-grp{min-height:52px;padding:14px 20px;font-size:15px}
-  .med-g2{padding-left:32px}
-  .med-select-list .med-sub .med-opt{min-height:48px;font-size:15px}
-  .med-select-list .med-sub .med-o1{padding-left:38px}
-  .med-select-list .med-sub .med-o2{padding-left:54px}
+  .med-grp{min-height:48px;padding:12px 18px;font-size:14px}
+  .med-g2{padding-left:28px}
+  .med-select-list .med-sub .med-opt{min-height:44px;font-size:14px}
+  .med-select-list .med-sub .med-o1{padding-left:34px}
+  .med-select-list .med-sub .med-o2{padding-left:50px}
 }
 
-/* Lápiz y "más": mismo naranja y mismo ícono blanco que el botón flotante del carrito */
 .med-btn{flex:0 0 50px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:#ff7700;color:#fff;border:2px solid transparent;transition:transform .15s,border-color .2s}
 .med-btn .icon-svg{font-size:28px}
 .med-btn:active{transform:scale(.94)}
@@ -198,7 +331,6 @@
 .med-msg.ok{color:#fdba74}
 .med-msg:empty{display:none}
 
-/* Formulario que se despliega con el lápiz */
 .med-form{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .3s ease,visibility 0s linear .3s}
 .med-form.abierto{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .3s ease,visibility 0s}
 .med-form-in{min-height:0;overflow:hidden;margin:0 -6px;padding:0 6px}
@@ -209,7 +341,6 @@
 
 .med-texto{margin-top:clamp(28px,5vw,48px);font-weight:400;font-size:clamp(15px,4vw,20px);line-height:1.4;letter-spacing:.01em;color:#fff}
 
-/* Carrito de medidas personalizadas (reutiliza .cart-fab / .cart-panel de la tienda estándar) */
 #cmed-panel{visibility:hidden;overscroll-behavior:contain;transition:transform .3s ease,visibility 0s linear .3s}
 #cmed-panel.abierto{visibility:visible;transition:transform .3s ease,visibility 0s}
 #cmed-items{min-height:170px;overscroll-behavior:contain}
@@ -221,38 +352,32 @@
 .ci-campo .ci-k{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;color:#a1a1aa;margin-bottom:3px}
 .ci-campo .ci-v{display:block;font-size:14px;line-height:1.3;color:#fff;border-left:3px solid #c4601f;padding-left:9px;overflow-wrap:anywhere;white-space:pre-wrap}
 
-/* ---- Celular y tablet vertical ---- */
 @media (max-width:767px){
-  /* Zonas táctiles de 52px y letra de 16px en los campos (evita el zoom automático de iPhone) */
   .med-select-btn,.med-btn{height:52px}
   .med-btn{flex-basis:52px;width:52px}
   .med-select-btn{font-size:14px;padding:0 14px;gap:10px}
   .med-select-btn .ms-tri{font-size:20px}
 
-  /* Panel de productos desde abajo, como el filtro de la tienda */
   .med-sel-overlay{display:block;position:fixed;inset:0;z-index:42;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s}
   .med-sel-overlay.abierto{opacity:1;pointer-events:auto}
-  .med-select-panel{position:fixed;left:0;right:0;top:auto;bottom:0;z-index:43;max-height:80vh;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);opacity:1;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
+  .med-select-panel{position:fixed;left:0;right:0;top:auto;bottom:0;z-index:43;max-height:75vh;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.3);border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 32px rgba(0,0,0,.6);padding-bottom:env(safe-area-inset-bottom,0px);opacity:1;transform:translateY(105%);transition:transform .28s ease,visibility 0s linear .28s}
   .med-select-panel.abierto{transform:none;transition:transform .28s ease,visibility 0s}
   .med-sheet-head{display:flex}
 
-  /* Botón extra al final del formulario: no hace falta volver a subir para agregar */
   .med-form-foot{display:block;margin-top:2px}
   .med-form-foot .med-msg{margin:0 0 10px}
   .med-add-movil{width:100%;height:52px;border-radius:9999px;background:#ff7700;color:#fff;font:700 15px 'Inter',Arial,sans-serif;letter-spacing:.04em;transition:transform .15s}
   .med-add-movil:active{transform:scale(.98)}
 
-  /* Carrito */
   .ci-campo .ci-k{font-size:13px}
   .ci-campo .ci-v{font-size:15px}
 }
-/* ---- Pantallas táctiles (celular y tablet): zonas de toque de 44-52px y letra de 16px (evita el zoom de iPhone/iPad) ---- */
 @media (max-width:767px),(pointer:coarse){
   #medidas .cart-input{font-size:16px;height:48px;scroll-margin-top:110px}
   #medidas .cart-input.med-area{height:auto;min-height:120px}
   #medidas .cart-label{scroll-margin-top:110px}
   #cmed-panel .cart-input{font-size:16px;height:48px}
-  .med-opt{min-height:56px;font-size:16px;padding:16px 20px}
+  .med-opt{min-height:48px;font-size:15px;padding:12px 18px}
   .med-sheet-head .fp-x{min-width:48px;min-height:48px}
   #cmed-panel .cart-close{min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center;margin-right:-10px}
   #cmed-panel .ci-quitar{min-height:44px;min-width:44px;padding:12px 0 12px 12px;margin-top:-12px}
@@ -265,6 +390,13 @@
 @media (prefers-reduced-motion:reduce){
   .med-select-btn .ms-tri,.med-btn,.med-add-movil,.med-form,.med-select-panel,.med-sel-overlay,#cmed-panel,#cmed-panel~.cart-overlay{transition:none!important}
 }
+
+/* Corrección de tipografía y espaciado para el botón Medidas Personalizadas */
+#btn-medidas {
+    letter-spacing: normal !important;
+    font-kerning: normal !important;
+    text-rendering: optimizeLegibility !important;
+}
 </style>
 </head>
 <body class="bg-servizing-orange font-fira text-white min-h-screen flex flex-col select-none relative pb-0">
@@ -275,7 +407,7 @@
             <div class="flex items-center space-x-1 sm:space-x-2">
                 <div class="flex-shrink-0 flex items-center z-10 -ml-2 sm:-ml-3">
                     <button onclick="mostrarSeccion('quienes-somos')" class="cursor-pointer block">
-                        <img src="LOGO.png" alt="SERVIZING Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain" loading="eager" decoding="async" fetchpriority="high">
+                        <img src="LOGO.png" alt="Zinguería Servizing Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain" loading="eager" decoding="async" fetchpriority="high">
                     </button>
                 </div>
 
@@ -286,7 +418,7 @@
                     <button onclick="mostrarSeccion('tienda')" id="btn-tienda" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
                         TIENDA ESTÁNDAR
                     </button>
-                    <button onclick="mostrarSeccion('medidas')" id="btn-medidas" class="nav-pill text-white text-[11px] lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
+                    <button onclick="mostrarSeccion('medidas')" id="btn-medidas" class="nav-pill text-white text-[11px] lg:text-sm font-bold uppercase px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
                         MEDIDAS PERSONALIZADAS
                     </button>
                     <button onclick="mostrarSeccion('servicios')" id="btn-servicios" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
@@ -296,7 +428,7 @@
             </div>
 
             <div class="flex items-center space-x-1.5 sm:space-x-0 -mr-1 sm:-mr-1.5">
-                <a href="https://maps.app.goo.gl/GTWF6qUdNanQi648A" target="_blank" rel="noopener noreferrer" class="text-white hover:text-orange-400 transition-colors duration-200 h-16 md:h-24 flex items-center justify-center text-3xl md:text-5xl p-1" title="Ubicación en Google Maps">
+                <a href="https://maps.app.goo.gl/GTWF6qUdNanQi648A" target="_blank" rel="noopener noreferrer" class="text-white hover:text-orange-400 transition-colors duration-200 h-16 md:h-24 flex items-center justify-center text-3xl md:text-5xl p-1" title="Ubicación en Google Maps - Monte Grande, Buenos Aires">
                     <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </a>
 
@@ -329,13 +461,13 @@
                             ZINGUERIA SERVIZING
                         </h1>
                         <p class="font-fira text-sm sm:text-base lg:text-lg font-medium leading-relaxed tracking-wide text-gray-200 drop-shadow-sm p-0 m-0">
-                            SOMOS ZINGUERIA SERVIZING, CONTAMOS CON 40 AÑOS DE EXPERIENCIA EN EL RUBRO. A LO LARGO DEL TIEMPO HEMOS REALIZADO ZINGUERÍA DE TALLER E INSTALACIONES EN OBRA ESPECIALMENTE PARA ZONA SUR, JUNTO A LOCALIDADES DE ZONA NORTE Y CABA.
+                            SOMOS ZINGUERIA SERVIZING, TALLER ESPECIALIZADO EN <strong>CHAPAS</strong>, <strong>CANALETAS</strong> Y <strong>CENEFAS</strong> CON 40 AÑOS DE EXPERIENCIA EN EL RUBRO. UBICADOS EN MONTE GRANDE, BUENOS AIRES, REALIZAMOS ZINGUERÍA DE TALLER E INSTALACIONES EN OBRA PARA EZEIZA, CANNING, EL JAGÜEL, LUIS GUILLÓN, SAN VICENTE, LOMAS DE ZAMORA, LANÚS, Y OTRAS LOCALIDADES DE ZONA SUR, NORTE Y CABA.
                         </p>
                     </div>
 
                     <div class="w-full lg:col-span-6 flex justify-end relative order-2 lg:order-2">
                         <div class="w-full h-80 sm:h-96 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                            <img id="marco-superior" alt="Presentación Servizing Superior" class="w-full h-full object-cover fade-img opacity-0" decoding="async" fetchpriority="high">
+                            <img id="marco-superior" alt="Fábrica de zinguería y chapas Servizing en Monte Grande" class="w-full h-full object-cover fade-img opacity-0" decoding="async" fetchpriority="high">
                         </div>
                         <div class="absolute bottom-3 right-3 sm:right-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 flex items-center space-x-1.5 shadow-lg pointer-events-none">
                             <div class="flex text-amber-400 text-xs sm:text-sm">
@@ -354,7 +486,7 @@
 
                 <div class="w-full hidden lg:flex justify-center order-3">
                     <div class="w-full h-80 sm:h-[30rem] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 bg-zinc-900 relative">
-                        <img id="marco-inferior" alt="Presentación Servizing Inferior" class="w-full h-full object-cover fade-img opacity-0" decoding="async" fetchpriority="high">
+                        <img id="marco-inferior" alt="Instalación de canaletas y conductos Servizing" class="w-full h-full object-cover fade-img opacity-0" decoding="async" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -365,7 +497,7 @@
                 TIENDA ESTÁNDAR
             </h2>
 
-            <!-- Filtros de categoría / subcategoría (se generan desde CATEGORIAS en el script) -->
+            <!-- Filtros de categoría / subcategoría -->
             <div id="tienda-filtros" class="tienda-filtros">
                 <div class="filtro-wrap">
                     <div class="filtro-bar">
@@ -381,7 +513,7 @@
                 </div>
             </div>
 
-            <!-- Grilla de productos (se genera desde el array PRODUCTOS en el script) -->
+            <!-- Grilla de productos -->
             <div id="tienda-grid" class="tienda-grid"></div>
 
             <!-- Botón flotante del pedido -->
@@ -411,12 +543,56 @@
             </aside>
         </section>
 
+        <!-- Modal de Variantes (Estilo Referencia) -->
+        <div id="modal-variante-overlay" class="modal-variante-overlay" onclick="cerrarModalVariante()">
+            <div id="modal-variante-content" class="modal-variante-content" onclick="event.stopPropagation()">
+                <button class="modal-variante-close" onclick="cerrarModalVariante()" aria-label="Cerrar">&times;</button>
+                <div class="modal-variante-body">
+                    <div class="modal-variante-img-wrap">
+                        <img id="modal-var-img" src="" alt="Producto de zinguería">
+                    </div>
+                    <div class="modal-variante-info">
+                        <h3 id="modal-var-titulo" class="modal-variante-titulo">TITULO DEL PRODUCTO</h3>
+
+                        <div class="modal-variante-field">
+                            <label class="modal-variante-label" for="modal-var-btn">TIPO:</label>
+                            <div id="modal-var-select" class="mv-select">
+                                <button id="modal-var-btn" class="mv-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="modal-var-panel" onclick="toggleVarianteSelect()">
+                                    <span id="modal-var-label" class="mv-lbl vacio">Seleccione la opción</span>
+                                    <svg class="icon-svg mv-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                                <div id="modal-var-overlay" class="mv-overlay" onclick="cerrarVarianteSelect(true)"></div>
+                                <div id="modal-var-panel" class="mv-panel">
+                                    <div class="fp-head mv-head">
+                                        <span class="fp-title">ELEGÍ UNA OPCIÓN</span>
+                                        <button class="fp-x" type="button" onclick="cerrarVarianteSelect(true)" aria-label="Cerrar">&times;</button>
+                                    </div>
+                                    <ul id="modal-var-list" class="mv-list" role="listbox" aria-label="Opciones del producto"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-variante-field">
+                            <span class="modal-variante-label">CANTIDAD:</span>
+                            <div class="modal-variante-row-qty">
+                                <div class="modal-variante-qty-box">
+                                    <button type="button" class="modal-variante-qty-btn" onclick="cambiarCantModal(-1)">-</button>
+                                    <span id="modal-var-qty" class="modal-variante-qty-num">1</span>
+                                    <button type="button" class="modal-variante-qty-btn" onclick="cambiarCantModal(1)">+</button>
+                                </div>
+                                <button type="button" class="modal-variante-btn-agregar" onclick="agregarVarianteAlCarrito()">AGREGAR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section id="medidas" class="seccion-contenido hidden py-4 sm:py-8 flex flex-col items-center">
             <div class="med-wrap">
                 <h2 class="med-titulo">MEDIDAS PERSONALIZADAS</h2>
 
                 <div id="med-controles" class="med-controles">
-                    <!-- Selector desplegable de producto (se genera desde PRODUCTOS_PERSONALIZADOS en el script) -->
                     <div id="med-select" class="med-select">
                         <button id="med-select-btn" class="med-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="med-select-panel" onclick="toggleSelectMed()">
                             <svg class="icon-svg ms-tri" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18l-9 10z"/></svg>
@@ -432,12 +608,10 @@
                         </div>
                     </div>
 
-                    <!-- Lápiz: muestra / oculta los datos a rellenar -->
                     <button id="med-btn-editar" class="med-btn med-lapiz" type="button" aria-expanded="false" aria-controls="med-form" aria-label="Completar los datos del producto" title="Completar datos" onclick="toggleFormMed()">
                         <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                     </button>
 
-                    <!-- Más: agrega el producto con sus datos al pedido -->
                     <button id="med-btn-agregar" class="med-btn med-mas" type="button" aria-label="Agregar al pedido" title="Agregar al pedido" onclick="agregarPersonalizado()">
                         <svg class="icon-svg i-mas" viewBox="0 0 24 24" aria-hidden="true"><rect x="10.5" y="4" width="3" height="16" rx="1"/><rect x="4" y="10.5" width="16" height="3" rx="1"/></svg>
                         <svg class="icon-svg i-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 16.6 4.9 12.3l-1.9 1.9 6.2 6.2L21 8.6l-1.9-1.9z"/></svg>
@@ -458,7 +632,6 @@
                             <label class="cart-label" for="med-aclaraciones">ACLARACIONES</label>
                             <textarea id="med-aclaraciones" class="cart-input med-area" rows="4" maxlength="400" placeholder="Opcional"></textarea>
 
-                            <!-- Solo celular: repite la acción del botón "más" al pie del formulario -->
                             <div class="med-form-foot">
                                 <div id="med-msg-form" class="med-msg" aria-hidden="true"></div>
                                 <button type="button" class="med-add-movil" onclick="agregarPersonalizado()">AGREGAR AL PEDIDO</button>
@@ -470,7 +643,6 @@
                 <p class="med-texto">COMPRA NUESTROS PRODUCTOS AGREGÁNDOLOS AL CARRITO Y COLOCANDO LAS CORRESPONDIENTES MEDIDAS, LUEGO HAREMOS UNA VERIFICACIÓN PREVIA DE LAS MISMAS.</p>
             </div>
 
-            <!-- Botón flotante del pedido personalizado (mismo estilo que el de la tienda estándar) -->
             <button id="cmed-fab" class="cart-fab" onclick="toggleCarritoMed()" aria-label="Ver mi pedido" title="Ver mi pedido">
                 <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/></svg>
                 <span id="cmed-badge" class="cart-badge vacio">0</span>
@@ -504,7 +676,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="servicios/1.png" alt="Instalación de canaletas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
+                        <img src="servicios/1.png" alt="Instalación profesional de canaletas y zinguería" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE CANALETAS</h3>
@@ -519,7 +691,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="servicios/2.png" alt="Pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
+                        <img src="servicios/2.png" alt="Construcción de pérgolas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl uppercase tracking-wide text-white mb-1.5">PÉRGOLAS</h3>
@@ -534,7 +706,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="servicios/3.png" alt="Techos nuevos" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
+                        <img src="servicios/3.png" alt="Instalación de techos nuevos de chapa" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl uppercase tracking-wide text-white mb-1.5">TECHOS NUEVOS</h3>
@@ -549,7 +721,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="servicios/4.png" alt="Reparaciones" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
+                        <img src="servicios/4.png" alt="Reparación de techos y cambio de chapas" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl uppercase tracking-wide text-white mb-1.5">REPARACIONES</h3>
@@ -564,7 +736,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="servicios/5.png" alt="Campanas y extraction" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
+                        <img src="servicios/5.png" alt="Instalación de campanas y extractores" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl uppercase tracking-wide text-white mb-1.5">INST. DE CAMPANAS Y EQUIPOS DE EXTRACCIÓN</h3>
@@ -579,7 +751,7 @@
 
                 <div class="bg-zinc-900/60 sm:bg-transparent border border-white/15 sm:border-none rounded-2xl p-4 sm:p-0 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-xl">
                     <div class="w-full md:w-80 h-44 sm:h-48 bg-zinc-900 border-2 border-white/30 p-1.5 rounded-xl flex-shrink-0 overflow-hidden">
-                        <img src="servicios/6.png" alt="Bajadas pluviales" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
+                        <img src="servicios/6.png" alt="Instalación de bajadas pluviales y desagües" class="w-full h-full object-cover rounded-lg pointer-events-none" loading="lazy" decoding="async">
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h3 class="text-xl sm:text-3xl uppercase tracking-wide text-white mb-1.5">INSTALACIÓN DE BAJADAS PLUVIALES</h3>
@@ -617,63 +789,15 @@
 
             <div class="marquee-track flex items-center space-x-10 sm:space-x-24 px-4 sm:px-8">
                 <div class="flex items-center space-x-10 sm:space-x-24 marquee-group">
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/1.png" alt="Empresa 1" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/2.png" alt="Empresa 2" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/3.png" alt="Empresa 3" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/4.png" alt="Empresa 4" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/5.png" alt="Empresa 5" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/6.png" alt="Empresa 6" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/7.png" alt="Empresa 7" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/8.png" alt="Empresa 8" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/9.png" alt="Empresa 9" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                </div>
-
-                <div class="flex items-center space-x-10 sm:space-x-24 marquee-group" aria-hidden="true">
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/1.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/2.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/3.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/4.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/5.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/6.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/7.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/8.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
-                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4">
-                        <img src="marcas/9.png" alt="" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async">
-                    </div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/1.png" alt="Empresa cliente 1" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/2.png" alt="Empresa cliente 2" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/3.png" alt="Empresa cliente 3" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/4.png" alt="Empresa cliente 4" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/5.png" alt="Empresa cliente 5" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/6.png" alt="Empresa cliente 6" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/7.png" alt="Empresa cliente 7" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/8.png" alt="Empresa cliente 8" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
+                    <div class="flex items-center justify-center h-24 sm:h-36 w-40 sm:w-72 px-2 sm:px-4"><img src="marcas/9.png" alt="Empresa cliente 9" class="max-h-20 sm:max-h-36 w-auto object-contain pointer-events-none drop-shadow-lg" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </div>
@@ -706,8 +830,6 @@
                 dom.mobileMenu.classList.add('hidden');
             }
 
-            /* Reseñas (Trustindex): ocultas en Tienda estándar y Medidas personalizadas.
-               Marcas: ocultas en Tienda estándar. */
             const rw = document.getElementById('resenas-wrap');
             if (rw) rw.classList.toggle('hidden', idSeccion === 'tienda' || idSeccion === 'medidas');
             const mw = document.getElementById('marcas-wrap');
@@ -740,7 +862,7 @@
                 const cache = leerCache();
                 cache[nombreBase] = ruta;
                 sessionStorage.setItem(CACHE_KEY, JSON.stringify(cache));
-            } catch { /* almacenamiento no disponible, se ignora */ }
+            } catch { }
         }
 
         function resolverRutaImagen(nombreBase) {
@@ -872,309 +994,290 @@
             { id: 37, nombre: "VENTURI 22 PULGADAS COLOR", categoria: "Sombreros", subcategoria: "Venturis", imagen: "productos/9.png" },
             { id: 38, nombre: "VENTURI 24 PULGADAS COLOR", categoria: "Sombreros", subcategoria: "Venturis", imagen: "productos/9.png" },
             { id: 39, nombre: "2 AROS 3 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 4 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 5 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 6 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 7 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 8 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 10 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 39, nombre: "2 AROS 12 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
-            { id: 41, nombre: "CHINO 4 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 42, nombre: "CHINO 5 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 43, nombre: "CHINO 6 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 44, nombre: "CHINO 7 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 45, nombre: "CHINO 8 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 46, nombre: "CHINO 10 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 47, nombre: "CHINO 12 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 48, nombre: "CHINO 14 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
-            { id: 49, nombre: "H 3 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
-            { id: 50, nombre: "H 4 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
-            { id: 51, nombre: "H 5 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
-            { id: 52, nombre: "H 6 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
-            { id: 53, nombre: "SPIRO REDONDO 3 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
-            { id: 54, nombre: "SPIRO REDONDO 4 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
-            { id: 55, nombre: "SPIRO REDONDO 5 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
-            { id: 56, nombre: "SPIRO REDONDO 6 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
-            { id: 57, nombre: "ESKABE 3 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
-            { id: 58, nombre: "ESKABE 4 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
-            { id: 59, nombre: "ESKABE 5 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
-            { id: 60, nombre: "ESKABE 6 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
-            { id: 61, nombre: "EÓLICO 4 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 62, nombre: "EÓLICO 6 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 63, nombre: "EÓLICO 8 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 64, nombre: "EÓLICO 10 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 65, nombre: "EÓLICO 12 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 66, nombre: "EÓLICO 16 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 67, nombre: "EÓLICO 20 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 68, nombre: "EÓLICO 24 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
-            { id: 69, nombre: "BASE PARABOLICO BAJO 24 PULGADAS", categoria: "Sombreros", subcategoria: "Base eólico", imagen: "productos/16.png" },
-            { id: 70, nombre: "BASE PARABOLICO ALTO 24 PULGADAS", categoria: "Sombreros", subcategoria: "Base eólico", imagen: "productos/16.png" },
-            { id: 71, nombre: "PLEGADO CALIBRE 27 DESARROLLO 210 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 72, nombre: "PLEGADO CALIBRE 27 DESARROLLO 330 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 73, nombre: "PLEGADO CALIBRE 27 DESARROLLO 400 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 74, nombre: "PLEGADO CALIBRE 27 DESARROLLO 500 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 75, nombre: "PLEGADO CALIBRE 25 DESARROLLO 210 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 76, nombre: "PLEGADO CALIBRE 25 DESARROLLO 330 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 77, nombre: "PLEGADO CALIBRE 25 DESARROLLO 400 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 78, nombre: "PLEGADO CALIBRE 25 DESARROLLO 500 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 79, nombre: "PLEGADO CALIBRE 25 DESARROLLO 610 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 80, nombre: "PLEGADO CALIBRE 25 DESARROLLO 800 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 81, nombre: "PLEGADO CALIBRE 25 DESARROLLO 1000 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 82, nombre: "PLEGADO CALIBRE 22 DESARROLLO 400 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 83, nombre: "PLEGADO CALIBRE 22 DESARROLLO 610 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 84, nombre: "PLEGADO CALIBRE 22 DESARROLLO 800 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 85, nombre: "PLEGADO CALIBRE 22 DESARROLLO 1000 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 86, nombre: "PLEGADO CALIBRE 22 DESARROLLO 1220 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
-            { id: 87, nombre: "CURVA GALVANIZADA 3 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 88, nombre: "CURVA GALVANIZADA 4 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 89, nombre: "CURVA GALVANIZADA 5 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 90, nombre: "CURVA GALVANIZADA 6 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 91, nombre: "CURVA GALVANIZADA 7 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 92, nombre: "CURVA GALVANIZADA 8 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 93, nombre: "CURVA GALVANIZADA 9 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 94, nombre: "CURVA GALVANIZADA 10 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 95, nombre: "CURVA GALVANIZADA 11 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 96, nombre: "CURVA GALVANIZADA 12 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 97, nombre: "CURVA GALVANIZADA 13 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 98, nombre: "CURVA GALVANIZADA 14 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 99, nombre: "CURVA GALVANIZADA 16 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 100, nombre: "CURVA GALVANIZADA 18 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 101, nombre: "CURVA GALVANIZADA 20 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 102, nombre: "CURVA GALVANIZADA 22 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 103, nombre: "CURVA GALVANIZADA 24 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 104, nombre: "CURVA GALVANIZADA 3 PULGADAS HER", categoria: "Curvas", imagen: "productos/50.png" },
-            { id: 105, nombre: "CURVA GALVANIZADA 4 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
-            { id: 106, nombre: "CURVA GALVANIZADA 5 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
-            { id: 107, nombre: "CURVA GALVANIZADA 6 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
-            { id: 108, nombre: "CURVA ENLOZADA 4 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
-            { id: 109, nombre: "CURVA ENLOZADA 5 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
-            { id: 110, nombre: "CURVA ENLOZADA 6 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
-            { id: 111, nombre: "CURVA ENLOZADO 8 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
-            { id: 112, nombre: "CURVA ENLOZADA 10 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
-            { id: 113, nombre: "GALVANIZADA 100cm x 200cm C30", categoria: "Chapas lisas", imagen: "productos/20.png" },
-            { id: 114, nombre: "GALVANIZADA 100cm x 200cm C28", categoria: "Chapas lisas", imagen: "productos/20.png" },
-            { id: 115, nombre: "GALVANIZADA 122cm x 244cm C27", categoria: "Chapas lisas", imagen: "productos/20.png" },
-            { id: 116, nombre: "GALVANIZADA 122cm x 244cm C25", categoria: "Chapas lisas", imagen: "productos/20.png" },
-            { id: 117, nombre: "GALVANIZADA 122cm x 244cm C22", categoria: "Chapas lisas", imagen: "productos/20.png" },
-            { id: 118, nombre: "COLOR NEGRO Y VARIOS 122cm x 244cm C25", categoria: "Chapas lisas", imagen: "productos/21.png" },
-            { id: 119, nombre: "GALVANIZADA C27 X M2", categoria: "Chapas de techo", imagen: "productos/45.png" },
-            { id: 120, nombre: "GALVANIZADA C25 X M2", categoria: "Chapas de techo", imagen: "productos/45.png" },
-            { id: 121, nombre: "CINCALUM C27 X M2", categoria: "Chapas de techo", imagen: "productos/47.png" },
-            { id: 122, nombre: "CINCALUM C25 X M2", categoria: "Chapas de techo", imagen: "productos/47.png" },
-            { id: 123, nombre: "CHAPA COLOR X M2", categoria: "Chapas de techo", imagen: "productos/46.png" },
-            { id: 124, nombre: "CHAPA POLI X M2", categoria: "Chapas de techo", imagen: "productos/48.png" },
-            { id: 125, nombre: "PERFIL C GALVANIZADO 80x40x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 126, nombre: "PERFIL C GALVANIZADO 100x40x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 127, nombre: "PERFIL C GALVANIZADO 120x50x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 128, nombre: "PERFIL C GALVANIZADO 120x50x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 129, nombre: "PERFIL C GALVANIZADO 100x40x15x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 130, nombre: "PERFIL C GALVANIZADO 120x50x15x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 131, nombre: "PERFIL C GALVANIZADO 140x60x20x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 132, nombre: "PERFIL C GALVANIZADO 160x60x20x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 133, nombre: "PERFIL C GALVANIZADO 180x70x20x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 134, nombre: "PERFIL C GALVANIZADO 200x80x30x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 135, nombre: "PERFIL C GALVANIZADO 200x80x30x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
-            { id: 136, nombre: "LANA DE VIDRIO ISOVER X 14 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/23.png" },
-            { id: 137, nombre: "LANA DE VIDRIO OROGLASS X1 14 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/52.png" },
-            { id: 138, nombre: "LANA DE VIDRIO ISOTEX GALPON X 19 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/51.png" },
-            { id: 139, nombre: "LANA DE VIDRIO ISOTEX GALPON X 19 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/51.png" },
-            { id: 140, nombre: "FUENTON 28 X 15", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
-            { id: 141, nombre: "FUENTON 32 X 15", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
-            { id: 142, nombre: "FUENTON 35 X 17", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
-            { id: 143, nombre: "FUENTON 40 X 19", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
-            { id: 144, nombre: "FUENTON 48 X 22", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
-            { id: 145, nombre: "FUENTON 60 X 28", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
-            { id: 146, nombre: "BALDE 3 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
-            { id: 147, nombre: "BALDE 6 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
-            { id: 148, nombre: "BALDE 8 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
-            { id: 149, nombre: "BALDE 14 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
-            { id: 150, nombre: "REGADERA 1 LITRO", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
-            { id: 151, nombre: "REGADERA 3 LITROS", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
-            { id: 152, nombre: "REGADERA 5 LITROS", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
-            { id: 153, nombre: "REGADERA 8 LITROS", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
-            { id: 154, nombre: "MOLINO CHICO 50 CM", categoria: "Zingueria Artística", subcategoria: "Molinos", imagen: "productos/41.png" },
-            { id: 155, nombre: "MOLINO MEDIANO 120 CM", categoria: "Zingueria Artística", subcategoria: "Molinos", imagen: "productos/41.png" },
-            { id: 156, nombre: "MOLINO GRANDE 150 CM", categoria: "Zingueria Artística", subcategoria: "Molinos", imagen: "productos/41.png" },
-            { id: 157, nombre: "LECHERO CHICO", categoria: "Zingueria Artística", subcategoria: "Lecheros", imagen: "productos/53.png" },
-            { id: 158, nombre: "LECHERO MEDIANO", categoria: "Zingueria Artística", subcategoria: "Lecheros", imagen: "productos/53.png" },
-            { id: 159, nombre: "GARGOLA BRONCE", categoria: "Zingueria Artística", subcategoria: "Gárgolas", imagen: "productos/42.png" },
-            { id: 160, nombre: "ESQUINERO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/44.png" },
-            { id: 161, nombre: "RINCONERO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/43.png" },
-            { id: 162, nombre: "COLECTOR AMERICANO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/54.png" },
-            { id: 162, nombre: "COLECTOR MINI", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/55.png" },
-            { id: 162, nombre: "COLECTOR PECHO PALOMA", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/56.png" },
-            { id: 162, nombre: "COLECTOR COLONIAL PANZA ADENTRO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/57.png" },
-            { id: 162, nombre: "COLECTOR CUADRADO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/58.png" },
-            { id: 162, nombre: "COLECTOR CUATRO CARAS ADENTRO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/59.png" },
-            { id: 162, nombre: "COLECTOR CARAS PANZA AFUERA", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/60.png" },
-            { id: 162, nombre: "COLECTOR FRANCES", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/61.png" },
-            { id: 162, nombre: "COLECTOR PANZA S ALTO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/62.png" },
-            { id: 162, nombre: "COLECTOR PIRAMIDAL", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/63.png" },
-            { id: 172, nombre: "GRAMPA OMEGA 3 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
-            { id: 173, nombre: "GRAMPA OMEGA 4 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
-            { id: 174, nombre: "GRAMPA OMEGA 5 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
-            { id: 175, nombre: "GRAMPA OMEGA 6 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
-            { id: 176, nombre: "GRAMPA CON PATA 3 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 177, nombre: "GRAMPA CON PATA 4 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 178, nombre: "GRAMPA CON PATA 5 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 179, nombre: "GRAMPA CON PATA 6 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 180, nombre: "GRAMPA CON PATA 7 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 181, nombre: "GRAMPA CON PATA 8 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 182, nombre: "GRAMPA CON PATA 10 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 183, nombre: "GRAMPA CON PATA 12 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
-            { id: 184, nombre: "ABRAZADERA 2X4 PULGADAS COMUN", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/35.png" },
-            { id: 185, nombre: "ABRAZADERA 3X4 PULGADAS COMÚN", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/35.png" },
-            { id: 186, nombre: "ABRAZADERA 2X4 PULGADAS ARTISTICA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/64.png" },
-            { id: 187, nombre: "ABRAZADERA 3X4 PULGADAS ARTISTICA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/64.png" },
-            { id: 188, nombre: "SOPORTE CANALETA AMERICANA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/36.png" },
-            { id: 189, nombre: "SOPORTE CANALETA AMERICANA C/PATA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/67.png" },
-            { id: 190, nombre: "SOPORTE CANALETA PECHO PALOMA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/68.png" },
-            { id: 191, nombre: "PLANCHUELA 29 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
-            { id: 192, nombre: "PLANCHUELA 35 Y 40 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
-            { id: 193, nombre: "PLANCHUELA 50 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
-            { id: 194, nombre: "PLANCHUELA 100 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
-            { id: 195, nombre: "CAÑO GALVANIZADO 3 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 196, nombre: "CAÑO GALVANIZADO 4 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 197, nombre: "CAÑO GALVANIZADO 5 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 198, nombre: "CAÑO GALVANIZADO 6 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 199, nombre: "CAÑO GALVANIZADO 7 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 200, nombre: "CAÑO GALVANIZADO 8 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 201, nombre: "CAÑO GALVANIZADO 9 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 202, nombre: "CAÑO GALVANIZADO 10 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 203, nombre: "CAÑO GALVANIZADO 12 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 204, nombre: "CAÑO GALVANIZADO 3 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 205, nombre: "CAÑO GALVANIZADO 4 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 206, nombre: "CAÑO GALVANIZADO 5 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 207, nombre: "CAÑO GALVANIZADO 6 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 208, nombre: "CAÑO GALVANIZADO 7 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 209, nombre: "CAÑO GALVANIZADO 8 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 210, nombre: "CAÑO GALVANIZADO 9 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 211, nombre: "CAÑO GALVANIZADO 10 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 212, nombre: "CAÑO GALVANIZADO 12 PULGADAS /25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 213, nombre: "CAÑO GALVANIZADO 14 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 214, nombre: "CAÑO GALVANIZADO 16 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 215, nombre: "CAÑO GALVANIZADO 18 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 216, nombre: "CAÑO GALVANIZADO 20 PULGADASC /25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 217, nombre: "CAÑO GALVANIZADO 22 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 218, nombre: "CAÑO GALVANIZADO 24 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
-            { id: 219, nombre: "CAÑO COLOR 3 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 220, nombre: "CAÑO COLOR 4 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 221, nombre: "CAÑO COLOR 5 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 222, nombre: "CAÑO COLOR 6 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 223, nombre: "CAÑO COLOR 7 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 224, nombre: "CAÑO COLOR 8 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 225, nombre: "CAÑO COLOR 9 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 226, nombre: "CAÑO COLOR 10 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 227, nombre: "CAÑO COLOR 12 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 228, nombre: "CAÑO COLOR 14 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 229, nombre: "CAÑO COLOR 16 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 230, nombre: "CAÑO COLOR 18 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 231, nombre: "CAÑO COLOR 20 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 234, nombre: "CAÑO COLOR 22 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 235, nombre: "CAÑO COLOR 24 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
-            { id: 236, nombre: "CAÑO RECTANGULAR GALVANIZADO 2X3 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/29.png" },
-            { id: 237, nombre: "CAÑO RECTANGULAR GALVAVANIZADO 2X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/29.png" },
-            { id: 238, nombre: "CAÑO RECTANGULAR GALVANIZADO 3X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/29.png" },
-            { id: 239, nombre: "CAÑO RECTANGULAR COLOR 2X3 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/70.png" },
-            { id: 240, nombre: "CAÑO RECTANGULAR COLOR 2X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/70.png" },
-            { id: 241, nombre: "CAÑO RECTANGULAR COLOR 3X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/70.png" },
-            { id: 242, nombre: "CAÑO ENLOZADO 4 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 243, nombre: "CAÑO ENLOZADO CON CLAPETA 4 PULGADAS", categoria: "Caños", subcategoria: "", imagen: "productos/30.png" },
-            { id: 244, nombre: "CAÑO ENLOZADO 5 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 245, nombre: "CAÑO ENLOZADO 6 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 246, nombre: "CAÑO ENLOZADO CON CLAPETA 6 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 247, nombre: "CAÑO ENLOZADO 6 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 248, nombre: "CAÑO ENLOZADO CON CLAPETA 6 PULGADAS", categoria: "Caños", subcategoria: "", imagen: "productos/30.png" },
-            { id: 249, nombre: "CAÑO ENLOZADO 8 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 250, nombre: "CAÑO ENLOZADO 10 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
-            { id: 251, nombre: "CAÑO FLEXIBLE 3 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
-            { id: 252, nombre: "CAÑO FLEXIBLE 4 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
-            { id: 253, nombre: "CAÑO FLEXIBLE 5 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
-            { id: 254, nombre: "CAÑO FLEXIBLE 6 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
-            { id: 255, nombre: "REDUCCION 4  A 3 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 256, nombre: "REDUCCION 5 A 3 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 257, nombre: "REDUCCION 110 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 258, nombre: "REDUCCION 5 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 259, nombre: "REDUCCION 6 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 260, nombre: "REDUCCION 6 A 5 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 261, nombre: "REDUCCION 6 A 3 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 262, nombre: "REDUCCION 7 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 263, nombre: "REDUCCION 8 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 264, nombre: "REDUCCION 8 A 5 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 265, nombre: "REDUCCION 8 A 6 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 266, nombre: "REDUCCION 10 A 6 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 267, nombre: "REDUCCION 10 A 8 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 268, nombre: "REDUCCION 12 A 8 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 269, nombre: "REDUCCION 12 A 10 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 270, nombre: "REDUCCION 14 A 8 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 271, nombre: "REDUCCION 14 A 10 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 272, nombre: "REDUCCION 14 A 12 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
-            { id: 273, nombre: "REDUCCION 5 A 4 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 274, nombre: "REDUCCION 6 A 4 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 275, nombre: "REDUCCION 6 A 5 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 276, nombre: "REDUCCION 8 A 4 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 277, nombre: "REDUCCION 8 A 5 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 278, nombre: "REDUCCION 8 A 6 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 279, nombre: "REDUCCION 10 A 4 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 280, nombre: "REDUCCION 10 A 5 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 281, nombre: "REDUCCION 10 A 8 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 282, nombre: "REDUCCION 12 A 6 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 283, nombre: "REDUCCION 12 A 8 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 284, nombre: "REDUCCION 12 A 10 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 285, nombre: "REDUCCION 14 A 8 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 286, nombre: "REDUCCION 14 A 10 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 287, nombre: "REDUCCION 14 A 8 PULGADAS COLOR NEGRO", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/71.png" },
-            { id: 288, nombre: "CANTONERA 15X15 C28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/25.png" },
-            { id: 289, nombre: "CANTONERA 20X20 C28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/25.png" },
-            { id: 290, nombre: "SOBRETEJA 15 C/30", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/72.png" },
-            { id: 291, nombre: "SOBRETEJA 20 C/30", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/72.png" },
-            { id: 292, nombre: "CUMBRERA 33 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/73.png" },
-            { id: 293, nombre: "CUMBRERA 40 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/73.png" },
-            { id: 294, nombre: "CUMBRERA 50 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/73.png" },
-            { id: 295, nombre: "CONVERSA 33 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/74.png" },
-            { id: 296, nombre: "CONVERSA 40 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/74.png" },
-            { id: 297, nombre: "CONVERSA 50 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/74.png" },
-            { id: 298, nombre: "BAJOTEJA 20 C/30", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/75.png" },
-            { id: 299, nombre: "BAJOTEJA CON NERVIO C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/76.png" },
-            { id: 300, nombre: "CAPUCHON", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/77.png" },
-            { id: 301, nombre: "ESCUADRAS CANALETAS", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/78.png" },
-            { id: 302, nombre: "CANALETA AMERICANA 33 C/28", categoria: "Canaletas", subcategoria: "Americanas", imagen: "productos/24.png" },
-            { id: 303, nombre: "CANALETA AMERICANA 40 C/28", categoria: "Canaletas", subcategoria: "Americanas", imagen: "productos/24.png" },
-            { id: 304, nombre: "CANALETA MEDIA CAÑA", categoria: "Canaletas", subcategoria: "Artísticas", imagen: "productos/26.png" },
-            { id: 305, nombre: "CANALETA MOLDURA", categoria: "Caños", subcategoria: "Artísticas", imagen: "productos/27.png" },
-            { id: 306, nombre: "EXTRACTOR ELECTRICO SATELITE 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/79.png" },
-            { id: 307, nombre: "EXTRACTOR ELECTRICO SATELITE 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/79.png" },
-            { id: 308, nombre: "PARRILLERO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
-            { id: 309, nombre: "PARRILLERO 8 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
-            { id: 310, nombre: "PARRILLERO 10 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
-            { id: 311, nombre: "PARRILLERO 12 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
-            { id: 312, nombre: "ENTRECAÑOS 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
-            { id: 313, nombre: "ENTRECAÑOS 8 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
-            { id: 314, nombre: "ENTRECAÑOS 10 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
-            { id: 315, nombre: "ENTRECAÑOS LIVIANOS 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
-            { id: 316, nombre: "ENTRECAÑOS LIVIANOS 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
-            { id: 317, nombre: "INDUSTRIAL 40 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
-            { id: 318, nombre: "INDUSTRIAL 45 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
-            { id: 319, nombre: "INDUSTRIAL 52 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
-            { id: 320, nombre: "INDUSTRIAL 61 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
-            { id: 321, nombre: "INDUSTRIAL 76 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
-            { id: 322, nombre: "SEMI INDUSTRIAL 20 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
-            { id: 323, nombre: "SEMI INDUSTRIAL 25 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
-            { id: 324, nombre: "SEMI INDUSTRIAL 30 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
-            { id: 325, nombre: "SEMI INDUSTRIAL 35 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
-            { id: 326, nombre: "SEMI INDUSTRIAL 40 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
-            { id: 327, nombre: "PVC BAÑO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/86.png" },
-            { id: 328, nombre: "PVC BAÑO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/86.png" },
-            { id: 329, nombre: "PVC REDONDAS 20 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/87.png" },
-            { id: 330, nombre: "PVC REDONDAS 25 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/87.png" },
-            { id: 331, nombre: "PVC REDONDAS 30 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/87.png" },
-            { id: 332, nombre: "MOVILES METALICAS 20 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/84.png" },
-            { id: 333, nombre: "MOVILES METALICAS 25 CM DE DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/84.png" },
-            { id: 334, nombre: "MOVILES METALICAS 30 CM DE DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/84.png" },
-            { id: 335, nombre: "PLANA DE 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/85.png" },
-            { id: 336, nombre: "ESFERA PLASTICO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
-            { id: 337, nombre: "ESFERA ACERO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
-            { id: 338, nombre: "ESFERA ACERO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
+            { id: 40, nombre: "2 AROS 4 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 41, nombre: "2 AROS 5 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 42, nombre: "2 AROS 6 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 43, nombre: "2 AROS 7 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 44, nombre: "2 AROS 8 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 45, nombre: "2 AROS 10 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 46, nombre: "2 AROS 12 PULGADAS", categoria: "Sombreros", subcategoria: "Dos aros", imagen: "productos/10.png" },
+            { id: 47, nombre: "CHINO 4 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 48, nombre: "CHINO 5 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 49, nombre: "CHINO 6 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 50, nombre: "CHINO 7 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 51, nombre: "CHINO 8 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 52, nombre: "CHINO 10 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 53, nombre: "CHINO 12 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 54, nombre: "CHINO 14 PULGADAS", categoria: "Sombreros", subcategoria: "Chinos", imagen: "productos/11.png" },
+            { id: 55, nombre: "H 3 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
+            { id: 56, nombre: "H 4 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
+            { id: 57, nombre: "H 5 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
+            { id: 58, nombre: "H 6 PULGADAS", categoria: "Sombreros", subcategoria: "Tipo h", imagen: "productos/12.png" },
+            { id: 59, nombre: "SPIRO REDONDO 3 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
+            { id: 60, nombre: "SPIRO REDONDO 4 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
+            { id: 61, nombre: "SPIRO REDONDO 5 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
+            { id: 62, nombre: "SPIRO REDONDO 6 PULGADAS", categoria: "Sombreros", subcategoria: "Redondos", imagen: "productos/49.png" },
+            { id: 63, nombre: "ESKABE 3 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
+            { id: 64, nombre: "ESKABE 4 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
+            { id: 65, nombre: "ESKABE 5 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
+            { id: 66, nombre: "ESKABE 6 PULGADAS", categoria: "Sombreros", subcategoria: "Eskabe", imagen: "productos/14.png" },
+            { id: 67, nombre: "EÓLICO 4 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 68, nombre: "EÓLICO 6 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 69, nombre: "EÓLICO 8 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 70, nombre: "EÓLICO 10 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 71, nombre: "EÓLICO 12 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 72, nombre: "EÓLICO 16 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 73, nombre: "EÓLICO 20 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 74, nombre: "EÓLICO 24 PULGADAS", categoria: "Sombreros", subcategoria: "Eólicos", imagen: "productos/15.png" },
+            { id: 75, nombre: "BASE PARABOLICO BAJO 24 PULGADAS", categoria: "Sombreros", subcategoria: "Base eólico", imagen: "productos/16.png" },
+            { id: 76, nombre: "BASE PARABOLICO ALTO 24 PULGADAS", categoria: "Sombreros", subcategoria: "Base eólico", imagen: "productos/16.png" },
+            { id: 77, nombre: "PLEGADO CALIBRE 27 DESARROLLO 210 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 78, nombre: "PLEGADO CALIBRE 27 DESARROLLO 330 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 79, nombre: "PLEGADO CALIBRE 27 DESARROLLO 400 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 80, nombre: "PLEGADO CALIBRE 27 DESARROLLO 500 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 81, nombre: "PLEGADO CALIBRE 25 DESARROLLO 210 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 82, nombre: "PLEGADO CALIBRE 25 DESARROLLO 330 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 83, nombre: "PLEGADO CALIBRE 25 DESARROLLO 400 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 84, nombre: "PLEGADO CALIBRE 25 DESARROLLO 500 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 85, nombre: "PLEGADO CALIBRE 25 DESARROLLO 610 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 86, nombre: "PLEGADO CALIBRE 25 DESARROLLO 800 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 87, nombre: "PLEGADO CALIBRE 25 DESARROLLO 1000 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 88, nombre: "PLEGADO CALIBRE 22 DESARROLLO 400 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 89, nombre: "PLEGADO CALIBRE 22 DESARROLLO 610 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 90, nombre: "PLEGADO CALIBRE 22 DESARROLLO 800 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 91, nombre: "PLEGADO CALIBRE 22 DESARROLLO 1000 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 92, nombre: "PLEGADO CALIBRE 22 DESARROLLO 1220 MM", categoria: "Plegados hasta 7m", imagen: "productos/17.png" },
+            { id: 93, nombre: "CURVA GALVANIZADA 3 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 94, nombre: "CURVA GALVANIZADA 4 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 95, nombre: "CURVA GALVANIZADA 5 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 96, nombre: "CURVA GALVANIZADA 6 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 97, nombre: "CURVA GALVANIZADA 7 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 98, nombre: "CURVA GALVANIZADA 8 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 99, nombre: "CURVA GALVANIZADA 9 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 100, nombre: "CURVA GALVANIZADA 10 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 101, nombre: "CURVA GALVANIZADA 11 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 102, nombre: "CURVA GALVANIZADA 12 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 103, nombre: "CURVA GALVANIZADA 13 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 104, nombre: "CURVA GALVANIZADA 14 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 105, nombre: "CURVA GALVANIZADA 16 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 106, nombre: "CURVA GALVANIZADA 18 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 107, nombre: "CURVA GALVANIZADA 20 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 108, nombre: "CURVA GALVANIZADA 22 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 109, nombre: "CURVA GALVANIZADA 24 PULGADAS ART", categoria: "Curvas", imagen: "productos/50.png" },
+            { id: 110, nombre: "CURVA GALVANIZADA 3 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
+            { id: 111, nombre: "CURVA GALVANIZADA 4 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
+            { id: 112, nombre: "CURVA GALVANIZADA 5 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
+            { id: 113, nombre: "CURVA GALVANIZADA 6 PULGADAS HER", categoria: "Curvas", imagen: "productos/18.png" },
+            { id: 114, nombre: "CURVA ENLOZADA 4 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
+            { id: 115, nombre: "CURVA ENLOZADA 5 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
+            { id: 116, nombre: "CURVA ENLOZADA 6 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
+            { id: 117, nombre: "CURVA ENLOZADO 8 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
+            { id: 118, nombre: "CURVA ENLOZADA 10 PULGADAS", categoria: "Curvas", subcategoria: "Enlozadas", imagen: "productos/19.png" },
+            { id: 119, nombre: "GALVANIZADA 100cm x 200cm C30", categoria: "Chapas lisas", imagen: "productos/20.png" },
+            { id: 120, nombre: "GALVANIZADA 100cm x 200cm C28", categoria: "Chapas lisas", imagen: "productos/20.png" },
+            { id: 121, nombre: "GALVANIZADA 122cm x 244cm C27", categoria: "Chapas lisas", imagen: "productos/20.png" },
+            { id: 122, nombre: "GALVANIZADA 122cm x 244cm C25", categoria: "Chapas lisas", imagen: "productos/20.png" },
+            { id: 123, nombre: "GALVANIZADA 122cm x 244cm C22", categoria: "Chapas lisas", imagen: "productos/20.png" },
+            { id: 124, nombre: "COLOR NEGRO Y VARIOS 122cm x 244cm C25", categoria: "Chapas lisas", imagen: "productos/21.png" },
+            { id: 125, nombre: "GALVANIZADA C27 X M2", categoria: "Chapas de techo", imagen: "productos/45.png" },
+            { id: 126, nombre: "GALVANIZADA C25 X M2", categoria: "Chapas de techo", imagen: "productos/45.png" },
+            { id: 127, nombre: "CINCALUM C27 X M2", categoria: "Chapas de techo", imagen: "productos/47.png" },
+            { id: 128, nombre: "CINCALUM C25 X M2", categoria: "Chapas de techo", imagen: "productos/47.png" },
+            { id: 129, nombre: "CHAPA COLOR X M2", categoria: "Chapas de techo", imagen: "productos/46.png" },
+            { id: 130, nombre: "CHAPA POLI X M2", categoria: "Chapas de techo", imagen: "productos/48.png" },
+            { id: 131, nombre: "PERFIL C GALVANIZADO 80x40x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 132, nombre: "PERFIL C GALVANIZADO 100x40x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 133, nombre: "PERFIL C GALVANIZADO 120x50x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 134, nombre: "PERFIL C GALVANIZADO 120x50x15x1,60mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 135, nombre: "PERFIL C GALVANIZADO 100x40x15x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 136, nombre: "PERFIL C GALVANIZADO 120x50x15x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 137, nombre: "PERFIL C GALVANIZADO 140x60x20x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 138, nombre: "PERFIL C GALVANIZADO 160x60x20x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 139, nombre: "PERFIL C GALVANIZADO 180x70x20x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 140, nombre: "PERFIL C GALVANIZADO 200x80x30x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 141, nombre: "PERFIL C GALVANIZADO 200x80x30x2,00mm", categoria: "Chapas de techo", subcategoria: "Perfiles c", imagen: "productos/22.png" },
+            { id: 142, nombre: "LANA DE VIDRIO ISOVER X 14 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/23.png" },
+            { id: 143, nombre: "LANA DE VIDRIO OROGLASS X1 14 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/52.png" },
+            { id: 144, nombre: "LANA DE VIDRIO ISOTEX GALPON X 19 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/51.png" },
+            { id: 145, nombre: "LANA DE VIDRIO ISOTEX GALPON X 19 M2", categoria: "Chapas de techo", subcategoria: "Aislantes", imagen: "productos/51.png" },
+            { id: 146, nombre: "FUENTON 28 X 15", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
+            { id: 147, nombre: "FUENTON 32 X 15", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
+            { id: 148, nombre: "FUENTON 35 X 17", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
+            { id: 149, nombre: "FUENTON 40 X 19", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
+            { id: 150, nombre: "FUENTON 48 X 22", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
+            { id: 151, nombre: "FUENTON 60 X 28", categoria: "Zingueria Artística", subcategoria: "Fuentones", imagen: "productos/37.png" },
+            { id: 152, nombre: "BALDE 3 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
+            { id: 153, nombre: "BALDE 6 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
+            { id: 154, nombre: "BALDE 8 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
+            { id: 155, nombre: "BALDE 14 LITROS", categoria: "Zingueria Artística", subcategoria: "Baldes", imagen: "productos/38.png" },
+            { id: 156, nombre: "REGADERA 1 LITRO", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
+            { id: 157, nombre: "REGADERA 3 LITROS", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
+            { id: 158, nombre: "REGADERA 5 LITROS", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
+            { id: 159, nombre: "REGADERA 8 LITROS", categoria: "Zingueria Artística", subcategoria: "Regaderas", imagen: "productos/39.png" },
+            { id: 160, nombre: "MOLINO CHICO 50 CM", categoria: "Zingueria Artística", subcategoria: "Molinos", imagen: "productos/41.png" },
+            { id: 161, nombre: "MOLINO MEDIANO 120 CM", categoria: "Zingueria Artística", subcategoria: "Molinos", imagen: "productos/41.png" },
+            { id: 162, nombre: "MOLINO GRANDE 150 CM", categoria: "Zingueria Artística", subcategoria: "Molinos", imagen: "productos/41.png" },
+            { id: 163, nombre: "LECHERO CHICO", categoria: "Zingueria Artística", subcategoria: "Lecheros", imagen: "productos/53.png" },
+            { id: 164, nombre: "LECHERO MEDIANO", categoria: "Zingueria Artística", subcategoria: "Lecheros", imagen: "productos/53.png" },
+            { id: 165, nombre: "GARGOLA BRONCE", categoria: "Zingueria Artística", subcategoria: "Gárgolas", imagen: "productos/42.png" },
+            { id: 166, nombre: "ESQUINERO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/44.png" },
+            { id: 167, nombre: "RINCONERO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/43.png" },
+            { id: 168, nombre: "COLECTOR AMERICANO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/54.png" },
+            { id: 169, nombre: "COLECTOR MINI", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/55.png" },
+            { id: 170, nombre: "COLECTOR PECHO PALOMA", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/56.png" },
+            { id: 171, nombre: "COLECTOR COLONIAL PANZA ADENTRO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/57.png" },
+            { id: 172, nombre: "COLECTOR CUADRADO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/58.png" },
+            { id: 173, nombre: "COLECTOR CUATRO CARAS ADENTRO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/59.png" },
+            { id: 174, nombre: "COLECTOR CARAS PANZA AFUERA", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/60.png" },
+            { id: 175, nombre: "COLECTOR FRANCES", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/61.png" },
+            { id: 176, nombre: "COLECTOR PANZA S ALTO", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/62.png" },
+            { id: 177, nombre: "COLECTOR PIRAMIDAL", categoria: "Zingueria Artística", subcategoria: "Colectores", imagen: "productos/63.png" },
+            { id: 178, nombre: "GRAMPA OMEGA 3 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
+            { id: 179, nombre: "GRAMPA OMEGA 4 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
+            { id: 180, nombre: "GRAMPA OMEGA 5 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
+            { id: 181, nombre: "GRAMPA OMEGA 6 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/65.png" },
+            { id: 182, nombre: "GRAMPA CON PATA 3 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 183, nombre: "GRAMPA CON PATA 4 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 184, nombre: "GRAMPA CON PATA 5 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 185, nombre: "GRAMPA CON PATA 6 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 186, nombre: "GRAMPA CON PATA 7 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 187, nombre: "GRAMPA CON PATA 8 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 188, nombre: "GRAMPA CON PATA 10 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 189, nombre: "GRAMPA CON PATA 12 PULGADAS", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/66.png" },
+            { id: 190, nombre: "ABRAZADERA 2X4 PULGADAS COMUN", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/35.png" },
+            { id: 191, nombre: "ABRAZADERA 3X4 PULGADAS COMÚN", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/35.png" },
+            { id: 192, nombre: "ABRAZADERA 2X4 PULGADAS ARTISTICA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/64.png" },
+            { id: 193, nombre: "ABRAZADERA 3X4 PULGADAS ARTISTICA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/64.png" },
+            { id: 194, nombre: "SOPORTE CANALETA AMERICANA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/36.png" },
+            { id: 195, nombre: "SOPORTE CANALETA AMERICANA C/PATA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/67.png" },
+            { id: 196, nombre: "SOPORTE CANALETA PECHO PALOMA", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/68.png" },
+            { id: 197, nombre: "PLANCHUELA 29 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
+            { id: 198, nombre: "PLANCHUELA 35 Y 40 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
+            { id: 199, nombre: "PLANCHUELA 50 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
+            { id: 200, nombre: "PLANCHUELA 100 CM", categoria: "Grampas, abrazaderas y planchuelas", imagen: "productos/34.png" },
+            { id: 201, nombre: "CAÑO GALVANIZADO 3 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 202, nombre: "CAÑO GALVANIZADO 4 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 203, nombre: "CAÑO GALVANIZADO 5 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 204, nombre: "CAÑO GALVANIZADO 6 PULGADAS C/30", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 205, nombre: "CAÑO GALVANIZADO 7 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 206, nombre: "CAÑO GALVANIZADO 8 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 207, nombre: "CAÑO GALVANIZADO 9 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 208, nombre: "CAÑO GALVANIZADO 10 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 209, nombre: "CAÑO GALVANIZADO 12 PULGADAS C/27", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 210, nombre: "CAÑO GALVANIZADO 3 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 211, nombre: "CAÑO GALVANIZADO 4 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 212, nombre: "CAÑO GALVANIZADO 5 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 213, nombre: "CAÑO GALVANIZADO 6 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 214, nombre: "CAÑO GALVANIZADO 7 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 215, nombre: "CAÑO GALVANIZADO 8 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 216, nombre: "CAÑO GALVANIZADO 9 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 217, nombre: "CAÑO GALVANIZADO 10 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 218, nombre: "CAÑO GALVANIZADO 12 PULGADAS /25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 219, nombre: "CAÑO GALVANIZADO 14 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 220, nombre: "CAÑO GALVANIZADO 16 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 221, nombre: "CAÑO GALVANIZADO 18 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 222, nombre: "CAÑO GALVANIZADO 20 PULGADASC /25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 223, nombre: "CAÑO GALVANIZADO 22 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 224, nombre: "CAÑO GALVANIZADO 24 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/28.png" },
+            { id: 225, nombre: "CAÑO COLOR 3 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 226, nombre: "CAÑO COLOR 4 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 227, nombre: "CAÑO COLOR 5 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 228, nombre: "CAÑO COLOR 6 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 229, nombre: "CAÑO COLOR 7 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 230, nombre: "CAÑO COLOR 8 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 231, nombre: "CAÑO COLOR 9 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 232, nombre: "CAÑO COLOR 10 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 233, nombre: "CAÑO COLOR 12 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 234, nombre: "CAÑO COLOR 14 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 235, nombre: "CAÑO COLOR 16 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 236, nombre: "CAÑO COLOR 18 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 237, nombre: "CAÑO COLOR 20 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 238, nombre: "CAÑO COLOR 22 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 239, nombre: "CAÑO COLOR 24 PULGADAS C/25", categoria: "Caños", subcategoria: "Redondos", imagen: "productos/69.png" },
+            { id: 240, nombre: "CAÑO RECTANGULAR GALVANIZADO 2X3 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/29.png" },
+            { id: 241, nombre: "CAÑO RECTANGULAR GALVAVANIZADO 2X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/29.png" },
+            { id: 242, nombre: "CAÑO RECTANGULAR GALVANIZADO 3X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/29.png" },
+            { id: 243, nombre: "CAÑO RECTANGULAR COLOR 2X3 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/70.png" },
+            { id: 244, nombre: "CAÑO RECTANGULAR COLOR 2X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/70.png" },
+            { id: 245, nombre: "CAÑO RECTANGULAR COLOR 3X4 PULGADAS", categoria: "Caños", subcategoria: "Rectangulares", imagen: "productos/70.png" },
+            { id: 246, nombre: "CAÑO ENLOZADO 4 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
+            { id: 247, nombre: "CAÑO ENLOZADO CON CLAPETA 4 PULGADAS", categoria: "Caños", subcategoria: "", imagen: "productos/30.png" },
+            { id: 248, nombre: "CAÑO ENLOZADO 5 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
+            { id: 249, nombre: "CAÑO ENLOZADO 6 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
+            { id: 250, nombre: "CAÑO ENLOZADO CON CLAPETA 6 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
+            { id: 253, nombre: "CAÑO ENLOZADO 8 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
+            { id: 254, nombre: "CAÑO ENLOZADO 10 PULGADAS", categoria: "Caños", subcategoria: "Enlozados", imagen: "productos/30.png" },
+            { id: 255, nombre: "CAÑO FLEXIBLE 3 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
+            { id: 256, nombre: "CAÑO FLEXIBLE 4 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
+            { id: 257, nombre: "CAÑO FLEXIBLE 5 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
+            { id: 258, nombre: "CAÑO FLEXIBLE 6 PULGADAS X 1 METRO", categoria: "Caños", subcategoria: "Flexibles", imagen: "productos/31.png" },
+            { id: 259, nombre: "REDUCCION 4  A 3 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 260, nombre: "REDUCCION 5 A 3 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 261, nombre: "REDUCCION 110 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 262, nombre: "REDUCCION 5 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 263, nombre: "REDUCCION 6 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 264, nombre: "REDUCCION 6 A 5 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 265, nombre: "REDUCCION 6 A 3 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 266, nombre: "REDUCCION 7 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 267, nombre: "REDUCCION 8 A 4 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 268, nombre: "REDUCCION 8 A 5 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 269, nombre: "REDUCCION 8 A 6 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 270, nombre: "REDUCCION 10 A 6 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 271, nombre: "REDUCCION 10 A 8 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 272, nombre: "REDUCCION 12 A 8 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 273, nombre: "REDUCCION 12 A 10 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 274, nombre: "REDUCCION 14 A 8 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 275, nombre: "REDUCCION 14 A 10 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 276, nombre: "REDUCCION 14 A 12 PULGADAS", categoria: "Caños", subcategoria: "Reducciones", imagen: "productos/33.png" },
+            { id: 292, nombre: "CANTONERA 15X15 C28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/25.png" },
+            { id: 293, nombre: "CANTONERA 20X20 C28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/25.png" },
+            { id: 294, nombre: "SOBRETEJA 15 C/30", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/72.png" },
+            { id: 295, nombre: "SOBRETEJA 20 C/30", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/72.png" },
+            { id: 296, nombre: "CUMBRERA 33 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/73.png" },
+            { id: 297, nombre: "CUMBRERA 40 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/73.png" },
+            { id: 298, nombre: "CUMBRERA 50 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/73.png" },
+            { id: 299, nombre: "CONVERSA 33 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/74.png" },
+            { id: 300, nombre: "CONVERSA 40 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/74.png" },
+            { id: 301, nombre: "CONVERSA 50 C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/74.png" },
+            { id: 302, nombre: "BAJOTEJA 20 C/30", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/75.png" },
+            { id: 303, nombre: "BAJOTEJA CON NERVIO C/28", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/76.png" },
+            { id: 304, nombre: "CAPUCHON", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/77.png" },
+            { id: 305, nombre: "ESCUADRAS CANALETAS", categoria: "Canaletas", subcategoria: "Babetas", imagen: "productos/78.png" },
+            { id: 306, nombre: "CANALETA AMERICANA 33 C/28", categoria: "Canaletas", subcategoria: "Americanas", imagen: "productos/24.png" },
+            { id: 307, nombre: "CANALETA AMERICANA 40 C/28", categoria: "Canaletas", subcategoria: "Americanas", imagen: "productos/24.png" },
+            { id: 308, nombre: "CANALETA MEDIA CAÑA", categoria: "Canaletas", subcategoria: "Artísticas", imagen: "productos/26.png" },
+            { id: 309, nombre: "CANALETA MOLDURA", categoria: "Caños", subcategoria: "Artísticas", imagen: "productos/27.png" },
+            { id: 310, nombre: "EXTRACTOR ELECTRICO SATELITE 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/79.png" },
+            { id: 311, nombre: "EXTRACTOR ELECTRICO SATELITE 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/79.png" },
+            { id: 312, nombre: "PARRILLERO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
+            { id: 313, nombre: "PARRILLERO 8 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
+            { id: 314, nombre: "PARRILLERO 10 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
+            { id: 315, nombre: "PARRILLERO 12 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/80.png" },
+            { id: 316, nombre: "ENTRECAÑOS 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
+            { id: 317, nombre: "ENTRECAÑOS 8 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
+            { id: 318, nombre: "ENTRECAÑOS 10 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
+            { id: 319, nombre: "ENTRECAÑOS LIVIANOS 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
+            { id: 320, nombre: "ENTRECAÑOS LIVIANOS 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/82.png" },
+            { id: 321, nombre: "INDUSTRIAL 40 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
+            { id: 322, nombre: "INDUSTRIAL 45 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
+            { id: 323, nombre: "INDUSTRIAL 52 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
+            { id: 324, nombre: "INDUSTRIAL 61 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
+            { id: 325, nombre: "INDUSTRIAL 76 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/81.png" },
+            { id: 326, nombre: "SEMI INDUSTRIAL 20 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
+            { id: 327, nombre: "SEMI INDUSTRIAL 25 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
+            { id: 328, nombre: "SEMI INDUSTRIAL 30 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
+            { id: 329, nombre: "SEMI INDUSTRIAL 35 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
+            { id: 330, nombre: "SEMI INDUSTRIAL 40 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/83.png" },
+            { id: 331, nombre: "PVC BAÑO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/86.png" },
+            { id: 332, nombre: "PVC BAÑO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/86.png" },
+            { id: 333, nombre: "REJILLA REDONDA DE PVC 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/87.png" },
+            { id: 336, nombre: "MOVILES METALICAS 20 CM DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/84.png" },
+            { id: 337, nombre: "MOVILES METALICAS 25 CM DE DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/84.png" },
+            { id: 338, nombre: "MOVILES METALICAS 30 CM DE DIAMETRO", categoria: "Extractores eléctricos", imagen: "productos/84.png" },
+            { id: 339, nombre: "PLANA DE 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/85.png" },
+            { id: 340, nombre: "ESFERA PLASTICO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
+            { id: 341, nombre: "ESFERA ACERO 4 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
+            { id: 342, nombre: "ESFERA ACERO 6 PULGADAS", categoria: "Extractores eléctricos", imagen: "productos/89.png" },
         ];
 
         const CATEGORIAS = [
@@ -1192,25 +1295,117 @@
             { nombre: "Grampas, abrazaderas y planchuelas", subs: [] },
         ];
 
-        let filtroCat = -1;  // -1 = todas
-        let filtroSub = -1;  // -1 = todas las subcategorías
+        let filtroCat = -1;
+        let filtroSub = -1;
 
         const CARRITO_KEY = "servizing_carrito_v1";
-        let carrito = {}; // { idProducto: cantidad }
+        let carrito = {};
 
         try { carrito = JSON.parse(localStorage.getItem(CARRITO_KEY)) || {}; } catch { carrito = {}; }
 
         const escapar = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-        const buscarProducto = id => PRODUCTOS.find(p => String(p.id) === String(id));
 
         function guardarCarrito() {
-            try { localStorage.setItem(CARRITO_KEY, JSON.stringify(carrito)); } catch { /* sin almacenamiento */ }
+            try { localStorage.setItem(CARRITO_KEY, JSON.stringify(carrito)); } catch { }
         }
 
         let vistaCat = -1;
 
-        const contarCat = i => PRODUCTOS.filter(p => p.categoria === CATEGORIAS[i].nombre).length;
-        const contarSub = (i, j) => PRODUCTOS.filter(p => p.categoria === CATEGORIAS[i].nombre && p.subcategoria === CATEGORIAS[i].subs[j]).length;
+        const MAPA_NOMBRES_IMAGEN = {
+            "productos/1.png": "CODO REDONDO SOLDADO",
+            "productos/2.png": "CODO RECTANGULAR SOLDADO",
+            "productos/8.png": "VENTURI GALVANIZADO",
+            "productos/9.png": "VENTURI COLOR",
+            "productos/10.png": "SOMBRERO 2 AROS",
+            "productos/11.png": "SOMBRERO CHINO",
+            "productos/12.png": "SOMBRERO H",
+            "productos/49.png": "SOMBRERO SPIRO REDONDO",
+            "productos/14.png": "SOMBRERO ESKABE",
+            "productos/15.png": "SOMBRERO EÓLICO",
+            "productos/16.png": "BASE PARABOLICO BAJO",
+            "productos/17.png": "PLEGADO",
+            "productos/50.png": "CURVA GALVA ART",
+            "productos/18.png": "CURVA GALVA HER",
+            "productos/19.png": "CURVA ENLOZADA",
+            "productos/20.png": "CHAPA GALVANIZADA",
+            "productos/21.png": "CHAPA COLOR Y VARIOS",
+            "productos/45.png": "CHAPA DE TECHO SINUSOIDAL",
+            "productos/47.png": "CHAPA DE TECHO CINCALUM",
+            "productos/46.png": "CHAPA COLOR TRAPEZOIDAL",
+            "productos/22.png": "PERFIL C GALVA",
+            "productos/37.png": "FUENTON DE CHAPA",
+            "productos/38.png": "BALDE DE CHAPA",
+            "productos/39.png": "REGADERA DE CHAPA",
+            "productos/41.png": "MOLINO DE CHAPA",
+            "productos/53.png": "LECHERO DE CHAPA",
+            "productos/65.png": "GRAMPA OMEGA",
+            "productos/66.png": "GRAMPA CON PATA",
+            "productos/35.png": "ABRAZADERA COMÚN",
+            "productos/64.png": "ABRAZADERA ARTISTICA",
+            "productos/34.png": "PLANCHUELA",
+            "productos/28.png": "CAÑO GALVANIZADO",
+            "productos/69.png": "CAÑO COLOR",
+            "productos/29.png": "CAÑO RECTANGULAR GALVA",
+            "productos/70.png": "CAÑO RECTANGULAR COLOR",
+            "productos/30.png": "CAÑO ENLOZADO",
+            "productos/31.png": "CAÑO FLEXIBLE 1 METRO",
+            "productos/33.png": "REDUCCIÓN",
+            "productos/25.png": "CANTONERA C28",
+            "productos/72.png": "SOBRETEJA C30",
+            "productos/73.png": "CUMBRERA C28",
+            "productos/74.png": "CONVERSA C28",
+            "productos/24.png": "CANALETA AMERICANA C28",
+            "productos/79.png": "EXTRACTOR ELECTRICO SATELITE",
+            "productos/80.png": "EXTRACTOR ELECTRICO PARRILLERO",
+            "productos/82.png": "EXTRACTOR ELECTRICO ENTRECAÑOS",
+            "productos/81.png": "EXTRACTOR ELECTRICO INDUSTRIAL",
+            "productos/83.png": "EXTRACTOR ELECTRICO SEMI INDUSTRIAL",
+            "productos/86.png": "EXTRACTOR ELECTRICO DE BAÑO",
+            "productos/87.png": "REJILLA REDONDA DE PVC 4 PULGADAS",
+            "productos/84.png": "REJILLA METALICA MOVIL",
+            "productos/89.png": "REJILLA ESFERA PLASTICA"
+        };
+
+        function obtenerProductosAgrupados() {
+            let lista = PRODUCTOS;
+            if (filtroCat >= 0) {
+                const cat = CATEGORIAS[filtroCat];
+                lista = lista.filter(p => p.categoria === cat.nombre);
+                if (filtroSub >= 0) lista = lista.filter(p => p.subcategoria === cat.subs[filtroSub]);
+            }
+
+            const gruposMap = new Map();
+            lista.forEach(p => {
+                if (!gruposMap.has(p.imagen)) {
+                    gruposMap.set(p.imagen, {
+                        imagen: p.imagen,
+                        categoria: p.categoria,
+                        variantes: []
+                    });
+                }
+                gruposMap.get(p.imagen).variantes.push(p);
+            });
+
+            const resultado = [];
+            gruposMap.forEach(g => {
+                const nombreBase = MAPA_NOMBRES_IMAGEN[g.imagen] || g.variantes[0].nombre;
+                resultado.push({
+                    imagen: g.imagen,
+                    nombre: nombreBase,
+                    variantes: g.variantes
+                });
+            });
+            return resultado;
+        }
+
+        const contarCat = i => {
+            const imgs = new Set(PRODUCTOS.filter(p => p.categoria === CATEGORIAS[i].nombre).map(p => p.imagen));
+            return imgs.size;
+        };
+        const contarSub = (i, j) => {
+            const imgs = new Set(PRODUCTOS.filter(p => p.categoria === CATEGORIAS[i].nombre && p.subcategoria === CATEGORIAS[i].subs[j]).map(p => p.imagen));
+            return imgs.size;
+        };
         const meta = n => n > 0 ? `<span>${n}</span>` : "";
 
         function actualizarBarra() {
@@ -1298,41 +1493,189 @@
 
         function renderFiltros() { actualizarBarra(); renderPanelFiltro(); }
 
-        document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarPanelFiltro(); });
+        document.addEventListener("keydown", e => { if (e.key === "Escape") { cerrarPanelFiltro(); cerrarModalVariante(); } });
 
         function renderProductos() {
             const grid = document.getElementById("tienda-grid");
             if (!grid) return;
 
-            let lista = PRODUCTOS;
-            if (filtroCat >= 0) {
-                const cat = CATEGORIAS[filtroCat];
-                lista = lista.filter(p => p.categoria === cat.nombre);
-                if (filtroSub >= 0) lista = lista.filter(p => p.subcategoria === cat.subs[filtroSub]);
-            }
+            const listaAgrupada = obtenerProductosAgrupados();
 
-            if (!lista.length) {
+            if (!listaAgrupada.length) {
                 grid.innerHTML = '<div class="tienda-vacio">Todavía no hay productos en esta categoría</div>';
                 return;
             }
 
-            grid.innerHTML = lista.map(p => `
+            grid.innerHTML = listaAgrupada.map((prodGrp, idx) => {
+                return `
                 <article class="prod-card">
-                    <div class="prod-img"><img src="${escapar(p.imagen)}" alt="${escapar(p.nombre)}" loading="lazy" decoding="async"></div>
-                    <div class="prod-info"><h3 class="prod-nombre">${escapar(p.nombre)}</h3></div>
-                    <button class="btn-agregar" data-id="${p.id}" onclick="agregarAlCarrito(${p.id}, this)">AGREGAR</button>
-                </article>`).join("");
+                    <div class="prod-img"><img src="${escapar(prodGrp.imagen)}" alt="${escapar(prodGrp.nombre)}" loading="lazy" decoding="async"></div>
+                    <div class="prod-info"><h3 class="prod-nombre">${escapar(prodGrp.nombre)}</h3></div>
+                    <button class="btn-agregar" onclick="clicBotonProducto(${idx})">AGREGAR</button>
+                </article>`;
+            }).join("");
         }
 
-        function agregarAlCarrito(id, btn) {
-            carrito[id] = (carrito[id] || 0) + 1;
+        let productoModalActivo = null;
+        let cantidadModal = 1;
+
+        /* ---- Menú desplegable de variantes (altura acotada, con scroll interno) ---- */
+        let varianteSelId = "";
+        const mqMovilVar = window.matchMedia ? window.matchMedia("(max-width:767px)") : { matches: false };
+        const CK_VAR = '<svg class="icon-svg mv-ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 16.6 4.9 12.3l-1.9 1.9 6.2 6.2L21 8.6l-1.9-1.9z"/></svg>';
+
+        function renderVarianteSelect() {
+            const lbl = document.getElementById('modal-var-label');
+            const lista = document.getElementById('modal-var-list');
+            const vs = productoModalActivo ? productoModalActivo.variantes : [];
+            const sel = vs.find(v => String(v.id) === String(varianteSelId));
+            lbl.textContent = sel ? sel.nombre : 'Seleccione la opción';
+            lbl.classList.toggle('vacio', !sel);
+            lista.innerHTML = vs.map(v => {
+                const act = sel && String(v.id) === String(sel.id);
+                return `<li role="presentation"><button type="button" role="option" class="mv-opt${act ? ' activo' : ''}" aria-selected="${act ? 'true' : 'false'}" data-id="${escapar(String(v.id))}"><span class="mv-t">${escapar(v.nombre)}</span>${CK_VAR}</button></li>`;
+            }).join('');
+        }
+
+        const varianteSelAbierto = () => document.getElementById('modal-var-panel').classList.contains('abierto');
+
+        function abrirVarianteSelect() {
+            const panel = document.getElementById('modal-var-panel');
+            const lista = document.getElementById('modal-var-list');
+            const btn = document.getElementById('modal-var-btn');
+
+            // Escritorio: la lista nunca supera el espacio visible; si abajo no entra, se abre hacia arriba
+            lista.style.maxHeight = '';
+            panel.classList.remove('arriba');
+            if (!mqMovilVar.matches) {
+                const r = btn.getBoundingClientRect();
+                const abajo = window.innerHeight - r.bottom - 20;
+                const arriba = r.top - 20;
+                const subir = abajo < 160 && arriba > abajo;
+                const espacio = Math.max(120, Math.min(240, (subir ? arriba : abajo) - 6));
+                lista.style.maxHeight = espacio + 'px';
+                panel.classList.toggle('arriba', subir);
+            }
+
+            panel.classList.add('abierto');
+            document.getElementById('modal-var-overlay').classList.add('abierto');
+            btn.setAttribute('aria-expanded', 'true');
+
+            const op = lista.querySelector('.mv-opt.activo') || lista.querySelector('.mv-opt');
+            if (op) {
+                op.focus({ preventScroll: true });
+                lista.scrollTop = Math.max(0, op.offsetTop - lista.clientHeight / 2 + op.offsetHeight / 2);
+            }
+        }
+
+        function cerrarVarianteSelect(devolverFoco) {
+            const panel = document.getElementById('modal-var-panel');
+            if (!panel || !varianteSelAbierto()) return;
+            panel.classList.remove('abierto');
+            document.getElementById('modal-var-overlay').classList.remove('abierto');
+            const btn = document.getElementById('modal-var-btn');
+            btn.setAttribute('aria-expanded', 'false');
+            if (devolverFoco) btn.focus({ preventScroll: true });
+        }
+
+        function toggleVarianteSelect() {
+            varianteSelAbierto() ? cerrarVarianteSelect() : abrirVarianteSelect();
+        }
+
+        document.getElementById('modal-var-list').addEventListener('click', e => {
+            const b = e.target.closest('.mv-opt');
+            if (!b) return;
+            varianteSelId = b.dataset.id;
+            renderVarianteSelect();
+            cerrarVarianteSelect(true);
+        });
+
+        // Teclado: flechas, Inicio/Fin, Enter/Espacio y Escape (cierra solo el menú, no el modal)
+        document.getElementById('modal-var-select').addEventListener('keydown', e => {
+            if (e.key === 'Escape' && varianteSelAbierto()) {
+                e.stopPropagation();
+                cerrarVarianteSelect(true);
+                return;
+            }
+            const ops = Array.from(document.querySelectorAll('#modal-var-list .mv-opt'));
+            const i = ops.indexOf(document.activeElement);
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (!varianteSelAbierto()) { abrirVarianteSelect(); return; }
+                const n = e.key === 'ArrowDown' ? Math.min(ops.length - 1, i + 1) : Math.max(0, i - 1);
+                if (ops[n]) ops[n].focus();
+            } else if (varianteSelAbierto() && (e.key === 'Home' || e.key === 'End')) {
+                e.preventDefault();
+                const o = e.key === 'Home' ? ops[0] : ops[ops.length - 1];
+                if (o) o.focus();
+            } else if (e.key === 'Tab' && varianteSelAbierto()) {
+                cerrarVarianteSelect();
+            }
+        });
+        if (mqMovilVar.addEventListener) mqMovilVar.addEventListener('change', () => cerrarVarianteSelect());
+
+        function clicBotonProducto(idx) {
+            const grupos = obtenerProductosAgrupados();
+            const prodGrp = grupos[idx];
+            if (!prodGrp) return;
+
+            if (prodGrp.variantes.length === 1) {
+                const p = prodGrp.variantes[0];
+                carrito[p.id] = (carrito[p.id] || 0) + 1;
+                guardarCarrito();
+                renderCarrito();
+                const botones = document.querySelectorAll('.btn-agregar');
+                if (botones[idx]) {
+                    botones[idx].classList.add("ok");
+                    botones[idx].textContent = "AGREGADO ✓";
+                    setTimeout(() => { botones[idx].classList.remove("ok"); botones[idx].textContent = "AGREGAR"; }, 900);
+                }
+            } else {
+                productoModalActivo = prodGrp;
+                cantidadModal = 1;
+                abrirModalVariante();
+            }
+        }
+
+        function abrirModalVariante() {
+            if (!productoModalActivo) return;
+            document.getElementById('modal-var-img').src = productoModalActivo.imagen;
+            document.getElementById('modal-var-titulo').textContent = productoModalActivo.nombre;
+            document.getElementById('modal-var-qty').textContent = cantidadModal;
+
+            varianteSelId = "";
+            renderVarianteSelect();
+
+            document.getElementById('modal-variante-overlay').classList.add('abierto');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModalVariante() {
+            cerrarVarianteSelect();
+            document.getElementById('modal-variante-overlay').classList.remove('abierto');
+            document.body.style.overflow = '';
+            productoModalActivo = null;
+        }
+
+        function cambiarCantModal(delta) {
+            cantidadModal = Math.max(1, cantidadModal + delta);
+            document.getElementById('modal-var-qty').textContent = cantidadModal;
+        }
+
+        function agregarVarianteAlCarrito() {
+            const idProd = varianteSelId;
+            if (!idProd) {
+                const btn = document.getElementById('modal-var-btn');
+                btn.focus();
+                btn.classList.add('error');
+                setTimeout(() => btn.classList.remove('error'), 1500);
+                return;
+            }
+
+            carrito[idProd] = (carrito[idProd] || 0) + cantidadModal;
             guardarCarrito();
             renderCarrito();
-            if (btn) {
-                btn.classList.add("ok");
-                btn.textContent = "AGREGADO ✓";
-                setTimeout(() => { btn.classList.remove("ok"); btn.textContent = "AGREGAR"; }, 900);
-            }
+            cerrarModalVariante();
         }
 
         function quitarDelCarrito(id) {
@@ -1344,8 +1687,9 @@
         }
 
         function lineasCarrito() {
+            const buscarProdPorId = id => PRODUCTOS.find(p => String(p.id) === String(id));
             return Object.keys(carrito)
-                .map(id => ({ p: buscarProducto(id), cant: carrito[id] }))
+                .map(id => ({ p: buscarProdPorId(id), cant: carrito[id] }))
                 .filter(l => l.p);
         }
 
@@ -1414,7 +1758,6 @@
             abrirWhatsapp(msg);
         }
 
-        document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarCarrito(); });
         window.addEventListener("resize", () => {
             if (document.getElementById("cart-panel").classList.contains("abierto")) posicionarPanel();
         });
@@ -1481,7 +1824,7 @@
         const sinAnimacionMed = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         function guardarCarritoMed() {
-            try { localStorage.setItem(CARRITO_MED_KEY, JSON.stringify(carritoMed)); } catch { /* sin almacenamiento */ }
+            try { localStorage.setItem(CARRITO_MED_KEY, JSON.stringify(carritoMed)); } catch { }
         }
 
         function mostrarMsgMed(texto, ok) {
@@ -1528,7 +1871,7 @@
             lista.innerHTML = ARBOL_MED.map(g => {
                 if (g.suelto !== undefined) return opt({ t: PRODUCTOS_PERSONALIZADOS[g.suelto].nombre, i: g.suelto }, "");
                 const directos = g.items.map(x => opt(x, "med-o1")).join("");
-                const subs = g.subs.map(s => grupo(s.key, s.n, s.items.length, "med-g2", s.items.map(x => opt(x, "med-o2")).join(""))).join("");
+                const subs = g.subs.map(s => grupo(s.key, s.n, s.items.length, "med-g2", s.items.map(x => opt(x, "med-o2")).join())).join("");
                 const total = g.items.length + g.subs.reduce((a, s) => a + s.items.length, 0);
                 return grupo(g.key, g.n, total, "med-g1", directos + subs);
             }).join("");
@@ -1592,9 +1935,6 @@
             else if (e.key === "End") n = ops.length - 1;
             else if (e.key === "Tab") { cerrarSelectMed(); return; }
             if (n !== null) { e.preventDefault(); ops[n].focus(); }
-        });
-        gid("med-select-btn").addEventListener("keydown", e => {
-            if (e.key === "ArrowDown" && !selectMedAbierto()) { e.preventDefault(); abrirSelectMed(); }
         });
 
         const formMedAbierto = () => gid("med-form").classList.contains("abierto");
@@ -1744,11 +2084,6 @@
             abrirWhatsapp(msg);
         }
 
-        document.addEventListener("keydown", e => {
-            if (e.key !== "Escape") return;
-            if (selectMedAbierto()) cerrarSelectMed(true);
-            else if (carritoMedAbierto()) cerrarCarritoMed(true);
-        });
         window.addEventListener("resize", () => {
             if (carritoMedAbierto()) posicionarPanelMed();
         });
