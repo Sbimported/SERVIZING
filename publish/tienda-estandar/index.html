@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <base href="/">
+    <base href="../">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tienda de Zinguería: Caños, Canaletas y Sombreros | Servizing</title>
@@ -389,22 +389,22 @@
 
             <div class="flex items-center space-x-1 sm:space-x-2">
                 <div class="flex-shrink-0 flex items-center z-10 -ml-2 sm:-ml-3">
-                    <a href="/" data-seccion="quienes-somos" class="cursor-pointer block">
+                    <a href="./" data-seccion="quienes-somos" class="cursor-pointer block">
                         <img src="LOGO.png" alt="Zinguería Servizing Logo" class="h-16 sm:h-20 md:h-32 w-auto block border-none outline-none shadow-none object-contain" loading="eager" decoding="async" fetchpriority="high">
                     </a>
                 </div>
 
                 <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="/" data-seccion="quienes-somos" id="btn-quienes-somos" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/20 whitespace-nowrap">
+                    <a href="./" data-seccion="quienes-somos" id="btn-quienes-somos" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/20 whitespace-nowrap">
                         QUIÉNES SOMOS
                     </a>
-                    <a href="/tienda-estandar/" data-seccion="tienda" id="btn-tienda" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap active" aria-current="page">
+                    <a href="tienda-estandar/" data-seccion="tienda" id="btn-tienda" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap active" aria-current="page">
                         TIENDA ESTÁNDAR
                     </a>
-                    <a href="/medidas-personalizadas/" data-seccion="medidas" id="btn-medidas" class="nav-pill text-white text-[11px] lg:text-sm font-bold uppercase px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
+                    <a href="medidas-personalizadas/" data-seccion="medidas" id="btn-medidas" class="nav-pill text-white text-[11px] lg:text-sm font-bold uppercase px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
                         MEDIDAS PERSONALIZADAS
                     </a>
-                    <a href="/servicios/" data-seccion="servicios" id="btn-servicios" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
+                    <a href="servicios/" data-seccion="servicios" id="btn-servicios" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
                         SERVICIOS
                     </a>
                 </nav>
@@ -426,10 +426,10 @@
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden header-grid-bg px-4 pt-3 pb-5 space-y-2 border-b border-white/10 shadow-xl">
-            <a href="/" data-seccion="quienes-somos" id="btn-mb-quienes-somos" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">QUIÉNES SOMOS</a>
-            <a href="/tienda-estandar/" data-seccion="tienda" id="btn-mb-tienda" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider active" aria-current="page">TIENDA ESTÁNDAR</a>
-            <a href="/medidas-personalizadas/" data-seccion="medidas" id="btn-mb-medidas" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">MEDIDAS PERSONALIZADAS</a>
-            <a href="/servicios/" data-seccion="servicios" id="btn-mb-servicios" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">SERVICIOS</a>
+            <a href="./" data-seccion="quienes-somos" id="btn-mb-quienes-somos" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">QUIÉNES SOMOS</a>
+            <a href="tienda-estandar/" data-seccion="tienda" id="btn-mb-tienda" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider active" aria-current="page">TIENDA ESTÁNDAR</a>
+            <a href="medidas-personalizadas/" data-seccion="medidas" id="btn-mb-medidas" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">MEDIDAS PERSONALIZADAS</a>
+            <a href="servicios/" data-seccion="servicios" id="btn-mb-servicios" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">SERVICIOS</a>
         </div>
     </header>
 
@@ -900,29 +900,32 @@
             try { localStorage.removeItem(CACHE_KEY); } catch { }
         }
 
-        function resolverRutaImagen(nombreBase) {
-            const enCache = rutaEnCache(nombreBase);
-            if (enCache) return Promise.resolve(enCache);
+        const cargaImagen = ruta => new Promise(resolve => {
+            const img = new Image();
+            img.onload = () => resolve(ruta);
+            img.onerror = () => resolve(null);
+            img.src = ruta;
+        });
 
-            return new Promise((resolve) => {
-                let restantes = EXTENSIONES_A_PROBAR.length;
-                let resuelto = false;
-                EXTENSIONES_A_PROBAR.forEach((ext) => {
-                    const ruta = `${CARPETA_DESTACADAS}/${nombreBase}.${ext}`;
-                    const img = new Image();
-                    img.onload = () => {
-                        if (resuelto) return;
-                        resuelto = true;
-                        guardarEnCache(nombreBase, ruta);
-                        resolve(ruta);
-                    };
-                    img.onerror = () => {
-                        restantes--;
-                        if (restantes === 0 && !resuelto) resolve(null);
-                    };
-                    img.src = ruta;
+        // Prueba primero la extensión "preferida" (la de la foto anterior); solo si falla prueba las demás a la vez
+        async function resolverRutaImagen(nombreBase, preferida) {
+            const enCache = rutaEnCache(nombreBase);
+            if (enCache) return enCache;
+
+            const rutaCon = ext => `${CARPETA_DESTACADAS}/${nombreBase}.${ext}`;
+            let ruta = preferida ? await cargaImagen(rutaCon(preferida)) : null;
+            if (!ruta) {
+                const otras = EXTENSIONES_A_PROBAR.filter(ext => ext !== preferida);
+                ruta = await new Promise(resolve => {
+                    let restantes = otras.length;
+                    otras.forEach(ext => cargaImagen(rutaCon(ext)).then(r => {
+                        if (r) resolve(r);
+                        else if (--restantes === 0) resolve(null);
+                    }));
                 });
-            });
+            }
+            if (ruta) guardarEnCache(nombreBase, ruta);
+            return ruta;
         }
 
         // Precarga de a una imagen por vez y recién con la página cargada (no compite con el contenido inicial)
@@ -950,7 +953,10 @@
                 img.style.opacity = '1';
             };
 
-            const imagenes = (await Promise.all(NOMBRES_BASE.map(resolverRutaImagen))).filter(Boolean);
+            const primera = await resolverRutaImagen(NOMBRES_BASE[0]);
+            const preferida = primera ? primera.split('.').pop() : null;
+            const restantes = await Promise.all(NOMBRES_BASE.slice(1).map(n => resolverRutaImagen(n, preferida)));
+            const imagenes = [primera, ...restantes].filter(Boolean);
             if (imagenes.length === 0) return;
 
             imgSup.addEventListener('error', olvidarCache);
