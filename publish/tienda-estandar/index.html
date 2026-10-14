@@ -117,7 +117,7 @@
 
 .prod-card{background:#000;border:2px solid #fff;padding:10px;display:flex;flex-direction:column;gap:10px;text-align:left;min-width:0;height:100%;width:100%;max-width:none;margin-inline:0}
 .prod-card .prod-img{width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#18181b;flex-shrink:0}
-.prod-card .prod-img img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.prod-card .prod-img img{width:100%;height:100%;object-fit:cover;pointer-events:none}.prod-card .prod-img img:not([src]){visibility:hidden}
 @media (min-width:640px){
   .prod-card{padding:clamp(6px,1.6vw,16px);gap:clamp(6px,1.4vw,14px);width:100%;max-width:none;margin-inline:0}
   .prod-card .prod-img{border-radius:clamp(10px,2.4vw,22px)}
@@ -797,10 +797,75 @@
         // Cambiar IMG_VERSION cada vez que subas/renombres imágenes: fuerza a navegadores y CDN a pedirlas de nuevo
         // (evita que queden guardados errores 404/5xx viejos, que "se arreglan solos" al vencer su caché).
         const IMG_VERSION = "20261014";
+        const IMG_RESUELTAS = {};   // ruta -> URL que ya cargó bien
         const imgUrl = ruta => {
             if (!ruta || /^(data:|blob:|https?:)/.test(ruta) || ruta.includes('?')) return ruta;
-            return `${ruta}?v=${IMG_VERSION}`;
+            return IMG_RESUELTAS[ruta] || `${ruta}?v=${IMG_VERSION}`;
         };
+
+        const esperar = ms => new Promise(r => setTimeout(r, ms));
+
+        // Cola: como máximo 4 imágenes pidiéndose a la vez. Con decenas de pedidos simultáneos, muchos hostings
+        // (límite de procesos/conexiones) responden error en la primera carga y OK al refrescar (F5).
+        const COLA_IMG = { activos: 0, max: 4, espera: [] };
+        function conCola(tarea) {
+            return new Promise((resolve, reject) => {
+                const correr = () => {
+                    COLA_IMG.activos++;
+                    tarea().then(resolve, reject).finally(() => {
+                        COLA_IMG.activos--;
+                        const sig = COLA_IMG.espera.shift();
+                        if (sig) sig();
+                    });
+                };
+                COLA_IMG.activos < COLA_IMG.max ? correr() : COLA_IMG.espera.push(correr);
+            });
+        }
+        const probarImagen = url => conCola(() => new Promise(resolve => {
+            const im = new Image();
+            im.onload = () => resolve(true);
+            im.onerror = () => resolve(false);
+            im.src = url;
+        }));
+
+        // Devuelve la URL de una imagen ya verificada (o null). Reintenta con espera creciente y, como último recurso,
+        // la descarga con fetch() saltando la caché. Pedidos repetidos de la misma imagen se unifican.
+        const IMG_PENDIENTES = {};
+        function obtenerImagen(ruta) {
+            if (IMG_RESUELTAS[ruta]) return Promise.resolve(IMG_RESUELTAS[ruta]);
+            if (IMG_PENDIENTES[ruta]) return IMG_PENDIENTES[ruta];
+            const base = `${ruta}?v=${IMG_VERSION}`;
+            const p = (async () => {
+                for (let i = 0; i < 7; i++) {
+                    const url = i === 0 ? base : `${base}&r=${i}`;
+                    if (await probarImagen(url)) return (IMG_RESUELTAS[ruta] = url);
+                    await esperar(Math.min(400 * Math.pow(2, i), 6000) + Math.random() * 300);
+                }
+                try {
+                    const r = await fetch(`${base}&f=${Date.now()}`, { cache: 'reload' });
+                    if (r.ok) return (IMG_RESUELTAS[ruta] = URL.createObjectURL(await r.blob()));
+                } catch { }
+                return null;
+            })().finally(() => { delete IMG_PENDIENTES[ruta]; });
+            return (IMG_PENDIENTES[ruta] = p);
+        }
+
+        // Imágenes con data-src: se asignan a src recién cuando la imagen ya se verificó (no se ve nunca el ícono roto)
+        function activarImagenesDiferidas(raiz) {
+            const cargar = async (img, intento = 0) => {
+                const ruta = img.dataset.src;
+                if (!ruta) return;
+                const url = await obtenerImagen(ruta);
+                if (url) { img.removeAttribute('data-src'); img.src = url; }
+                else if (intento < 3) setTimeout(() => cargar(img, intento + 1), 5000 * (intento + 1));
+            };
+            const imgs = raiz.querySelectorAll('img[data-src]');
+            if (!('IntersectionObserver' in window)) { imgs.forEach(i => cargar(i)); return; }
+            const obs = new IntersectionObserver(es => es.forEach(e => {
+                if (e.isIntersecting) { obs.unobserve(e.target); cargar(e.target); }
+            }), { rootMargin: '600px 0px' });
+            imgs.forEach(i => obs.observe(i));
+        }
 
         // Si CUALQUIER <img> de la página falla (incluidas las creadas dinámicamente), reintenta con espera creciente
         const MAX_REINTENTOS_IMG = 5;
@@ -916,25 +981,7 @@
         // Limpia la caché de rutas de versiones anteriores (podía guardar rutas .png/.jpg viejas o fallos puntuales)
         try { ['servizing_rutas_destacadas_v3', 'servizing_rutas_destacadas_v2', 'servizing_rutas_destacadas'].forEach(k => localStorage.removeItem(k)); } catch { }
 
-        const esperar = ms => new Promise(r => setTimeout(r, ms));
-
-        const cargaImagen = ruta => new Promise(resolve => {
-            const img = new Image();
-            img.onload = () => resolve(ruta);
-            img.onerror = () => resolve(null);
-            img.src = ruta;
-        });
-
-        // Un fallo puntual de red/servidor ya no descarta la foto: reintenta hasta 4 veces con espera creciente
-        async function resolverRutaImagen(nombreBase) {
-            const base = `${CARPETA_DESTACADAS}/${nombreBase}.webp?v=${IMG_VERSION}`;
-            for (let intento = 0; intento < 4; intento++) {
-                const ruta = intento === 0 ? base : `${base}&r=${intento}`;
-                if (await cargaImagen(ruta)) return ruta;
-                await esperar(400 * Math.pow(2, intento));
-            }
-            return null;
-        }
+        const resolverRutaImagen = nombreBase => obtenerImagen(`${CARPETA_DESTACADAS}/${nombreBase}.webp`);
 
         // Precarga de a una imagen por vez y recién con la página cargada (no compite con el contenido inicial)
         function precargarImagenes(rutas) {
@@ -1606,11 +1653,12 @@
             grid.innerHTML = listaAgrupada.map((prodGrp, idx) => {
                 return `
                 <article class="prod-card">
-                    <div class="prod-img"><img src="${escapar(imgUrl(prodGrp.imagen))}" alt="${escapar(prodGrp.nombre)}" loading="lazy" decoding="async"></div>
+                    <div class="prod-img"><img data-src="${escapar(prodGrp.imagen)}" alt="${escapar(prodGrp.nombre)}" decoding="async"></div>
                     <div class="prod-info"><h3 class="prod-nombre">${escapar(prodGrp.nombre)}</h3></div>
                     <button class="btn-agregar" onclick="clicBotonProducto(${idx})">AGREGAR</button>
                 </article>`;
             }).join("");
+            activarImagenesDiferidas(grid);
         }
 
         let productoModalActivo = null;
