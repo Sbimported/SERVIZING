@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.zingueriaservizing.com.ar/</loc>
     <lastmod>2026-10-14</lastmod>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/LOGO.png</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/001.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/002.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/003.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/004.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/005.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/006.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/007.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/008.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.zingueriaservizing.com.ar/tienda-estandar/</loc>
     <lastmod>2026-10-14</lastmod>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/001.webp</image:loc></image:image>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/productos/1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/productos/2.webp</image:loc></image:image>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/productos/3.webp</image:loc></image:image>
@@ -97,10 +105,12 @@
   <url>
     <loc>https://www.zingueriaservizing.com.ar/medidas-personalizadas/</loc>
     <lastmod>2026-10-14</lastmod>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/001.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.zingueriaservizing.com.ar/servicios/</loc>
     <lastmod>2026-10-14</lastmod>
+    <image:image><image:loc>https://www.zingueriaservizing.com.ar/destacadas/001.webp</image:loc></image:image>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/servicios/1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/servicios/2.webp</image:loc></image:image>
     <image:image><image:loc>https://www.zingueriaservizing.com.ar/servicios/3.webp</image:loc></image:image>
