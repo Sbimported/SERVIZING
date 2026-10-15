@@ -2,20 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script>var u=location.href.split('#')[0].split('?')[0].replace(/[^\/]*$/,'');document.write('<base href="'+u+'">');</script>
+    <script>var u=location.href.split('#')[0].split('?')[0],m=u.replace(/\/medidas-personalizadas(?:\/(?:[^\/]*\.html)?)?$/,'/');u=m!==u?m:u.replace(/[^\/]*$/,'');document.write('<base href="'+u+'">');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Zinguería Servizing | Chapas, Canaletas y Zinguería en Buenos Aires</title>
-    <meta name="description" content="Zinguería Servizing en Monte Grande: chapas, canaletas, cenefas y sombreros a medida. Atendemos Ezeiza, Canning, Lomas, Lanús y CABA. ¡Pedí presupuesto!">
+    <title>Medidas Personalizadas: Chapas y Plegados a Medida | Servizing</title>
+    <meta name="description" content="Pedí chapas, canaletas, perfiles y plegados hasta 7 metros a tu medida. Verificamos las medidas antes de fabricar. Zinguería en Monte Grande, Buenos Aires.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://www.zingueriaservizing.com.ar/">
+    <link rel="canonical" href="https://www.zingueriaservizing.com.ar/medidas-personalizadas/">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Zinguería Servizing">
     <meta property="og:locale" content="es_AR">
-    <meta property="og:url" content="https://www.zingueriaservizing.com.ar/">
-    <meta property="og:title" content="Zinguería Servizing | Chapas, Canaletas y Zinguería en Buenos Aires">
-    <meta property="og:description" content="Fabricación e instalación de zinguería, chapas, canaletas y cenefas. Atención en Monte Grande, Ezeiza, Canning, Lomas de Zamora, Lanús, CABA y Zona Norte.">
+    <meta property="og:url" content="https://www.zingueriaservizing.com.ar/medidas-personalizadas/">
+    <meta property="og:title" content="Medidas Personalizadas: Chapas y Plegados a Medida | Servizing">
+    <meta property="og:description" content="Pedí chapas, canaletas, perfiles y plegados hasta 7 metros a tu medida. Verificamos las medidas antes de fabricar. Zinguería en Monte Grande, Buenos Aires.">
     <meta property="og:image" content="https://www.zingueriaservizing.com.ar/LOGO.png">
     <meta property="og:image:alt" content="Logo de Zinguería Servizing">
     <meta name="twitter:card" content="summary">
@@ -383,7 +383,7 @@
 #btn-medidas{letter-spacing:normal;font-kerning:normal;text-rendering:optimizeLegibility}
 </style>
 </head>
-<body data-seccion="quienes-somos" class="bg-servizing-orange font-fira text-white min-h-screen flex flex-col select-none relative pb-0">
+<body data-seccion="medidas" class="bg-servizing-orange font-fira text-white min-h-screen flex flex-col select-none relative pb-0">
 
     <header class="header-grid-bg sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 md:h-28 flex items-center justify-between">
@@ -396,13 +396,13 @@
                 </div>
 
                 <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="./" data-seccion="quienes-somos" id="btn-quienes-somos" class="nav-pill active text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/20 whitespace-nowrap" aria-current="page">
+                    <a href="./" data-seccion="quienes-somos" id="btn-quienes-somos" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/20 whitespace-nowrap">
                         QUIÉNES SOMOS
                     </a>
                     <a href="tienda-estandar/" data-seccion="tienda" id="btn-tienda" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
                         TIENDA ESTÁNDAR
                     </a>
-                    <a href="medidas-personalizadas/" data-seccion="medidas" id="btn-medidas" class="nav-pill text-white text-[11px] lg:text-sm font-bold uppercase px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
+                    <a href="medidas-personalizadas/" data-seccion="medidas" id="btn-medidas" class="nav-pill text-white text-[11px] lg:text-sm font-bold uppercase px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap active" aria-current="page">
                         MEDIDAS PERSONALIZADAS
                     </a>
                     <a href="servicios/" data-seccion="servicios" id="btn-servicios" class="nav-pill text-white text-xs lg:text-sm font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-white/10 hover:border-white/30 text-center whitespace-nowrap">
@@ -427,16 +427,16 @@
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden header-grid-bg px-4 pt-3 pb-5 space-y-2 border-b border-white/10 shadow-xl">
-            <a href="./" data-seccion="quienes-somos" id="btn-mb-quienes-somos" class="w-full text-center nav-pill active text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider" aria-current="page">QUIÉNES SOMOS</a>
+            <a href="./" data-seccion="quienes-somos" id="btn-mb-quienes-somos" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">QUIÉNES SOMOS</a>
             <a href="tienda-estandar/" data-seccion="tienda" id="btn-mb-tienda" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">TIENDA ESTÁNDAR</a>
-            <a href="medidas-personalizadas/" data-seccion="medidas" id="btn-mb-medidas" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">MEDIDAS PERSONALIZADAS</a>
+            <a href="medidas-personalizadas/" data-seccion="medidas" id="btn-mb-medidas" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider active" aria-current="page">MEDIDAS PERSONALIZADAS</a>
             <a href="servicios/" data-seccion="servicios" id="btn-mb-servicios" class="w-full text-center nav-pill text-white text-xs font-bold uppercase px-4 py-2.5 rounded-full tracking-wider">SERVICIOS</a>
         </div>
     </header>
 
     <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 flex flex-col justify-between w-full">
 
-        <section id="quienes-somos" class="seccion-contenido">
+        <section id="quienes-somos" class="seccion-contenido hidden">
             <div class="w-full py-4 sm:py-6">
                 <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 items-center mb-8">
 
@@ -572,9 +572,9 @@
             </div>
         </div>
 
-        <section id="medidas" class="seccion-contenido hidden py-4 sm:py-8 flex flex-col items-center">
+        <section id="medidas" class="seccion-contenido py-4 sm:py-8 flex flex-col items-center">
             <div class="med-wrap">
-                <h2 class="med-titulo">MEDIDAS PERSONALIZADAS</h2>
+                <h1 class="med-titulo">MEDIDAS PERSONALIZADAS</h1>
 
                 <div id="med-controles" class="med-controles">
                     <div id="med-select" class="med-select">
@@ -752,8 +752,6 @@
         </section>
 
     </main>
-
-    <div id="resenas-wrap" class="max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-6 sm:my-8"></div>
 
     <section id="marcas-wrap" class="w-full mt-6 sm:mt-10 mb-0 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2 sm:mb-3 flex flex-col items-center">
@@ -953,8 +951,6 @@
                 dom.mobileMenu.classList.add('hidden');
             }
 
-            const rw = document.getElementById('resenas-wrap');
-            if (rw) rw.classList.toggle('hidden', idSeccion === 'tienda' || idSeccion === 'medidas');
             const mw = document.getElementById('marcas-wrap');
             if (mw) mw.classList.toggle('sin-marcas', idSeccion === 'tienda');
 
@@ -1092,30 +1088,7 @@
 
         inicializarCarruselDestacadas();
 
-        /* ===================== RESEÑAS Y MARCAS (carga diferida) ===================== */
-
-        // El widget de reseñas (script de terceros) se descarga recién cuando está por entrar en pantalla
-        (function () {
-            const cont = document.getElementById('resenas-wrap');
-            if (!cont) return;
-            let cargado = false;
-            const cargar = () => {
-                if (cargado) return;
-                cargado = true;
-                const sc = document.createElement('script');
-                sc.src = 'https://cdn.trustindex.io/loader.js?b96f12382fbd94078e36b767c87';
-                sc.async = true;
-                cont.appendChild(sc);
-            };
-            if ('IntersectionObserver' in window) {
-                const obs = new IntersectionObserver(entradas => {
-                    if (entradas.some(e => e.isIntersecting)) { obs.disconnect(); cargar(); }
-                }, { rootMargin: '600px 0px' });
-                obs.observe(cont);
-            } else {
-                alCargar(cargar);
-            }
-        })();
+        /* ===================== MARCAS (carga diferida) ===================== */
 
         // El carrusel de marcas solo anima mientras se ve en pantalla
         (function () {

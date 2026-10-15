@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script>var u=location.href.split('#')[0].split('?')[0],m=u.replace(/tienda-estandar\/?(?:index\.html)?$/,'');u=m!==u?m:u.replace(/[^\/]*$/,'');document.write('<base href="'+u+'">');</script>
+    <script>var u=location.href.split('#')[0].split('?')[0],m=u.replace(/\/tienda-estandar(?:\/(?:[^\/]*\.html)?)?$/,'/');u=m!==u?m:u.replace(/[^\/]*$/,'');document.write('<base href="'+u+'">');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tienda de Zinguería: Caños, Canaletas y Sombreros | Servizing</title>
@@ -753,8 +753,6 @@
 
     </main>
 
-    <div id="resenas-wrap" class="max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-6 sm:my-8 hidden"></div>
-
     <section id="marcas-wrap" class="w-full mt-6 sm:mt-10 mb-0 relative sin-marcas">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2 sm:mb-3 flex flex-col items-center">
             <div class="relative inline-block px-6 py-1">
@@ -953,8 +951,6 @@
                 dom.mobileMenu.classList.add('hidden');
             }
 
-            const rw = document.getElementById('resenas-wrap');
-            if (rw) rw.classList.toggle('hidden', idSeccion === 'tienda' || idSeccion === 'medidas');
             const mw = document.getElementById('marcas-wrap');
             if (mw) mw.classList.toggle('sin-marcas', idSeccion === 'tienda');
 
@@ -1092,30 +1088,7 @@
 
         inicializarCarruselDestacadas();
 
-        /* ===================== RESEÑAS Y MARCAS (carga diferida) ===================== */
-
-        // El widget de reseñas (script de terceros) se descarga recién cuando está por entrar en pantalla
-        (function () {
-            const cont = document.getElementById('resenas-wrap');
-            if (!cont) return;
-            let cargado = false;
-            const cargar = () => {
-                if (cargado) return;
-                cargado = true;
-                const sc = document.createElement('script');
-                sc.src = 'https://cdn.trustindex.io/loader.js?b96f12382fbd94078e36b767c87';
-                sc.async = true;
-                cont.appendChild(sc);
-            };
-            if ('IntersectionObserver' in window) {
-                const obs = new IntersectionObserver(entradas => {
-                    if (entradas.some(e => e.isIntersecting)) { obs.disconnect(); cargar(); }
-                }, { rootMargin: '600px 0px' });
-                obs.observe(cont);
-            } else {
-                alCargar(cargar);
-            }
-        })();
+        /* ===================== MARCAS (carga diferida) ===================== */
 
         // El carrusel de marcas solo anima mientras se ve en pantalla
         (function () {
