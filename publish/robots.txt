@@ -1,4 +1,6 @@
+# Zinguería Servizing
 User-agent: *
 Allow: /
 
+# Mapa del sitio (todas las páginas y fotos)
 Sitemap: https://www.zingueriaservizing.com.ar/sitemap.xml

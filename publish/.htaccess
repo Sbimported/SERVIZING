@@ -1,0 +1,170 @@
+# ============================================================
+#  Zinguería Servizing · .htaccess  (Apache / hosting compartido)
+#  Subir en la raíz del sitio, junto a index.html
+# ============================================================
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+# ---------- 1) https + www (una sola dirección oficial) ----------
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# a https (si hay Cloudflare u otro proxy delante, se respeta X-Forwarded-Proto para no entrar en bucle)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_HOST} ^(www\.)?zingueriaservizing\.com\.ar$ [NC]
+RewriteRule ^ https://www.zingueriaservizing.com.ar%{REQUEST_URI} [L,R=301]
+# sin www -> con www
+RewriteCond %{HTTP_HOST} ^zingueriaservizing\.com\.ar$ [NC]
+RewriteRule ^ https://www.zingueriaservizing.com.ar%{REQUEST_URI} [L,R=301]
+# /index.html -> / (evita direcciones duplicadas)
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301,NE]
+</IfModule>
+
+# ---------- 2) Direcciones viejas -> nuevas (301 = permanente, Google traspasa el posicionamiento) ----------
+<IfModule mod_alias.c>
+RedirectMatch 301 ^/tienda-estandar/abrazadera-artistica/?(index\.html)?$ /tienda-zingueria/abrazadera-artistica-para-cano/
+RedirectMatch 301 ^/tienda-estandar/abrazadera-comun/?(index\.html)?$ /tienda-zingueria/abrazadera-comun-para-cano/
+RedirectMatch 301 ^/tienda-estandar/bajoteja/?(index\.html)?$ /tienda-zingueria/bajoteja-c30-canaleta/
+RedirectMatch 301 ^/tienda-estandar/bajoteja-con-nervio/?(index\.html)?$ /tienda-zingueria/bajoteja-con-nervio-c28/
+RedirectMatch 301 ^/tienda-estandar/balde-de-chapa/?(index\.html)?$ /tienda-zingueria/balde-de-chapa-decorativo/
+RedirectMatch 301 ^/tienda-estandar/base-parabolico/?(index\.html)?$ /tienda-zingueria/base-parabolico-para-sombrero/
+RedirectMatch 301 ^/tienda-estandar/canaleta-americana/?(index\.html)?$ /tienda-zingueria/canaleta-americana-c28/
+RedirectMatch 301 ^/tienda-estandar/canaleta-media-cana/?(index\.html)?$ /tienda-zingueria/canaleta-media-cana-zingueria/
+RedirectMatch 301 ^/tienda-estandar/canaleta-moldura/?(index\.html)?$ /tienda-zingueria/canaleta-moldura-zingueria/
+RedirectMatch 301 ^/tienda-estandar/cano-color/?(index\.html)?$ /tienda-zingueria/cano-bajada-color/
+RedirectMatch 301 ^/tienda-estandar/cano-enlozado/?(index\.html)?$ /tienda-zingueria/cano-bajada-enlozado/
+RedirectMatch 301 ^/tienda-estandar/cano-flexible/?(index\.html)?$ /tienda-zingueria/cano-flexible-1-metro/
+RedirectMatch 301 ^/tienda-estandar/cano-galvanizado/?(index\.html)?$ /tienda-zingueria/cano-bajada-galvanizado/
+RedirectMatch 301 ^/tienda-estandar/cano-rectangular-color/?(index\.html)?$ /tienda-zingueria/cano-rectangular-color-bajada/
+RedirectMatch 301 ^/tienda-estandar/cano-rectangular-galvanizado/?(index\.html)?$ /tienda-zingueria/cano-rectangular-galvanizado-bajada/
+RedirectMatch 301 ^/tienda-estandar/cantonera/?(index\.html)?$ /tienda-zingueria/cantonera-c28-babeta/
+RedirectMatch 301 ^/tienda-estandar/capuchon/?(index\.html)?$ /tienda-zingueria/capuchon-para-canaleta/
+RedirectMatch 301 ^/tienda-estandar/chapa-color-trapezoidal/?(index\.html)?$ /tienda-zingueria/chapa-trapezoidal-color-techo/
+RedirectMatch 301 ^/tienda-estandar/chapa-de-techo-cincalum/?(index\.html)?$ /tienda-zingueria/chapa-techo-cincalum/
+RedirectMatch 301 ^/tienda-estandar/chapa-de-techo-sinusoidal/?(index\.html)?$ /tienda-zingueria/chapa-techo-sinusoidal/
+RedirectMatch 301 ^/tienda-estandar/chapa-lisa-color/?(index\.html)?$ /tienda-zingueria/chapa-lisa-color/
+RedirectMatch 301 ^/tienda-estandar/chapa-lisa-galvanizada/?(index\.html)?$ /tienda-zingueria/chapa-lisa-galvanizada/
+RedirectMatch 301 ^/tienda-estandar/chapa-poli/?(index\.html)?$ /tienda-zingueria/chapa-poli-techo-por-m2/
+RedirectMatch 301 ^/tienda-estandar/codo-rectangular-soldado/?(index\.html)?$ /tienda-zingueria/codo-rectangular-soldado-zingueria/
+RedirectMatch 301 ^/tienda-estandar/codo-redondo-soldado/?(index\.html)?$ /tienda-zingueria/codo-redondo-soldado-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-americano/?(index\.html)?$ /tienda-zingueria/colector-americano-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-caras-panza-afuera/?(index\.html)?$ /tienda-zingueria/colector-caras-panza-afuera-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-colonial-panza-adentro/?(index\.html)?$ /tienda-zingueria/colector-colonial-panza-adentro-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-cuadrado/?(index\.html)?$ /tienda-zingueria/colector-cuadrado-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-cuatro-caras-adentro/?(index\.html)?$ /tienda-zingueria/colector-cuatro-caras-adentro-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-frances/?(index\.html)?$ /tienda-zingueria/colector-frances-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-mini/?(index\.html)?$ /tienda-zingueria/colector-mini-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-panza-s-alto/?(index\.html)?$ /tienda-zingueria/colector-panza-s-alto-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-pecho-paloma/?(index\.html)?$ /tienda-zingueria/colector-pecho-paloma-zingueria/
+RedirectMatch 301 ^/tienda-estandar/colector-piramidal/?(index\.html)?$ /tienda-zingueria/colector-piramidal-zingueria/
+RedirectMatch 301 ^/tienda-estandar/compriband-sinusoidal/?(index\.html)?$ /tienda-zingueria/compriband-sinusoidal-techo/
+RedirectMatch 301 ^/tienda-estandar/compriband-trapezoidal/?(index\.html)?$ /tienda-zingueria/compriband-trapezoidal-techo/
+RedirectMatch 301 ^/tienda-estandar/conversa/?(index\.html)?$ /tienda-zingueria/conversa-c28-babeta/
+RedirectMatch 301 ^/tienda-estandar/cumbrera/?(index\.html)?$ /tienda-zingueria/cumbrera-c28-babeta/
+RedirectMatch 301 ^/tienda-estandar/cupla-para-flexible/?(index\.html)?$ /tienda-zingueria/cupla-para-cano-flexible/
+RedirectMatch 301 ^/tienda-estandar/curva-enlozada/?(index\.html)?$ /tienda-zingueria/curva-enlozada-para-cano/
+RedirectMatch 301 ^/tienda-estandar/curva-galvanizada-art/?(index\.html)?$ /tienda-zingueria/curva-galvanizada-art-para-cano/
+RedirectMatch 301 ^/tienda-estandar/curva-galvanizada-her/?(index\.html)?$ /tienda-zingueria/curva-galvanizada-her-para-cano/
+RedirectMatch 301 ^/tienda-estandar/escuadra-canaleta/?(index\.html)?$ /tienda-zingueria/escuadras-para-canaletas/
+RedirectMatch 301 ^/tienda-estandar/esquinero/?(index\.html)?$ /tienda-zingueria/esquinero-zingueria-artistica/
+RedirectMatch 301 ^/tienda-estandar/extractor-electrico-de-bano/?(index\.html)?$ /tienda-zingueria/extractor-electrico-de-bano/
+RedirectMatch 301 ^/tienda-estandar/extractor-electrico-entrecanos/?(index\.html)?$ /tienda-zingueria/extractor-electrico-entrecanos/
+RedirectMatch 301 ^/tienda-estandar/extractor-electrico-industrial/?(index\.html)?$ /tienda-zingueria/extractor-electrico-industrial/
+RedirectMatch 301 ^/tienda-estandar/extractor-electrico-parrillero/?(index\.html)?$ /tienda-zingueria/extractor-electrico-parrillero/
+RedirectMatch 301 ^/tienda-estandar/extractor-electrico-satelite/?(index\.html)?$ /tienda-zingueria/extractor-electrico-satelite/
+RedirectMatch 301 ^/tienda-estandar/extractor-electrico-semi-industrial/?(index\.html)?$ /tienda-zingueria/extractor-electrico-semi-industrial/
+RedirectMatch 301 ^/tienda-estandar/fuenton-de-chapa/?(index\.html)?$ /tienda-zingueria/fuenton-de-chapa-decorativo/
+RedirectMatch 301 ^/tienda-estandar/gargola-bronce/?(index\.html)?$ /tienda-zingueria/gargola-bronce-zingueria-artistica/
+RedirectMatch 301 ^/tienda-estandar/grampa-con-pata/?(index\.html)?$ /tienda-zingueria/grampa-con-pata-zingueria/
+RedirectMatch 301 ^/tienda-estandar/grampa-omega/?(index\.html)?$ /tienda-zingueria/grampa-omega-zingueria/
+RedirectMatch 301 ^/tienda-estandar/lana-de-vidrio-isotex-galpon/?(index\.html)?$ /tienda-zingueria/lana-de-vidrio-isotex-galpon/
+RedirectMatch 301 ^/tienda-estandar/lana-de-vidrio-isover/?(index\.html)?$ /tienda-zingueria/lana-de-vidrio-isover/
+RedirectMatch 301 ^/tienda-estandar/lana-de-vidrio-oroglass/?(index\.html)?$ /tienda-zingueria/lana-de-vidrio-oroglass/
+RedirectMatch 301 ^/tienda-estandar/lechero-de-chapa/?(index\.html)?$ /tienda-zingueria/lechero-de-chapa-decorativo/
+RedirectMatch 301 ^/tienda-estandar/molino-de-chapa/?(index\.html)?$ /tienda-zingueria/molino-de-chapa-decorativo/
+RedirectMatch 301 ^/tienda-estandar/perfil-c-galvanizado/?(index\.html)?$ /tienda-zingueria/perfil-c-galvanizado/
+RedirectMatch 301 ^/tienda-estandar/planchuela/?(index\.html)?$ /tienda-zingueria/planchuela-zingueria/
+RedirectMatch 301 ^/tienda-estandar/plegado-chapa/?(index\.html)?$ /tienda-zingueria/plegado-de-chapa-a-medida-hasta-7-metros/
+RedirectMatch 301 ^/tienda-estandar/ramal-te/?(index\.html)?$ /tienda-zingueria/ramal-te-para-cano/
+RedirectMatch 301 ^/tienda-estandar/reduccion/?(index\.html)?$ /tienda-zingueria/reduccion-para-cano/
+RedirectMatch 301 ^/tienda-estandar/regadera-de-chapa/?(index\.html)?$ /tienda-zingueria/regadera-de-chapa-decorativa/
+RedirectMatch 301 ^/tienda-estandar/rejilla-esfera-plastica/?(index\.html)?$ /tienda-zingueria/rejilla-esfera-plastica/
+RedirectMatch 301 ^/tienda-estandar/rejilla-metalica-movil/?(index\.html)?$ /tienda-zingueria/rejilla-metalica-movil/
+RedirectMatch 301 ^/tienda-estandar/rejilla-plana-4-pulgadas/?(index\.html)?$ /tienda-zingueria/rejilla-plana-4-pulgadas/
+RedirectMatch 301 ^/tienda-estandar/rejilla-redonda-pvc-4-pulgadas/?(index\.html)?$ /tienda-zingueria/rejilla-redonda-pvc-4-pulgadas/
+RedirectMatch 301 ^/tienda-estandar/rinconero/?(index\.html)?$ /tienda-zingueria/rinconero-zingueria-artistica/
+RedirectMatch 301 ^/tienda-estandar/sellador-canaletas-zinacril/?(index\.html)?$ /tienda-zingueria/sellador-canaletas-zinacril/
+RedirectMatch 301 ^/tienda-estandar/sellador-poliuretanico-roof/?(index\.html)?$ /tienda-zingueria/sellador-poliuretanico-roof/
+RedirectMatch 301 ^/tienda-estandar/silicona-alta-temperatura-roof/?(index\.html)?$ /tienda-zingueria/silicona-alta-temperatura-roof/
+RedirectMatch 301 ^/tienda-estandar/sobreteja/?(index\.html)?$ /tienda-zingueria/sobreteja-c30-babeta/
+RedirectMatch 301 ^/tienda-estandar/sombrero-2-aros/?(index\.html)?$ /tienda-zingueria/sombrero-2-aros/
+RedirectMatch 301 ^/tienda-estandar/sombrero-chino/?(index\.html)?$ /tienda-zingueria/sombrero-chino/
+RedirectMatch 301 ^/tienda-estandar/sombrero-eolico/?(index\.html)?$ /tienda-zingueria/sombrero-eolico/
+RedirectMatch 301 ^/tienda-estandar/sombrero-eskabe/?(index\.html)?$ /tienda-zingueria/sombrero-eskabe/
+RedirectMatch 301 ^/tienda-estandar/sombrero-spiro-redondo/?(index\.html)?$ /tienda-zingueria/sombrero-spiro-redondo/
+RedirectMatch 301 ^/tienda-estandar/sombrero-tipo-h/?(index\.html)?$ /tienda-zingueria/sombrero-tipo-h/
+RedirectMatch 301 ^/tienda-estandar/sombrero-venturi-color/?(index\.html)?$ /tienda-zingueria/sombrero-venturi-color/
+RedirectMatch 301 ^/tienda-estandar/sombrero-venturi-galvanizado/?(index\.html)?$ /tienda-zingueria/sombrero-venturi-galvanizado/
+RedirectMatch 301 ^/tienda-estandar/soporte-canaleta-americana/?(index\.html)?$ /tienda-zingueria/soporte-canaleta-americana/
+RedirectMatch 301 ^/tienda-estandar/soporte-canaleta-americana-con-pata/?(index\.html)?$ /tienda-zingueria/soporte-canaleta-americana-con-pata/
+RedirectMatch 301 ^/tienda-estandar/soporte-canaleta-pecho-paloma/?(index\.html)?$ /tienda-zingueria/soporte-canaleta-pecho-paloma/
+
+RedirectMatch 301 ^/tienda-estandar/?(index\.html)?$ /tienda-zingueria/
+RedirectMatch 301 ^/medidas-personalizadas/?(index\.html)?$ /zingueria-a-medida/
+RedirectMatch 301 ^/servicios/?(index\.html)?$ /servicios-zingueria-techos/
+RedirectMatch 301 ^/tienda-estandar/.+$ /tienda-zingueria/
+</IfModule>
+
+# ---------- 3) Compresión (páginas, CSS, JS, SVG... cargan hasta 70% más rápido) ----------
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/xhtml+xml
+AddOutputFilterByType DEFLATE application/javascript text/javascript application/json application/ld+json application/manifest+json
+AddOutputFilterByType DEFLATE image/svg+xml image/x-icon
+</IfModule>
+
+# ---------- 4) Caché del navegador (visitas repetidas casi instantáneas) ----------
+<IfModule mod_mime.c>
+AddType image/webp .webp
+AddType application/manifest+json .webmanifest
+AddType text/javascript .js
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 1 week"
+ExpiresByType text/html "access plus 10 minutes"
+ExpiresByType application/xml "access plus 1 day"
+ExpiresByType text/xml "access plus 1 day"
+ExpiresByType text/plain "access plus 1 day"
+# CSS y JS llevan ?v=NÚMERO: al subir cambios se cambia el número y se descargan de nuevo
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType image/webp "access plus 6 months"
+ExpiresByType image/png "access plus 6 months"
+ExpiresByType image/jpeg "access plus 6 months"
+ExpiresByType image/svg+xml "access plus 6 months"
+ExpiresByType image/x-icon "access plus 6 months"
+ExpiresByType application/manifest+json "access plus 1 week"
+</IfModule>
+
+# ---------- 5) Seguridad básica ----------
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set Strict-Transport-Security "max-age=15552000" env=HTTPS
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "public, max-age=600, must-revalidate"
+</FilesMatch>
+</IfModule>
+
+# Archivos internos que no deben verse
+<IfModule mod_authz_core.c>
+<FilesMatch "^\.(?!well-known)">
+Require all denied
+</FilesMatch>
+</IfModule>
